@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :tcn_springboard-release:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/df76a26df3a915caf4c38980d10f93c3/tcn_springboard-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/df76a26df3a915caf4c38980d10f93c3/tcn_springboard-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/df76a26df3a915caf4c38980d10f93c3/tcn_springboard-release/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

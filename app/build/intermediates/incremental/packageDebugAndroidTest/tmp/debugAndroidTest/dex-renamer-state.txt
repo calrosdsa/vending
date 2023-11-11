@@ -1,0 +1,4 @@
+#Fri Nov 10 13:48:59 BOT 2023
+base.0=D\:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,179 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tcn.sdk.springdemo"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+11-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:5:5-76
+11-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:5:22-73
+12    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+12-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:6:5-76
+12-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:6:22-73
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:7:5-68
+13-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:7:22-65
+14
+15    <!-- 添加访问手机位置的权限 Add access to phone location -->
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:10:5-80
+16-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:10:22-78
+17    <!-- 添加访问手机状态的权限  Add access to phone status -->
+18    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+18-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:12:5-74
+18-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:12:22-72
+19    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+19-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:14:5-79
+19-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:14:22-76
+20    <uses-permission android:name="android.permission.INTERNET" />
+20-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:16:5-67
+20-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:16:22-64
+21    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+21-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:17:5-81
+21-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:17:22-78
+22    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+22-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:18:5-75
+22-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:18:22-72
+23    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+23-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:19:5-81
+23-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:19:22-78
+24    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+24-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:20:5-79
+24-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:20:22-77
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+25-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:21:5-79
+25-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:21:22-76
+26
+27    <!-- 允许CWJ账户组访问底层信息  Allow CWJ account groups to access underlying information -->
+28    <uses-permission android:name="android.permission.CWJ_GROUP" >
+28-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:24:5-25:23
+28-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:24:22-65
+29    </uses-permission>
+30
+31    <!-- 允许mTweak用户访问高级系统权限  Allow mTweak users to access advanced system permissions -->
+32    <uses-permission android:name="android.permission.MTWEAK_USER" />
+32-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:28:5-70
+32-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:28:22-67
+33
+34    <!-- 允许声波支付权限  Allow Sonic payment permissions -->
+35    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+35-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:31:5-70
+35-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:31:22-68
+36    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+36-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:32:5-80
+36-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:32:22-77
+37    <uses-permission android:name="android.permission.GET_TASKS" />
+37-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:34:5-68
+37-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:34:22-65
+38    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+38-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:35:5-78
+38-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:35:22-75
+39
+40    <application
+40-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:38:5-85:19
+41        android:name="controller.VendApplication"
+41-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:39:9-50
+42        android:allowBackup="true"
+42-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:40:9-35
+43        android:debuggable="true"
+44        android:label="@string/app_name"
+44-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:41:9-41
+45        android:supportsRtl="true"
+45-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:42:9-35
+46        android:testOnly="true"
+47        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+47-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:43:9-65
+48        <activity android:name="com.tcn.sdk.springdemo.ComposeActivity" >
+48-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:44:9-50:20
+48-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:44:19-50
+49            <intent-filter>
+49-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:45:13-49:29
+50                <action android:name="android.intent.action.MAIN" />
+50-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:17-68
+50-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:25-66
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:17-76
+52-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:27-74
+53            </intent-filter>
+54        </activity>
+55        <activity
+55-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-55:46
+56            android:name="com.tcn.sdk.springdemo.MenuSettingsLatticeActivity"
+56-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-56
+57            android:configChanges="locale|keyboardHidden|orientation"
+57-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:13-70
+58            android:launchMode="singleTask" />
+58-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:55:13-44
+59        <activity
+59-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:57:9-60:46
+60            android:name="com.tcn.sdk.springdemo.MenuSettingsStandJsActivity"
+60-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:58:13-56
+61            android:configChanges="locale|keyboardHidden|orientation"
+61-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:59:13-70
+62            android:launchMode="singleTask" />
+62-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:60:13-44
+63        <activity
+63-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:62:9-65:46
+64            android:name="com.tcn.sdk.springdemo.MainAct"
+64-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:63:13-36
+65            android:configChanges="locale|keyboardHidden|orientation"
+65-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:64:13-70
+66            android:launchMode="singleTask" />
+66-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:65:13-44
+67        <activity
+67-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:67:9-71:20
+68            android:name="com.tcn.sdk.springdemo.SerialPortSetting"
+68-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:69:13-45
+69            android:configChanges="locale|keyboardHidden|orientation"
+69-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:70:13-70
+70            android:launchMode="singleTask" >
+70-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:68:13-44
+71        </activity>
+72        <activity
+72-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:73:9-77:20
+73            android:name="com.tcn.sdk_auth_lib.floatwindow.FloatActivity"
+73-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:13-74
+74            android:configChanges="locale|keyboardHidden|orientation"
+74-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:76:13-70
+75            android:launchMode="singleTask" >
+75-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:74:13-44
+76        </activity>
+77
+78        <receiver android:name="controller.BootBroadcastReceiver" >
+78-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:79:9-83:20
+78-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:79:19-66
+79            <intent-filter android:priority="999" >
+79-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:13-82:29
+79-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:28-50
+80                <action android:name="android.intent.action.BOOT_COMPLETED" />
+80-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:81:17-79
+80-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:81:25-76
+81            </intent-filter>
+82        </receiver>
+83
+84        <service android:name="controller.VendService" />
+84-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:9-66
+84-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:18-55
+85
+86        <meta-data
+86-->[com.android.support:design:26.1.0] C:\Users\jorge\.gradle\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:26:9-28:38
+87            android:name="android.support.VERSION"
+87-->[com.android.support:design:26.1.0] C:\Users\jorge\.gradle\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:27:13-51
+88            android:value="26.1.0" />
+88-->[com.android.support:design:26.1.0] C:\Users\jorge\.gradle\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:28:13-35
+89        <meta-data
+89-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\jorge\.gradle\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
+90            android:name="android.arch.lifecycle.VERSION"
+90-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\jorge\.gradle\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:26:13-58
+91            android:value="27.0.0-SNAPSHOT" />
+91-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\jorge\.gradle\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:27:13-44
+92    </application>
+93
+94</manifest>

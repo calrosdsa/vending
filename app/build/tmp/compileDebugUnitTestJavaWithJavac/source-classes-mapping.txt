@@ -1,0 +1,2 @@
+com/tcn/sdk/springdemo/ExampleUnitTest.java
+ com.tcn.sdk.springdemo.ExampleUnitTest
