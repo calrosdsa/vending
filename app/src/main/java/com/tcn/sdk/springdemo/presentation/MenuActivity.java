@@ -1,28 +1,33 @@
 package com.tcn.sdk.springdemo.presentation;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.tcn.sdk.springdemo.Injection;
 import com.tcn.sdk.springdemo.R;
-import com.tcn.sdk.springdemo.adapter.CeldaAdapter;
-import com.tcn.sdk.springdemo.adapter.RecyclerItemClickListener;
+import com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter;
+import com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener;
 import com.tcn.sdk.springdemo.data.models.Celda;
 import com.tcn.sdk.springdemo.data.models.ShipmentState;
-import com.tcn.sdk.springdemo.domain.repository.CeldaDataSource;
+import com.tcn.sdk.springdemo.data.repository.AppPreferences;
+import com.tcn.sdk.springdemo.domain.repository.AppDataSource;
 import com.tcn.springboard.control.PayMethod;
 import com.tcn.springboard.control.TcnVendEventID;
 import com.tcn.springboard.control.TcnVendIF;
 import com.tcn.springboard.control.VendEventInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -37,16 +42,24 @@ import io.reactivex.schedulers.Schedulers;
 public class MenuActivity extends TcnMainActivity {
     RecyclerView recyclerView1;
     RecyclerView recyclerView2;
+    RecyclerView recyclerView3;
+    RecyclerView recyclerView4;
+    RecyclerView recyclerView5;
+    RecyclerView recyclerView6;
+
     CeldaAdapter adapter;
-    CeldaDataSource dataSource;
+    AppDataSource dataSource;
     Button mergeButton;
     Button splitButton;
     Button splitAllB;
     AlertDialog loadingDialog;
     AlertDialog messageDialog;
     int currentPosition = -1;
+    int currentRow = -1;
     Celda mCelda;
     List<Celda> mCeldas;
+    TextView mPosition;
+    AppPreferences preferences;
     private final CompositeDisposable mDisposable = new CompositeDisposable();
 
     @Override
@@ -54,7 +67,7 @@ public class MenuActivity extends TcnMainActivity {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_menu);
         dataSource = Injection.provideUserDataSource(this);
-        populateDb();
+        preferences = AppPreferences.getInstance(this);
         initView();
     }
 
@@ -62,6 +75,11 @@ public class MenuActivity extends TcnMainActivity {
     protected void onStart() {
         super.onStart();
         observeCeldas();
+        if(!preferences.getIsDbPopulated()){
+            populateDb();
+            showMessage("Alredy inserted");
+            preferences.setIsDbPopulated(true);
+        }
 //        wSocker.start();
     }
 
@@ -79,6 +97,9 @@ public class MenuActivity extends TcnMainActivity {
 
     protected void  initView(){
         setRecyclerView();
+
+        mPosition = findViewById(R.id.position);
+
         splitButton = findViewById(R.id.splitButton);
         mergeButton = findViewById(R.id.mergeButton);
         splitAllB = findViewById(R.id.splitAllB);
@@ -115,28 +136,65 @@ public class MenuActivity extends TcnMainActivity {
 
     protected void populateDb() {
         AsyncTask.execute(() -> {
-            for (int i = 0; i < 4; i++) {
+            ArrayList<Celda> list = new ArrayList<>();
+            for (int i = 1; i < 10; i++) {
                 Celda celda = new Celda(i, i, 1,true);
-                dataSource.insertCelda(celda);
+                list.add(celda);
             }
-            Celda celda1 = new Celda(4, 4, 1,false);
-            dataSource.insertCelda(celda1);
-            for (int i = 5; i < 9; i++) {
+             list.add(new Celda(10, 10, 1,false));
+            for (int i = 11; i < 20; i++) {
                 Celda celda = new Celda(i, i, 2,true);
-                dataSource.insertCelda(celda);
+                list.add(celda);
             }
+            list.add(new Celda(20, 20, 2,false));
+
+            for (int i = 21; i < 30; i++) {
+                Celda celda = new Celda(i, i, 3,true);
+                list.add(celda);
+            }
+            list.add(new Celda(30, 30, 3,false));
+
+            for (int i = 31; i < 40; i++) {
+                Celda celda = new Celda(i, i, 4,true);
+                list.add(celda);
+            }
+            list.add(new Celda(40, 40, 4,false));
+
+            for (int i = 41; i < 50; i++) {
+                Celda celda = new Celda(i, i, 5,true);
+                list.add(celda);
+            }
+            list.add(new Celda(50, 50, 5,false));
+
+            for (int i = 51; i < 60; i++) {
+                Celda celda = new Celda(i, i, 6,true);
+                list.add(celda);
+            }
+            list.add(new Celda(60, 60, 2,false));
+            dataSource.insertAllCeldas(list);
         });
     }
 
 
     private void setRecyclerView() {
         recyclerView1
-                = (RecyclerView) findViewById(
-                R.id.recyclerview);
+                = findViewById(
+                R.id.row_1);
         recyclerView2
-                = (RecyclerView) findViewById(
-                R.id.recyclerview2);
-
+                = findViewById(
+                R.id.row_2);
+        recyclerView3
+                = findViewById(
+                R.id.row_3);
+        recyclerView4
+                = findViewById(
+                R.id.row_4);
+        recyclerView5
+                = findViewById(
+                R.id.row_5);
+        recyclerView6
+                = findViewById(
+                R.id.row_6);
 
         RecyclerView.LayoutManager RecyclerViewLayoutManager
                 = new LinearLayoutManager(
@@ -151,23 +209,82 @@ public class MenuActivity extends TcnMainActivity {
                 LinearLayoutManager.HORIZONTAL,
                 false
         );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager3
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager4
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager5
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager6
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
 
         // Set LayoutManager on Recycler View
         recyclerView1.setLayoutManager(
                 RecyclerViewLayoutManager);
+        recyclerView1.addOnItemTouchListener(clickItem(recyclerView1));
 
         recyclerView2.setLayoutManager(
                 RecyclerViewLayoutManager2);
-        recyclerView1.addOnItemTouchListener(clickItem(recyclerView1));
         recyclerView2.addOnItemTouchListener(clickItem(recyclerView2));
+
+        recyclerView3.setLayoutManager(
+                RecyclerViewLayoutManager3);
+        recyclerView3.addOnItemTouchListener(clickItem(recyclerView3));
+
+        recyclerView4.setLayoutManager(
+                RecyclerViewLayoutManager4);
+        recyclerView4.addOnItemTouchListener(clickItem(recyclerView4));
+
+        recyclerView5.setLayoutManager(
+                RecyclerViewLayoutManager5);
+        recyclerView5.addOnItemTouchListener(clickItem(recyclerView5));
+
+        recyclerView6.setLayoutManager(
+                RecyclerViewLayoutManager6);
+        recyclerView6.addOnItemTouchListener(clickItem(recyclerView6));
     }
 
-    RecyclerItemClickListener clickItem(RecyclerView recycler) {
-        return  new RecyclerItemClickListener(this, recycler, new RecyclerItemClickListener.OnItemClickListener() {
+    RecyclerItemClickListener clickItem(RecyclerView currentRecycler) {
+        return  new RecyclerItemClickListener(this, currentRecycler, new RecyclerItemClickListener.OnItemClickListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public void onItemClick(View view, int position) {
-                selectCurrentSlot(position);
-
+                switch (currentRecycler.getId()){
+                    case R.id.row_1:
+                        selectCurrentSlot(position,1);
+                        break;
+                    case R.id.row_2:
+                        selectCurrentSlot(position,2);
+                        break;
+                    case R.id.row_3:
+                        selectCurrentSlot(position,3);
+                        break;
+                    case R.id.row_4:
+                        selectCurrentSlot(position,4);
+                        break;
+                    case R.id.row_5:
+                        selectCurrentSlot(position,5);
+                        break;
+                    case R.id.row_6:
+                        selectCurrentSlot(position,6);
+                        break;
+                }
 //                int slotNo = position + 1;//出货的货道号 dispensing slot number
 //                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
 //                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
@@ -185,16 +302,67 @@ public class MenuActivity extends TcnMainActivity {
         });
     }
 
-    protected void selectCurrentSlot(int position){
-        if(currentPosition != -1){
-        View oldView =  recyclerView1.getLayoutManager().findViewByPosition(currentPosition);
-        oldView.setBackground(null);
+    protected void selectCurrentSlot(int position,int row){
+        if(currentPosition != -1 && currentRow != -1){
+            showMessage("REMOVE ----");
+            Drawable card = ContextCompat.getDrawable(this,R.drawable.card);
+            switch (currentRow){
+                case 1:
+                    showMessage("REMOVE");
+                    View oldView =  recyclerView1.getLayoutManager().findViewByPosition(currentPosition);
+                    oldView.setBackground(card);
+//                    recyclerView1.getLayoutManager().findViewByPosition(position).setBackground(null);
+                    break;
+                case 2:
+                    showMessage("REMOVE2");
+                    recyclerView2.getLayoutManager().findViewByPosition(currentPosition).setBackground(card);
+                    break;
+                case 3:
+                    showMessage("REMOVE2");
+                    recyclerView3.getLayoutManager().findViewByPosition(currentPosition).setBackground(card);
+                    break;
+                case 4:
+                    showMessage("REMOVE2");
+                    recyclerView4.getLayoutManager().findViewByPosition(currentPosition).setBackground(card);
+                    break;
+                case 5:
+                    showMessage("REMOVE2");
+                    recyclerView5.getLayoutManager().findViewByPosition(currentPosition).setBackground(card);
+                    break;
+                case 6:
+                    showMessage("REMOVE2");
+                    recyclerView6.getLayoutManager().findViewByPosition(currentPosition).setBackground(card);
+                    break;
+            }
+
         }
-        View view =  recyclerView1.getLayoutManager().findViewByPosition(position);
-        Drawable res = MenuActivity.this.getResources().getDrawable(R.drawable.selectedcard);
-        view.setBackground(res);
-        mCelda = mCeldas.get(position);
+        Drawable res = ContextCompat.getDrawable(this,R.drawable.selectedcard);
+        switch (row){
+            case 1:
+                recyclerView1.getLayoutManager().findViewByPosition(position).setBackground(res);
+                break;
+            case 2:
+                recyclerView2.getLayoutManager().findViewByPosition(position).setBackground(res);
+                break;
+            case 3:
+                recyclerView3.getLayoutManager().findViewByPosition(position).setBackground(res);
+                break;
+            case 4:
+                recyclerView4.getLayoutManager().findViewByPosition(position).setBackground(res);
+                break;
+            case 5:
+                recyclerView5.getLayoutManager().findViewByPosition(position).setBackground(res);
+                break;
+            case 6:
+                recyclerView6.getLayoutManager().findViewByPosition(position).setBackground(res);
+                break;
+        }
+        List<Celda> filterRows = mCeldas.stream()
+                .filter(p -> p.mRowNumber == row).collect(Collectors.toList());
+        mCelda = filterRows.get(position);
         currentPosition = position;
+        currentRow = row;
+        mPosition.setText(String.format("%s",mCelda.mSlotNumber));
     }
 
     protected void mergeCelda() {
@@ -257,6 +425,18 @@ public class MenuActivity extends TcnMainActivity {
                                 case 2:
                                     adapter = new CeldaAdapter(entry.getValue());
                                     recyclerView2.setAdapter(adapter);
+                                case 3:
+                                    adapter = new CeldaAdapter(entry.getValue());
+                                    recyclerView3.setAdapter(adapter);
+                                case 4:
+                                    adapter = new CeldaAdapter(entry.getValue());
+                                    recyclerView4.setAdapter(adapter);
+                                case 5:
+                                    adapter = new CeldaAdapter(entry.getValue());
+                                    recyclerView5.setAdapter(adapter);
+                                case 6:
+                                    adapter = new CeldaAdapter(entry.getValue());
+                                    recyclerView6.setAdapter(adapter);
                             }
 //                        if(entry.getKey() == 1){
 //                            adapter = new CeldaAdapter(entry.getValue());

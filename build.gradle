@@ -27,7 +27,7 @@ ext {
 
     compileVersion = 26
     buildVersion = '26.1'
-    minVersion = 16
+    minVersion = 24
     targetVersion = 26
     supportVersion = '26.1.0'
     commonsNetVersion = "3.6"

@@ -243,7 +243,6 @@ controller/VendApplication.class
 io/reactivex/Completable.class
 io/reactivex/CompletableSource.class
 io/reactivex/Flowable.class
-io/reactivex/FlowableSubscriber.class
 io/reactivex/Maybe.class
 io/reactivex/MaybeSource.class
 io/reactivex/Observable.class
@@ -258,11 +257,8 @@ io/reactivex/annotations/Experimental.class
 io/reactivex/annotations/NonNull.class
 io/reactivex/annotations/Nullable.class
 io/reactivex/annotations/SchedulerSupport.class
-io/reactivex/flowables/ConnectableFlowable.class
 io/reactivex/internal/util/SuppressAnimalSniffer.class
 io/reactivex/parallel/ParallelFlowable.class
-io/reactivex/processors/FlowableProcessor.class
-io/reactivex/processors/MulticastProcessor.class
 javax/annotation/CheckForNull.class
 javax/annotation/CheckForSigned.class
 javax/annotation/CheckReturnValue.class
@@ -311,9 +307,7 @@ org/checkerframework/checker/regex/RegexUtil.class
 org/codehaus/mojo/animal_sniffer/IgnoreJRERequirement.class
 org/greenrobot/eventbus/Subscribe.class
 org/greenrobot/eventbus/ThreadMode.class
-org/reactivestreams/Processor.class
 org/reactivestreams/Publisher.class
-org/reactivestreams/Subscriber.class
 retrofit2/http/Body.class
 retrofit2/http/DELETE.class
 retrofit2/http/Field.class

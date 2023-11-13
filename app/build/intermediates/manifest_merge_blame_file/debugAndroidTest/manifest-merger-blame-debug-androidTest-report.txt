@@ -3,31 +3,31 @@
 3    package="com.tcn.sdk.springdemo.test" >
 4
 5    <uses-sdk
-5-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:5:5-74
-6        android:minSdkVersion="16"
-6-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:5:15-41
+5-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:5:5-74
+6        android:minSdkVersion="24"
+6-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:5:15-41
 7        android:targetSdkVersion="26" />
-7-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:5:42-71
+7-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:11:5-15:72
+9-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:11:5-15:72
 10        android:name="android.support.test.runner.AndroidJUnitRunner"
-10-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:11:22-83
+10-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:11:22-83
 11        android:functionalTest="false"
-11-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:14:22-52
+11-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:13:22-53
+12-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:13:22-53
 13        android:label="Tests for com.tcn.sdk.springdemo"
-13-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:15:22-70
+13-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:15:22-70
 14        android:targetPackage="com.tcn.sdk.springdemo" />
-14-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:12:22-68
+14-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:12:22-68
 15
 16    <application android:debuggable="true" >
-16-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:7:5-9:19
-16-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:7:18-43
+16-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:7:5-9:19
+16-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:7:18-43
 17        <uses-library android:name="android.test.runner" />
-17-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:8:9-60
-17-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3360963092160395005.xml:8:23-57
+17-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:8:9-60
+17-->D:\AndroidApps\Expendedora\Vending\app\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger802677568956467123.xml:8:23-57
 18    </application>
 19
 20</manifest>

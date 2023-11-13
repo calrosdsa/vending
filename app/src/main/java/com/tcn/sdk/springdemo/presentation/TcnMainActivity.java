@@ -1,11 +1,16 @@
 package com.tcn.sdk.springdemo.presentation;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import com.tcn.springboard.control.TcnVendIF;
 
@@ -49,4 +54,25 @@ public class TcnMainActivity extends AppCompatActivity {
 				WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	}
+
+
+	@Override // android.app.Activity, android.view.Window.Callback
+	public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+		if (motionEvent.getAction() == 0) {
+			View currentFocus = getCurrentFocus();
+
+				InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+				if (inputMethodManager != null) {
+					assert currentFocus != null;
+					inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+				}
+
+			return super.dispatchTouchEvent(motionEvent);
+		}
+		if (getWindow().superDispatchTouchEvent(motionEvent)) {
+			return true;
+		}
+		return onTouchEvent(motionEvent);
+	}
+
 }

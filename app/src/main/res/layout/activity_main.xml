@@ -8,14 +8,28 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ComposeActivity"
     android:orientation="vertical"
-    android:padding="15dp"
     android:id="@+id/relativelayout">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/logo"-->
+<!--        android:layout_width="425dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:src="@drawable/logo" />-->
+
+    <ss.com.bannerslider.Slider
+        android:id="@+id/banner_slider1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:padding="15dp"
         android:orientation="horizontal"
         >
-
     <Button
         android:id="@+id/mtitle"
         android:layout_width="100dp"
@@ -34,6 +48,15 @@
     </Button>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:orientation="vertical"
+        >
+
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +65,7 @@
         />
     <!--Recycler View widget-->
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/row_1"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
         android:layout_marginTop="10dp"
@@ -52,7 +75,7 @@
         android:layout_centerHorizontal="false" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview2"
+        android:id="@+id/row_2"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
         android:layout_marginTop="10dp"
@@ -60,5 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="false"
         android:layout_centerHorizontal="false" />
+
+    </LinearLayout>
 
 </LinearLayout>

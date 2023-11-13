@@ -73,6 +73,17 @@ public class CeldaDao_Impl implements CeldaDao {
   }
 
   @Override
+  public void insertAll(List<Celda> celdas) {
+    __db.beginTransaction();
+    try {
+      __insertionAdapterOfCelda.insert(celdas);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
   public void mergeCelda(boolean isMerged, boolean show, int slotN) {
     final SupportSQLiteStatement _stmt = __preparedStmtOfMergeCelda.acquire();
     __db.beginTransaction();

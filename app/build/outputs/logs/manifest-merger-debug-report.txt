@@ -4,17 +4,18 @@ ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-92:12
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-92:12
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-92:12
-MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\de0151e446039cdc1a9280ae05eb2e08\appcompat-v7-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\3096558a38985002a92148241fdc5dd1\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [:sdk_auth_lib-release:] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1f0004ddeed05a7b95c49b5635b5b326\sdk_auth_lib-release\AndroidManifest.xml:2:1-13:12
 MERGED from [:tcn_springboard-release:] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\df76a26df3a915caf4c38980d10f93c3\tcn_springboard-release\AndroidManifest.xml:2:1-13:12
 MERGED from [com.github.d-max:spots-dialog:1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\f3e6bd8b28793f9a118d04649e963e98\spots-dialog-1.1\AndroidManifest.xml:2:1-13:12
+MERGED from [com.ss.bannerslider:bannerslider:2.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\48d2a70bd303c95b3e6a4ce5285bf9d3\bannerslider-2.0.0\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:cardview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d64b5052513c769d51b27624bb35b4c\cardview-v7-26.1.0\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\efc76bc500edcf09b07e25c94010c0fc\recyclerview-v7-26.1.0\AndroidManifest.xml:17:1-28:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\89b197a7df772f8e9d77e1dcb4660ffa\rxandroid-2.0.1\AndroidManifest.xml:15:1-21:12
 MERGED from [android.arch.persistence.room:rxjava2:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c641e38f0d863fe0ecae8556098810c4\rxjava2-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence.room:guava:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\7cfdb70fc4d9e516ae8decd0537ed76b\guava-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence.room:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1934370e5550339690bea12b39e2b900\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\4e6388e4d2d8386d17959dc633465ffd\animated-vector-drawable-26.1.0\AndroidManifest.xml:17:1-28:12
@@ -133,6 +134,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.3] D:\AndroidS
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\3096558a38985002a92148241fdc5dd1\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.github.d-max:spots-dialog:1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\f3e6bd8b28793f9a118d04649e963e98\spots-dialog-1.1\AndroidManifest.xml:11:5-20
 MERGED from [com.github.d-max:spots-dialog:1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\f3e6bd8b28793f9a118d04649e963e98\spots-dialog-1.1\AndroidManifest.xml:11:5-20
+MERGED from [com.ss.bannerslider:bannerslider:2.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\48d2a70bd303c95b3e6a4ce5285bf9d3\bannerslider-2.0.0\AndroidManifest.xml:11:5-53
+MERGED from [com.ss.bannerslider:bannerslider:2.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\48d2a70bd303c95b3e6a4ce5285bf9d3\bannerslider-2.0.0\AndroidManifest.xml:11:5-53
 MERGED from [com.android.support:cardview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d64b5052513c769d51b27624bb35b4c\cardview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:cardview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d64b5052513c769d51b27624bb35b4c\cardview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\efc76bc500edcf09b07e25c94010c0fc\recyclerview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
@@ -247,8 +250,6 @@ uses-sdk
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\de0151e446039cdc1a9280ae05eb2e08\appcompat-v7-26.1.0\AndroidManifest.xml:21:5-23:78
@@ -261,6 +262,8 @@ MERGED from [:tcn_springboard-release:] D:\AndroidStudio\jbr\caches\transforms-2
 MERGED from [:tcn_springboard-release:] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\df76a26df3a915caf4c38980d10f93c3\tcn_springboard-release\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.d-max:spots-dialog:1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\f3e6bd8b28793f9a118d04649e963e98\spots-dialog-1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.d-max:spots-dialog:1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\f3e6bd8b28793f9a118d04649e963e98\spots-dialog-1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.ss.bannerslider:bannerslider:2.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\48d2a70bd303c95b3e6a4ce5285bf9d3\bannerslider-2.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.ss.bannerslider:bannerslider:2.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\48d2a70bd303c95b3e6a4ce5285bf9d3\bannerslider-2.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:cardview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d64b5052513c769d51b27624bb35b4c\cardview-v7-26.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d64b5052513c769d51b27624bb35b4c\cardview-v7-26.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\efc76bc500edcf09b07e25c94010c0fc\recyclerview-v7-26.1.0\AndroidManifest.xml:20:5-44
@@ -269,6 +272,8 @@ MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] D:\AndroidStudio\jbr\caches\t
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\89b197a7df772f8e9d77e1dcb4660ffa\rxandroid-2.0.1\AndroidManifest.xml:19:5-43
 MERGED from [android.arch.persistence.room:rxjava2:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c641e38f0d863fe0ecae8556098810c4\rxjava2-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence.room:rxjava2:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c641e38f0d863fe0ecae8556098810c4\rxjava2-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:20:5-43
 MERGED from [android.arch.persistence.room:guava:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\7cfdb70fc4d9e516ae8decd0537ed76b\guava-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence.room:guava:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\7cfdb70fc4d9e516ae8decd0537ed76b\guava-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence.room:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1934370e5550339690bea12b39e2b900\runtime-1.1.1\AndroidManifest.xml:20:5-44

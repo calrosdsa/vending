@@ -24,4 +24,7 @@ public interface CeldaDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
      void insert(Celda celdas);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertAll(List<Celda> celdas);
 }

@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -20,16 +21,17 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.tcn.sdk.springdemo.Injection;
 import com.tcn.sdk.springdemo.R;
-import com.tcn.sdk.springdemo.adapter.CeldaAdapter;
-import com.tcn.sdk.springdemo.adapter.RecyclerItemClickListener;
+import com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter;
+import com.tcn.sdk.springdemo.presentation.adapter.MainSliderAdapter;
+import com.tcn.sdk.springdemo.presentation.adapter.PicassoImageLoadingService;
+import com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener;
 import com.tcn.sdk.springdemo.data.dto.Marcacion;
 import com.tcn.sdk.springdemo.data.dto.RequestItem;
 import com.tcn.sdk.springdemo.data.dto.RequestItemResponse;
 import com.tcn.sdk.springdemo.data.models.Celda;
-import com.tcn.sdk.springdemo.data.models.Shipment;
 import com.tcn.sdk.springdemo.data.models.ShipmentState;
 import com.tcn.sdk.springdemo.data.models.User;
-import com.tcn.sdk.springdemo.domain.repository.CeldaDataSource;
+import com.tcn.sdk.springdemo.domain.repository.AppDataSource;
 import com.tcn.springboard.control.PayMethod;
 import com.tcn.springboard.control.TcnVendEventID;
 import com.tcn.springboard.control.TcnVendIF;
@@ -53,13 +55,14 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ss.com.bannerslider.Slider;
 
 public class ComposeActivity extends TcnMainActivity {
     RecyclerView recyclerView1;
     RecyclerView recyclerView2;
 //    RecyclerView recyclerView1;
     CeldaAdapter adapter;
-    CeldaDataSource dataSource;
+    AppDataSource dataSource;
     User currrentUser = null;
     AlertDialog loadingDialog;
     AlertDialog messageDialog;
@@ -67,6 +70,7 @@ public class ComposeActivity extends TcnMainActivity {
     Button mButton;
     Button hideButton;
     EditText input;
+    private Slider slider;
     private final CompositeDisposable mDisposable = new CompositeDisposable();
 
     @Override
@@ -85,27 +89,19 @@ public class ComposeActivity extends TcnMainActivity {
             return false;
         });
         mButton.setOnClickListener(view -> {
-            hideButton.setVisibility(View.VISIBLE);
+            String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
+            new Thread(()->{
+                TcnVendIF.getInstance().reqShip(1, shipMethod, "1", UUID.randomUUID().toString());
+            }).start();
+            new Thread(()->{
+                TcnVendIF.getInstance().reqShip(3, shipMethod, "1", UUID.randomUUID().toString());
+            }).start();
+
 //            wSocker.start();
 //            makeToast(hubConnection.getConnectionState().name());
         });
-        populateDb();
-
+        AsyncTask.execute(()->dataSource.getActivos());
         initView();
-    }
-
-    protected void populateDb() {
-        AsyncTask.execute(() -> {
-            for (int i = 0; i < 5; i++) {
-                Celda celda = new Celda(i, i, 1,true);
-                dataSource.insertCelda(celda);
-            }
-
-            for (int i = 5; i < 9; i++) {
-                Celda celda = new Celda(i, i, 2,true);
-                dataSource.insertCelda(celda);
-            }
-        });
     }
 
     @Override
@@ -133,7 +129,7 @@ public class ComposeActivity extends TcnMainActivity {
     private void createWebSocketClient() {
         URI uri;
         try {
-            uri = new URI("ws://192.168.0.10:8000/v1/ws/suscribe/user/?id=2");
+            uri = new URI("ws://172.20.20.76:8000/v1/ws/suscribe/user/");
         } catch (URISyntaxException e) {
             e.printStackTrace();
             return;
@@ -153,7 +149,12 @@ public class ComposeActivity extends TcnMainActivity {
                 Marcacion obj = gson.fromJson(message, Marcacion.class);
                 Log.d("DEBUG_APP_WS", "onTextReceived" + obj.name);
                 currrentUser = new User(obj.id,obj.name);
-                mButton.setText(obj.name);
+//                currrentUser = new User("jorge","123123123");
+                runOnUiThread(() -> {
+                    mButton.setText(obj.name);
+                    // Stuff that updates the UI
+
+                });
             }
 
             @Override
@@ -247,6 +248,13 @@ public class ComposeActivity extends TcnMainActivity {
         setRecyclerView();
         setDialogPassword();
 
+        Slider.init(new PicassoImageLoadingService(this));
+        slider = findViewById(R.id.banner_slider1);
+        slider.setAdapter(new MainSliderAdapter());
+        slider.setInterval(5000);
+        slider.setLoopSlides(true);
+        slider.setAnimateIndicators(true);
+
     }
 
     private void setDialogPassword() {
@@ -285,11 +293,11 @@ public class ComposeActivity extends TcnMainActivity {
 
     private void setRecyclerView() {
         recyclerView1
-                = (RecyclerView) findViewById(
-                R.id.recyclerview);
+                = findViewById(
+                R.id.row_1);
         recyclerView2
-                = (RecyclerView) findViewById(
-                R.id.recyclerview2);
+                = findViewById(
+                R.id.row_2);
 
 
         RecyclerView.LayoutManager RecyclerViewLayoutManager
@@ -435,7 +443,7 @@ public class ComposeActivity extends TcnMainActivity {
                     });
                     loadingDialog.setMessage("Dispensando activo...");
 
-//                    Log.d("DEBUG_APP_",String.format("%s - %s - %s - %s",cEventInfo.m_lParam5.toString(),cEventInfo.m_lParam3,cEventInfo.m_lParam2,cEventInfo.m_lParam1));
+                    Log.d("DEBUG_APP_SHIPPING",cEventInfo.m_lParam4);
 //                    AsyncTask.execute(()-> {
 //                        Shipment shipment = new Shipment() ;
 //                    });
@@ -455,8 +463,13 @@ public class ComposeActivity extends TcnMainActivity {
         }
     }
 
+    @Override // com.tcn.app_common.view.TcnMainActivity, android.app.Activity, android.view.Window.Callback
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return super.dispatchTouchEvent(motionEvent);
 
-    @Override
+    }
+
+        @Override
     public void onBackPressed(){
         Toast.makeText(getApplicationContext(),"You Are Not Allowed to Exit the App", Toast.LENGTH_SHORT).show();
     }

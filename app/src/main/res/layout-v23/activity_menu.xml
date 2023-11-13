@@ -11,9 +11,16 @@
     android:paddingHorizontal="15dp"
     android:paddingTop="55dp"
     android:id="@+id/relativelayout">
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="425dp"
+            android:layout_height="100dp"
+            android:padding="5dp"
+            android:src="@drawable/logo" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
         >
 
@@ -60,30 +67,112 @@
         android:layout_marginRight="20dp"
         >
     </Button>
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="26sp"
+            />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="1F"
-        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
         />
     <!--Recycler View widget-->
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/row_1"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="false"
         android:layout_centerHorizontal="false" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2F"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        />
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview2"
+        android:id="@+id/row_3"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3F"
         android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/row_4"
+        android:scrollbars="horizontal"
+        android:paddingVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4F"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/row_5"
+        android:scrollbars="horizontal"
+        android:paddingVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5F"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/row_6"
+        android:scrollbars="horizontal"
+        android:paddingVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="false" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6F"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/row_2"
+        android:scrollbars="horizontal"
+        android:paddingVertical="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="false"

@@ -12,6 +12,8 @@ import android.arch.persistence.room.util.TableInfo;
 import android.arch.persistence.room.util.TableInfo.Column;
 import android.arch.persistence.room.util.TableInfo.ForeignKey;
 import android.arch.persistence.room.util.TableInfo.Index;
+import com.tcn.sdk.springdemo.data.dao.ActivoDao;
+import com.tcn.sdk.springdemo.data.dao.ActivoDao_Impl;
 import com.tcn.sdk.springdemo.data.dao.CeldaDao;
 import com.tcn.sdk.springdemo.data.dao.CeldaDao_Impl;
 import com.tcn.sdk.springdemo.data.dao.ShipmentDao;
@@ -33,6 +35,8 @@ public class AppDatabase_Impl extends AppDatabase {
 
   private volatile ShipmentDao _shipmentDao;
 
+  private volatile ActivoDao _activoDao;
+
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
@@ -41,8 +45,9 @@ public class AppDatabase_Impl extends AppDatabase {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `celda` (`mId` INTEGER NOT NULL, `mSlotNumber` INTEGER NOT NULL, `mRowNumber` INTEGER NOT NULL, `mIsMerged` INTEGER NOT NULL, `mCanMerged` INTEGER NOT NULL, `enabled` INTEGER NOT NULL, `mCanShow` INTEGER NOT NULL, PRIMARY KEY(`mId`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `user` (`mId` TEXT NOT NULL, `mName` TEXT, `mCreatedAt` INTEGER NOT NULL, PRIMARY KEY(`mId`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `shipment` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mSlotNumber` INTEGER NOT NULL, `mIdUser` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `activo` (`id` TEXT NOT NULL, `slotN` INTEGER NOT NULL, `name` TEXT, `cantidad` INTEGER NOT NULL, `celdas` INTEGER NOT NULL, `row` INTEGER NOT NULL, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"11f38c379729098074951aad5895e632\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f2d465a0a1c2cbc2015a81e69b18f5c6\")");
       }
 
       @Override
@@ -50,6 +55,7 @@ public class AppDatabase_Impl extends AppDatabase {
         _db.execSQL("DROP TABLE IF EXISTS `celda`");
         _db.execSQL("DROP TABLE IF EXISTS `user`");
         _db.execSQL("DROP TABLE IF EXISTS `shipment`");
+        _db.execSQL("DROP TABLE IF EXISTS `activo`");
       }
 
       @Override
@@ -120,8 +126,24 @@ public class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoShipment + "\n"
                   + " Found:\n" + _existingShipment);
         }
+        final HashMap<String, TableInfo.Column> _columnsActivo = new HashMap<String, TableInfo.Column>(6);
+        _columnsActivo.put("id", new TableInfo.Column("id", "TEXT", true, 1));
+        _columnsActivo.put("slotN", new TableInfo.Column("slotN", "INTEGER", true, 0));
+        _columnsActivo.put("name", new TableInfo.Column("name", "TEXT", false, 0));
+        _columnsActivo.put("cantidad", new TableInfo.Column("cantidad", "INTEGER", true, 0));
+        _columnsActivo.put("celdas", new TableInfo.Column("celdas", "INTEGER", true, 0));
+        _columnsActivo.put("row", new TableInfo.Column("row", "INTEGER", true, 0));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysActivo = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesActivo = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoActivo = new TableInfo("activo", _columnsActivo, _foreignKeysActivo, _indicesActivo);
+        final TableInfo _existingActivo = TableInfo.read(_db, "activo");
+        if (! _infoActivo.equals(_existingActivo)) {
+          throw new IllegalStateException("Migration didn't properly handle activo(com.tcn.sdk.springdemo.data.models.Activo).\n"
+                  + " Expected:\n" + _infoActivo + "\n"
+                  + " Found:\n" + _existingActivo);
+        }
       }
-    }, "11f38c379729098074951aad5895e632", "4e5c71a9054ff4bfe4594cb9c76e8765");
+    }, "f2d465a0a1c2cbc2015a81e69b18f5c6", "30c9b1b5e56811c662bef2161efb0200");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -132,7 +154,7 @@ public class AppDatabase_Impl extends AppDatabase {
 
   @Override
   protected InvalidationTracker createInvalidationTracker() {
-    return new InvalidationTracker(this, "celda","user","shipment");
+    return new InvalidationTracker(this, "celda","user","shipment","activo");
   }
 
   @Override
@@ -144,6 +166,7 @@ public class AppDatabase_Impl extends AppDatabase {
       _db.execSQL("DELETE FROM `celda`");
       _db.execSQL("DELETE FROM `user`");
       _db.execSQL("DELETE FROM `shipment`");
+      _db.execSQL("DELETE FROM `activo`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -192,6 +215,20 @@ public class AppDatabase_Impl extends AppDatabase {
           _shipmentDao = new ShipmentDao_Impl(this);
         }
         return _shipmentDao;
+      }
+    }
+  }
+
+  @Override
+  public ActivoDao activoDao() {
+    if (_activoDao != null) {
+      return _activoDao;
+    } else {
+      synchronized(this) {
+        if(_activoDao == null) {
+          _activoDao = new ActivoDao_Impl(this);
+        }
+        return _activoDao;
       }
     }
   }

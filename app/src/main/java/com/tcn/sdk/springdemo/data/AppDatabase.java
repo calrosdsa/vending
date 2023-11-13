@@ -9,9 +9,11 @@ import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.tcn.sdk.springdemo.data.dao.ActivoDao;
 import com.tcn.sdk.springdemo.data.dao.CeldaDao;
 import com.tcn.sdk.springdemo.data.dao.ShipmentDao;
 import com.tcn.sdk.springdemo.data.dao.UserDao;
+import com.tcn.sdk.springdemo.data.models.Activo;
 import com.tcn.sdk.springdemo.data.models.Celda;
 import com.tcn.sdk.springdemo.data.models.Shipment;
 import com.tcn.sdk.springdemo.data.models.User;
@@ -24,6 +26,7 @@ import java.util.concurrent.Executors;
                 Celda.class,
                 User.class,
                 Shipment.class,
+                Activo.class,
         }, version = 1)
 @TypeConverters(Converters.class)
 public abstract class AppDatabase extends RoomDatabase {
@@ -33,6 +36,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract CeldaDao celdaDao();
     public abstract UserDao userDao();
     public abstract ShipmentDao shipmentDao();
+    public abstract ActivoDao activoDao();
 
     private static final int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseWriteExecutor =

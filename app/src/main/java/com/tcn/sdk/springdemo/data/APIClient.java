@@ -10,8 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
 
-    public static String hostUrl = "http://172.20.20.104:22272";
-    private static ApiInterface rest = null;
+    public static final String hostUrl = "http://172.20.20.104:22272";
+    public static final String hostUrlTest = "http://172.20.20.76:8000/v1/";
 
     public static ApiInterface getRestService() {
 
@@ -19,16 +19,11 @@ public class APIClient {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-
-        rest = new Retrofit.Builder()
-                .baseUrl(hostUrl)
+        return new Retrofit.Builder()
+                .baseUrl(hostUrlTest)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build().create(ApiInterface.class);
-
-
-
-        return rest;
     }
 
 }

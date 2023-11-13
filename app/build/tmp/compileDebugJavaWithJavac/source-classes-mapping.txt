@@ -2,13 +2,14 @@ com/tcn/sdk/springdemo/presentation/Resources.java
  com.tcn.sdk.springdemo.presentation.Resources
 com/tcn/sdk/springdemo/domain/repository/ApiInterface.java
  com.tcn.sdk.springdemo.domain.repository.ApiInterface
-com/tcn/sdk/springdemo/adapter/CeldaAdapter.java
- com.tcn.sdk.springdemo.adapter.CeldaAdapter
- com.tcn.sdk.springdemo.adapter.CeldaAdapter$MyView
 controller/VendIF.java
  controller.VendIF
  controller.VendIF$1
  controller.VendIF$VendCommunicationListener
+com/tcn/sdk/springdemo/presentation/adapter/RecyclerItemClickListener.java
+ com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener
+ com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener$1
+ com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener$OnItemClickListener
 com/tcn/sdk/springdemo/presentation/SerialPortSetting.java
  com.tcn.sdk.springdemo.presentation.SerialPortSetting
  com.tcn.sdk.springdemo.presentation.SerialPortSetting$1
@@ -32,12 +33,9 @@ com/tcn/sdk/springdemo/presentation/GropInfoBack.java
  com.tcn.sdk.springdemo.presentation.GropInfoBack
 com/tcn/sdk/springdemo/presentation/TcnMainActivity.java
  com.tcn.sdk.springdemo.presentation.TcnMainActivity
-com/tcn/sdk/springdemo/adapter/CustomAdapter.java
- com.tcn.sdk.springdemo.adapter.CustomAdapter
- com.tcn.sdk.springdemo.adapter.CustomAdapter$1
- com.tcn.sdk.springdemo.adapter.CustomAdapter$ViewHolder
-com/tcn/sdk/springdemo/data/repository/LocalCeldaDataSource.java
- com.tcn.sdk.springdemo.data.repository.LocalCeldaDataSource
+com/tcn/sdk/springdemo/data/repository/LocalAppDataSource.java
+ com.tcn.sdk.springdemo.data.repository.LocalAppDataSource
+ com.tcn.sdk.springdemo.data.repository.LocalAppDataSource$1
 com/tcn/sdk/springdemo/presentation/DialogInput.java
  com.tcn.sdk.springdemo.presentation.DialogInput
  com.tcn.sdk.springdemo.presentation.DialogInput$1
@@ -62,6 +60,10 @@ com/tcn/sdk/springdemo/presentation/MenuSettingsLatticeActivity.java
  com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$VendListener
 com/tcn/sdk/springdemo/data/dto/Result.java
  com.tcn.sdk.springdemo.data.dto.Result
+com/tcn/sdk/springdemo/presentation/adapter/CustomAdapter.java
+ com.tcn.sdk.springdemo.presentation.adapter.CustomAdapter
+ com.tcn.sdk.springdemo.presentation.adapter.CustomAdapter$1
+ com.tcn.sdk.springdemo.presentation.adapter.CustomAdapter$ViewHolder
 controller/BootBroadcastReceiver.java
  controller.BootBroadcastReceiver
 com/tcn/sdk/springdemo/data/Converters.java
@@ -90,6 +92,8 @@ com/tcn/sdk/springdemo/presentation/OutDialog.java
  com.tcn.sdk.springdemo.presentation.OutDialog
  com.tcn.sdk.springdemo.presentation.OutDialog$1
  com.tcn.sdk.springdemo.presentation.OutDialog$2
+com/tcn/sdk/springdemo/data/dao/ActivoDao.java
+ com.tcn.sdk.springdemo.data.dao.ActivoDao
 controller/VendApplication.java
  controller.VendApplication
 com/tcn/sdk/springdemo/presentation/Titlebar.java
@@ -97,14 +101,22 @@ com/tcn/sdk/springdemo/presentation/Titlebar.java
  com.tcn.sdk.springdemo.presentation.Titlebar$1
  com.tcn.sdk.springdemo.presentation.Titlebar$ClickListener
  com.tcn.sdk.springdemo.presentation.Titlebar$TitleBarListener
+com/tcn/sdk/springdemo/presentation/adapter/PicassoImageLoadingService.java
+ com.tcn.sdk.springdemo.presentation.adapter.PicassoImageLoadingService
 controller/VendEventID.java
  controller.VendEventID
 com/tcn/sdk/springdemo/data/dao/UserDao.java
  com.tcn.sdk.springdemo.data.dao.UserDao
 com/tcn/sdk/springdemo/data/APIClient.java
  com.tcn.sdk.springdemo.data.APIClient
+com/tcn/sdk/springdemo/data/models/Activo.java
+ com.tcn.sdk.springdemo.data.models.Activo
 com/tcn/sdk/springdemo/data/models/User.java
  com.tcn.sdk.springdemo.data.models.User
+com/tcn/sdk/springdemo/domain/repository/AppDataSource.java
+ com.tcn.sdk.springdemo.domain.repository.AppDataSource
+com/tcn/sdk/springdemo/presentation/adapter/MainSliderAdapter.java
+ com.tcn.sdk.springdemo.presentation.adapter.MainSliderAdapter
 com/tcn/sdk/springdemo/presentation/MySlipSwitch.java
  com.tcn.sdk.springdemo.presentation.MySlipSwitch
  com.tcn.sdk.springdemo.presentation.MySlipSwitch$OnSwitchListener
@@ -116,20 +128,21 @@ com/tcn/sdk/springdemo/presentation/components/buttons/ButtonSwitch.java
  com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch$1
  com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch$ButtonListener
  com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch$SwitchListener
+com/tcn/sdk/springdemo/data/repository/AppPreferences.java
+ com.tcn.sdk.springdemo.data.repository.AppPreferences
 com/tcn/sdk/springdemo/presentation/LoadingDialog.java
  com.tcn.sdk.springdemo.presentation.LoadingDialog
  com.tcn.sdk.springdemo.presentation.LoadingDialog$1
  com.tcn.sdk.springdemo.presentation.LoadingDialog$2
-com/tcn/sdk/springdemo/adapter/RecyclerItemClickListener.java
- com.tcn.sdk.springdemo.adapter.RecyclerItemClickListener
- com.tcn.sdk.springdemo.adapter.RecyclerItemClickListener$1
- com.tcn.sdk.springdemo.adapter.RecyclerItemClickListener$OnItemClickListener
 com/tcn/sdk/springdemo/data/dto/RequestItem.java
  com.tcn.sdk.springdemo.data.dto.RequestItem
 com/tcn/sdk/springdemo/presentation/ResourceUtil.java
  com.tcn.sdk.springdemo.presentation.ResourceUtil
 com/tcn/sdk/springdemo/data/AppDatabase.java
  com.tcn.sdk.springdemo.data.AppDatabase
+com/tcn/sdk/springdemo/presentation/adapter/CeldaAdapter.java
+ com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter
+ com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter$MyView
 com/tcn/sdk/springdemo/presentation/MenuSettingsStandJsActivity.java
  com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity
  com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity$1
@@ -150,8 +163,6 @@ com/tcn/sdk/springdemo/data/models/ShipmentState.java
  com.tcn.sdk.springdemo.data.models.ShipmentState
 com/tcn/sdk/springdemo/data/models/Celda.java
  com.tcn.sdk.springdemo.data.models.Celda
-com/tcn/sdk/springdemo/domain/repository/CeldaDataSource.java
- com.tcn.sdk.springdemo.domain.repository.CeldaDataSource
 com/tcn/sdk/springdemo/Injection.java
  com.tcn.sdk.springdemo.Injection
 com/tcn/sdk/springdemo/BuildConfig.java

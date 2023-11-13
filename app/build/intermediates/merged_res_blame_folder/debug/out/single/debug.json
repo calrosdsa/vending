@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\layout_ui_base_toast.xml.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\layout\\ui_base_toast.xml"
+    },
+    {
+        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_normal.xml.flat",
@@ -22,6 +22,10 @@
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_fni.png.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\mipmap-xhdpi\\fni.png"
+    },
+    {
+        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_card.xml.flat",
+        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\card.xml"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ui_base_toaststyle.xml.flat",
@@ -44,10 +48,6 @@
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_title_back_normal.9.png.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable-xhdpi\\title_back_normal.9.png"
     },
@@ -60,10 +60,6 @@
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\ui_base_toastbackbutton.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\layout\\content_main.xml"
-    },
-    {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\layout_ui_base_button_switch_layout.xml.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\layout\\ui_base_button_switch_layout.xml"
     },
@@ -74,10 +70,6 @@
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\layout_background_menu_settings_layout_spr.xml.flat",
@@ -114,18 +106,6 @@
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\layout_ui_base_button_edit_seletct_d_layout.xml.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\layout\\ui_base_button_edit_seletct_d_layout.xml"
-    },
-    {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
-    },
-    {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
-    },
-    {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
@@ -174,6 +154,10 @@
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ui_base_dialoback.xml.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\ui_base_dialoback.xml"
+    },
+    {
+        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo.png.flat",
+        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\layout_ui_base_dialog_input.xml.flat",
@@ -252,16 +236,12 @@
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\ui_base_button_green_pressed.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\xml_serial_port_preferences.xml.flat",
+        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\xml\\serial_port_preferences.xml"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_switch_bkg_switch.png.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\mipmap-xhdpi\\switch_bkg_switch.png"
-    },
-    {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\xml_serial_port_preferences.xml.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\xml\\serial_port_preferences.xml"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",

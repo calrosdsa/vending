@@ -5,7 +5,7 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="16"
+8        android:minSdkVersion="24"
 8-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="26" />
 9-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
@@ -82,104 +82,105 @@
 42        android:allowBackup="true"
 42-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:40:9-35
 43        android:debuggable="true"
-44        android:label="@string/app_name"
-44-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:41:9-41
-45        android:supportsRtl="true"
-45-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:42:9-35
-46        android:testOnly="true"
-47        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-47-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:43:9-65
-48        <activity android:name="com.tcn.sdk.springdemo.presentation.ComposeActivity" >
-48-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:44:9-50:20
-48-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:44:19-63
-49            <intent-filter>
-49-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:45:13-49:29
-50                <action android:name="android.intent.action.MAIN" />
-50-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:17-68
-50-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:25-66
-51
-52                <category android:name="android.intent.category.LAUNCHER" />
-52-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:17-76
-52-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:27-74
-53            </intent-filter>
-54        </activity>
-55        <activity
-55-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-55:15
-56            android:name="com.tcn.sdk.springdemo.presentation.MenuActivity"
-56-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-54
-57            android:configChanges="locale|keyboardHidden|orientation" />
-57-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:13-70
-58        <activity
-58-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:57:9-60:46
-59            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity"
-59-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:58:13-69
-60            android:configChanges="locale|keyboardHidden|orientation"
-60-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:59:13-70
-61            android:launchMode="singleTask" />
-61-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:60:13-44
-62        <activity
-62-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:62:9-65:46
-63            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity"
-63-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:63:13-69
-64            android:configChanges="locale|keyboardHidden|orientation"
-64-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:64:13-70
-65            android:launchMode="singleTask" />
-65-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:65:13-44
-66        <activity
-66-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:67:9-70:46
-67            android:name="com.tcn.sdk.springdemo.presentation.MainAct"
-67-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:68:13-49
-68            android:configChanges="locale|keyboardHidden|orientation"
-68-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:69:13-70
-69            android:launchMode="singleTask" />
-69-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:70:13-44
-70        <activity
-70-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:72:9-76:20
-71            android:name="com.tcn.sdk.springdemo.presentation.SerialPortSetting"
-71-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:74:13-59
-72            android:configChanges="locale|keyboardHidden|orientation"
-72-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:13-70
-73            android:launchMode="singleTask" >
-73-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:73:13-44
-74        </activity>
-75        <activity
-75-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:78:9-82:20
-76            android:name="com.tcn.sdk_auth_lib.floatwindow.FloatActivity"
-76-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:13-74
-77            android:configChanges="locale|keyboardHidden|orientation"
-77-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:81:13-70
-78            android:launchMode="singleTask" >
-78-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:79:13-44
-79        </activity>
-80
-81        <receiver android:name="controller.BootBroadcastReceiver" >
-81-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:9-88:20
-81-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:19-66
-82            <intent-filter android:priority="999" >
-82-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:13-87:29
-82-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:28-50
-83                <action android:name="android.intent.action.BOOT_COMPLETED" />
-83-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:86:17-79
-83-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:86:25-76
-84            </intent-filter>
-85        </receiver>
-86
-87        <service android:name="controller.VendService" />
-87-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:9-66
-87-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:18-55
-88
-89        <meta-data
-89-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:26:9-28:38
-90            android:name="android.support.VERSION"
-90-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:27:13-51
-91            android:value="26.1.0" />
-91-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:28:13-35
-92        <meta-data
-92-->[android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
-93            android:name="android.arch.lifecycle.VERSION"
-93-->[android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:26:13-58
-94            android:value="27.0.0-SNAPSHOT" />
-94-->[android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:27:13-44
-95    </application>
-96
-97</manifest>
+44        android:extractNativeLibs="false"
+45        android:label="@string/app_name"
+45-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:41:9-41
+46        android:supportsRtl="true"
+46-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:42:9-35
+47        android:testOnly="true"
+48        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+48-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:43:9-65
+49        <activity android:name="com.tcn.sdk.springdemo.presentation.ComposeActivity" >
+49-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:44:9-50:20
+49-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:44:19-63
+50            <intent-filter>
+50-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:45:13-49:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:17-68
+51-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:25-66
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:17-76
+53-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:27-74
+54            </intent-filter>
+55        </activity>
+56        <activity
+56-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-55:15
+57            android:name="com.tcn.sdk.springdemo.presentation.MenuActivity"
+57-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-54
+58            android:configChanges="locale|keyboardHidden|orientation" />
+58-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:13-70
+59        <activity
+59-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:57:9-60:46
+60            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity"
+60-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:58:13-69
+61            android:configChanges="locale|keyboardHidden|orientation"
+61-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:59:13-70
+62            android:launchMode="singleTask" />
+62-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:60:13-44
+63        <activity
+63-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:62:9-65:46
+64            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity"
+64-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:63:13-69
+65            android:configChanges="locale|keyboardHidden|orientation"
+65-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:64:13-70
+66            android:launchMode="singleTask" />
+66-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:65:13-44
+67        <activity
+67-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:67:9-70:46
+68            android:name="com.tcn.sdk.springdemo.presentation.MainAct"
+68-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:68:13-49
+69            android:configChanges="locale|keyboardHidden|orientation"
+69-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:69:13-70
+70            android:launchMode="singleTask" />
+70-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:70:13-44
+71        <activity
+71-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:72:9-76:20
+72            android:name="com.tcn.sdk.springdemo.presentation.SerialPortSetting"
+72-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:74:13-59
+73            android:configChanges="locale|keyboardHidden|orientation"
+73-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:13-70
+74            android:launchMode="singleTask" >
+74-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:73:13-44
+75        </activity>
+76        <activity
+76-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:78:9-82:20
+77            android:name="com.tcn.sdk_auth_lib.floatwindow.FloatActivity"
+77-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:13-74
+78            android:configChanges="locale|keyboardHidden|orientation"
+78-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:81:13-70
+79            android:launchMode="singleTask" >
+79-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:79:13-44
+80        </activity>
+81
+82        <receiver android:name="controller.BootBroadcastReceiver" >
+82-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:9-88:20
+82-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:19-66
+83            <intent-filter android:priority="999" >
+83-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:13-87:29
+83-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:28-50
+84                <action android:name="android.intent.action.BOOT_COMPLETED" />
+84-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:86:17-79
+84-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:86:25-76
+85            </intent-filter>
+86        </receiver>
+87
+88        <service android:name="controller.VendService" />
+88-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:9-66
+88-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:18-55
+89
+90        <meta-data
+90-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:26:9-28:38
+91            android:name="android.support.VERSION"
+91-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:27:13-51
+92            android:value="26.1.0" />
+92-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:28:13-35
+93        <meta-data
+93-->[android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
+94            android:name="android.arch.lifecycle.VERSION"
+94-->[android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:26:13-58
+95            android:value="27.0.0-SNAPSHOT" />
+95-->[android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:27:13-44
+96    </application>
+97
+98</manifest>

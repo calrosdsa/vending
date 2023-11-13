@@ -3,6 +3,7 @@ package controller;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 
 import com.tcn.springboard.control.TcnVendIF;
 
@@ -24,12 +25,20 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         if (null == context) {
             return;
         }
-        m_context = context;
+        m_context = context.getApplicationContext();
         if(action_boot.equals(intent.getAction())){
             TcnVendIF.getInstance().LoggerDebug("BootBroadcastReceiver", "action_boot");
             //启动服务与主板进行通讯 Start the service to communicate with the motherboard
             m_intent_Service = new Intent(m_context, VendService.class);
             m_context.startService(m_intent_Service);
+
+            startApp(this.m_context);
+
         }
     }
+
+    private void startApp(Context context) {
+        context.startActivity(context.getPackageManager().getLaunchIntentForPackage(context.getPackageName()));
+    }
+
 }

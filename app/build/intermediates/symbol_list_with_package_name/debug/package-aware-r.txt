@@ -346,6 +346,15 @@ attr showDividers
 attr showText
 attr showTitle
 attr singleChoiceItemLayout
+attr slider_animateIndicators
+attr slider_defaultBanner
+attr slider_emptyView
+attr slider_hideIndicators
+attr slider_indicatorSize
+attr slider_interval
+attr slider_loopSlides
+attr slider_selectedSlideIndicator
+attr slider_unselectedSlideIndicator
 attr spanCount
 attr spinBars
 attr spinnerDropDownItemStyle
@@ -508,6 +517,8 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color default_indicator_color_selected
+color default_indicator_color_unselected
 color design_bottom_navigation_shadow_color
 color design_error
 color design_fab_shadow_end_color
@@ -739,6 +750,7 @@ color ui_base_transparent_background
 color ui_base_turquoise
 color ui_base_violet
 color ui_base_wheat
+color ui_base_white
 color ui_base_whitesmoke
 color ui_base_yellow
 dimen abc_action_bar_content_inset_material
@@ -823,6 +835,9 @@ dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
 dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
+dimen default_dash_indicator_width
+dimen default_indicator_margins
+dimen default_indicator_size
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_text_size
@@ -876,6 +891,7 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen max_slider_indicator_size
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -893,6 +909,7 @@ dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen progress_margin
 dimen progress_width
+dimen round_square_indicator_radius
 dimen spot_size
 dimen title_margin
 dimen title_padding
@@ -992,6 +1009,7 @@ drawable avd_show_password
 drawable btn_normal
 drawable btn_pressed
 drawable btn_selector
+drawable card
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1000,6 +1018,15 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable dmax_spots_spot
 drawable ic_launcher_background
+drawable indicator_circle_selected
+drawable indicator_circle_unselected
+drawable indicator_dash_selected
+drawable indicator_dash_unselected
+drawable indicator_round_square_selected
+drawable indicator_round_square_unselected
+drawable indicator_square_selected
+drawable indicator_square_unselected
+drawable logo
 drawable mmtitle_bg
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -1065,6 +1092,7 @@ id all
 id always
 id async
 id auto
+id banner_slider1
 id barrier
 id beginning
 id blocking
@@ -1165,10 +1193,10 @@ id largeLabel
 id left
 id line1
 id line3
-id list
 id listMode
 id list_item
 id load_text
+id logo
 id m_lattice_num_set_btn
 id m_lattice_num_set_checkbox
 id m_lattice_num_set_column_end
@@ -1246,15 +1274,20 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id position
 id progress_circular
 id progress_horizontal
 id radio
-id recyclerview
-id recyclerview2
 id relativelayout
 id right
 id right_icon
 id right_side
+id row_1
+id row_2
+id row_3
+id row_4
+id row_5
+id row_6
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1385,7 +1418,6 @@ layout app_outdialog
 layout background_menu_settings_layout_lattice
 layout background_menu_settings_layout_spr
 layout background_menu_settings_layout_standjs_board
-layout content_main
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1402,6 +1434,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dmax_spots_dialog
 layout item
+layout item_slide_image
 layout layout_bcomm_help_qrcode
 layout notification_action
 layout notification_action_tombstone
@@ -2193,6 +2226,7 @@ styleable RecyclerView android_orientation android_descendantFocusability fastSc
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
+styleable Slider slider_animateIndicators slider_defaultBanner slider_emptyView slider_hideIndicators slider_indicatorSize slider_interval slider_loopSlides slider_selectedSlideIndicator slider_unselectedSlideIndicator
 styleable SnackbarLayout android_maxWidth elevation maxActionInlineWidth
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
