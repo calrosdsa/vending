@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="primary">#034a90</color>
+
     <color name="ui_base_alpha">#00000000</color>
     <color name="ui_base_black">#ff000000</color>
     <color name="ui_base_blue">#ff0000ff</color>

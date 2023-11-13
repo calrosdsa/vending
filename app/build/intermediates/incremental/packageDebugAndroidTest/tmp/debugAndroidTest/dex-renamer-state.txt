@@ -1,4 +1,7 @@
-#Fri Nov 10 13:48:59 BOT 2023
+#Sat Nov 11 15:13:32 BOT 2023
 base.0=D\:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes.dex
+path.1=classes2.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=D\:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes2.dex

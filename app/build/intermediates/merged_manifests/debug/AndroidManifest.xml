@@ -45,7 +45,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        <activity android:name="com.tcn.sdk.springdemo.ComposeActivity" >
+        <activity android:name="com.tcn.sdk.springdemo.presentation.ComposeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,19 +53,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.tcn.sdk.springdemo.MenuSettingsLatticeActivity"
+            android:name="com.tcn.sdk.springdemo.presentation.MenuActivity"
+            android:configChanges="locale|keyboardHidden|orientation" />
+        <activity
+            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             android:launchMode="singleTask" />
         <activity
-            android:name="com.tcn.sdk.springdemo.MenuSettingsStandJsActivity"
+            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             android:launchMode="singleTask" />
         <activity
-            android:name="com.tcn.sdk.springdemo.MainAct"
+            android:name="com.tcn.sdk.springdemo.presentation.MainAct"
             android:configChanges="locale|keyboardHidden|orientation"
             android:launchMode="singleTask" />
         <activity
-            android:name="com.tcn.sdk.springdemo.SerialPortSetting"
+            android:name="com.tcn.sdk.springdemo.presentation.SerialPortSetting"
             android:configChanges="locale|keyboardHidden|orientation"
             android:launchMode="singleTask" >
         </activity>

@@ -10,10 +10,9 @@
     android:foreground="?android:attr/selectableItemBackground"
     android:clickable="true"
     card_view:contentPadding="8dp"
-    card_view:cardCornerRadius="8dp"
-    card_view:cardElevation="8dp"
-    card_view:cardBackgroundColor="#0F9D58"
-    android:layout_margin="1dp"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="1dp"
+    android:layout_margin="5dp"
     android:focusable="true">
 
     <!--Text View over Card View-->
@@ -25,6 +24,6 @@
     android:textSize="22dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textColor="#fff"/>
+    android:textColor="@color/primary"/>
 
 </android.support.v7.widget.CardView>

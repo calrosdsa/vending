@@ -21,6 +21,10 @@ anim up_from_bottom
 animator design_appbar_state_list_animator
 array baudrates_name
 array baudrates_value
+attr DialogSpotColor
+attr DialogSpotCount
+attr DialogTitleAppearance
+attr DialogTitleText
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -539,6 +543,7 @@ color material_grey_900
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color primary
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -553,6 +558,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color spots_dialog_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -885,6 +891,11 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen progress_margin
+dimen progress_width
+dimen spot_size
+dimen title_margin
+dimen title_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -987,6 +998,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dmax_spots_spot
 drawable ic_launcher_background
 drawable mmtitle_bg
 drawable navigation_empty_icon
@@ -1002,6 +1014,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable roundedbutton
+drawable selectedcard
 drawable title_back_normal
 drawable title_back_pressed
 drawable tooltip_frame_dark
@@ -1104,11 +1118,14 @@ id dialog_start_text
 id dimensions
 id direct
 id disableHome
+id dmax_spots_progress
+id dmax_spots_title
 id edit_query
 id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id error_text
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1129,6 +1146,7 @@ id func_paper_open_set_btn
 id ghost_view
 id gone
 id groups
+id hiddenButton
 id home
 id homeAsUp
 id icon
@@ -1136,6 +1154,7 @@ id icon_group
 id ifRoom
 id image
 id info
+id input
 id invisible
 id italic
 id item_info
@@ -1204,10 +1223,12 @@ id menu_ys_query_drive_fault
 id menu_ys_query_drive_info
 id menu_ys_query_param
 id menu_ys_set_param_select
+id mergeButton
 id message
 id middle
 id mini
 id msg
+id mtitle
 id multiply
 id name
 id navigation_header_container
@@ -1229,6 +1250,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerview
+id recyclerview2
 id relativelayout
 id right
 id right_icon
@@ -1264,6 +1286,8 @@ id snackbar_action
 id snackbar_text
 id snap
 id spacer
+id splitAllB
+id splitButton
 id split_action_bar
 id spread
 id spread_inside
@@ -1276,6 +1300,7 @@ id status_bar_latest_event_content
 id submenuarrow
 id submit_area
 id tabMode
+id testSlot
 id text
 id text2
 id textSpacerNoButtons
@@ -1354,6 +1379,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout activity_main
+layout activity_menu
 layout app_activity_custom_loding_dialog_layout
 layout app_outdialog
 layout background_menu_settings_layout_lattice
@@ -1374,6 +1400,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dmax_spots_dialog
 layout item
 layout layout_bcomm_help_qrcode
 layout notification_action
@@ -1397,6 +1424,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout text_input_password
 layout tooltip
 layout ui_base_button_edit_seletct_d_layout
 layout ui_base_button_switch_layout
@@ -1904,6 +1932,7 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style SpotsDialogDefault
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
@@ -2142,6 +2171,7 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle textColorError
+styleable Dialog DialogSpotColor DialogSpotCount DialogTitleAppearance DialogTitleText
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabSize pressedTranslationZ rippleColor useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide

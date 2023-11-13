@@ -5,13 +5,13 @@
     android:background="@color/background_main_background">
 
 
-    <com.tcn.sdk.springdemo.Titlebar
+    <com.tcn.sdk.springdemo.presentation.Titlebar
         android:id="@+id/menu_setttings_titlebar"
         android:layout_width="match_parent"
         android:layout_height="100px"
         >
 
-    </com.tcn.sdk.springdemo.Titlebar>
+    </com.tcn.sdk.springdemo.presentation.Titlebar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,85 +33,85 @@
                 android:layout_height="60px" />
 
 
-            <com.tcn.sdk.springdemo.ButtonEditSelectD
+            <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spring_display_price"
                 android:layout_width="match_parent"
                 android:layout_height="100px"
                 style="@style/background_lrmarginss">
 
-            </com.tcn.sdk.springdemo.ButtonEditSelectD>
+            </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonSwitch
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch
                     android:id="@+id/menu_spr_light_check"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginson">
 
-                </com.tcn.sdk.springdemo.ButtonSwitch>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_query_slot"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
-            <com.tcn.sdk.springdemo.ButtonEditSelectD
+            <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spr_ship_slot"
                 android:layout_width="match_parent"
                 android:layout_height="100px"
                 style="@style/background_lrmarginss">
 
-            </com.tcn.sdk.springdemo.ButtonEditSelectD>
+            </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
 
-            <com.tcn.sdk.springdemo.ButtonEditSelectD
+            <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spr_ship_slot_test"
                 android:layout_width="match_parent"
                 android:layout_height="100px"
                 style="@style/background_lrmarginss">
 
-            </com.tcn.sdk.springdemo.ButtonEditSelectD>
+            </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-            <com.tcn.sdk.springdemo.ButtonEditSelectD
+            <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spr_reqselect"
                 android:layout_width="match_parent"
                 android:layout_height="100px"
                 style="@style/background_lrmarginss">
 
-            </com.tcn.sdk.springdemo.ButtonEditSelectD>
+            </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_self_check"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_reset"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
             </LinearLayout>
 
@@ -120,14 +120,14 @@
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_heat_cool"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
                 <!--<com.tcn.uicommon.button.ButtonEditSelectD-->
                     <!--android:id="@+id/menu_spr_set_temp"-->
@@ -225,23 +225,23 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="20px">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_glass_heat_enable"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_glass_heat_disable"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
             <LinearLayout
@@ -249,23 +249,23 @@
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_open_led"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_close_led"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
             <LinearLayout
@@ -273,23 +273,23 @@
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_buzzer_open"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_buzzer_close"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
             <LinearLayout
@@ -297,23 +297,23 @@
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_spring"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_belts"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
             <LinearLayout
@@ -321,23 +321,23 @@
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_spring_all"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_belts_all"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
             <LinearLayout
@@ -345,23 +345,23 @@
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_single_slot"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_double_slot"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
             <LinearLayout
@@ -369,23 +369,23 @@
                 android:layout_height="100px"
                 android:orientation="horizontal">
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_single_slot_all"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
-                <com.tcn.sdk.springdemo.ButtonEditSelectD
+                <com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_test_mode"
                     android:layout_width="0px"
                     android:layout_height="100px"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
-                </com.tcn.sdk.springdemo.ButtonEditSelectD>
+                </com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD>
             </LinearLayout>
 
             <Button

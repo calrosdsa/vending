@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--Relative Layout-->
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComposeActivity"
+    tools:context=".presentation.ComposeActivity"
+    android:orientation="vertical"
+    android:padding="15dp"
     android:id="@+id/relativelayout">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        >
 
+    <Button
+        android:id="@+id/mtitle"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="DSA"
+        >
+    </Button>
+
+    <Button
+        android:id="@+id/hiddenButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text=""
+        android:background="@color/ui_base_transparent"
+        >
+    </Button>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1F"
+        android:textSize="20sp"
+        />
     <!--Recycler View widget-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:scrollbars="horizontal"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="false" />
 
-</RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview2"
+        android:scrollbars="horizontal"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="false" />
+
+</LinearLayout>

@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.view.LayoutInflater;
 
 import com.tcn.sdk.springdemo.R;
+import com.tcn.sdk.springdemo.data.models.Celda;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
 public class CeldaAdapter  extends RecyclerView.Adapter<CeldaAdapter.MyView> {
 
     // List with String type
-    private List<String> list;
+    private List<Celda> list;
 
     // View Holder class which
     // extends RecyclerView.ViewHolder
@@ -40,7 +41,7 @@ public class CeldaAdapter  extends RecyclerView.Adapter<CeldaAdapter.MyView> {
 
     // Constructor for adapter class
     // which takes a list of String type
-    public CeldaAdapter(List<String> horizontalList)
+    public CeldaAdapter(List<Celda> horizontalList)
     {
         this.list = horizontalList;
     }
@@ -76,7 +77,7 @@ public class CeldaAdapter  extends RecyclerView.Adapter<CeldaAdapter.MyView> {
 
         // Set the text of each item of
         // Recycler view with the list items
-        holder.textView.setText(list.get(position));
+        holder.textView.setText(String.valueOf(list.get(position).mId));
     }
 
     // Override getItemCount which Returns

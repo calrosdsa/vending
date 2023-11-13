@@ -1,0 +1,1 @@
+-keep class controller.VendApplication { <init>(); }

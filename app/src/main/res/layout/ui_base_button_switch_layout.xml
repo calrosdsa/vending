@@ -10,7 +10,7 @@
         android:drawablePadding="10dp"
         />
 
-    <com.tcn.sdk.springdemo.MySlipSwitch
+    <com.tcn.sdk.springdemo.presentation.MySlipSwitch
         android:id="@+id/btn_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
