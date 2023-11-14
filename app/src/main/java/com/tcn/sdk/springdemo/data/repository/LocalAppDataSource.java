@@ -7,6 +7,8 @@ import com.tcn.sdk.springdemo.data.dao.ActivoDao;
 import com.tcn.sdk.springdemo.data.dao.CeldaDao;
 import com.tcn.sdk.springdemo.data.dao.ShipmentDao;
 import com.tcn.sdk.springdemo.data.dao.UserDao;
+import com.tcn.sdk.springdemo.data.dto.DispensarResponse;
+import com.tcn.sdk.springdemo.data.dto.RequestDispensar;
 import com.tcn.sdk.springdemo.data.dto.RequestItem;
 import com.tcn.sdk.springdemo.data.dto.RequestItemResponse;
 import com.tcn.sdk.springdemo.data.models.Activo;
@@ -45,10 +47,46 @@ public class LocalAppDataSource implements AppDataSource {
     public Call<RequestItemResponse> requestActivo(RequestItem r){
        return mRestService.requestActivo(r);
     }
+    @Override
+    public void requestDispensar(String id) {
+        Shipment shipment = mShipmentDao.getShipment(id);
+        RequestDispensar request = new RequestDispensar(
+                shipment.mIdCelda,
+                shipment.mIdUser,
+                shipment.mIdActivo,
+                shipment.mKeyActivo,
+                shipment.mObjectType
+                );
+        Call<DispensarResponse> call = mRestService.requestDispensar(request);
+        call.enqueue(new Callback<DispensarResponse>() {
+            @Override
+            public void onResponse(Call<DispensarResponse> call, Response<DispensarResponse> response) {
+                try{
+                    if(response.isSuccessful()){
+                        DispensarResponse res = response.body();
+                        assert res != null;
+                        if(res.isSuccess){
+                            mShipmentDao.setSuccessfullShipment(id);
+                        }
+                    }else{
+                        Log.d("DEBUG_APP_ERR","NO SUCCESS");
+                        call.cancel();
+                    }
+                }catch(Exception e){
+                    Log.d("DEBUG_APP_ERR",e.getLocalizedMessage());
+                }
+            }
+            @Override
+            public void onFailure(Call<DispensarResponse> call, Throwable t) {
+                Log.d("DEBUG_APP_API",t.getLocalizedMessage());
+                call.cancel();
+            }
+        });
+    }
 
     @Override
     public void getActivos() {
-        Call call = mRestService.getActivos();
+        Call<List<Activo>> call = mRestService.getActivos();
         call.enqueue(new Callback<List<Activo>>() {
             @Override
             public void onResponse(Call<List<Activo>> call, Response<List<Activo>> response) {
@@ -64,7 +102,6 @@ public class LocalAppDataSource implements AppDataSource {
                     Log.d("DEBUG_APP_ERR",e.getLocalizedMessage());
                 }
             }
-
             @Override
             public void onFailure(Call<List<Activo>> call, Throwable t) {
                 Log.d("DEBUG_APP_API",t.getLocalizedMessage());
@@ -72,6 +109,8 @@ public class LocalAppDataSource implements AppDataSource {
             }
         });
     }
+
+
 
     //ACTIVOS
     @Override

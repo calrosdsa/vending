@@ -44,10 +44,10 @@ public class AppDatabase_Impl extends AppDatabase {
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `celda` (`mId` INTEGER NOT NULL, `mSlotNumber` INTEGER NOT NULL, `mRowNumber` INTEGER NOT NULL, `mIsMerged` INTEGER NOT NULL, `mCanMerged` INTEGER NOT NULL, `enabled` INTEGER NOT NULL, `mCanShow` INTEGER NOT NULL, PRIMARY KEY(`mId`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `user` (`mId` TEXT NOT NULL, `mName` TEXT, `mCreatedAt` INTEGER NOT NULL, PRIMARY KEY(`mId`))");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `shipment` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mSlotNumber` INTEGER NOT NULL, `mIdUser` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `activo` (`id` TEXT NOT NULL, `slotN` INTEGER NOT NULL, `name` TEXT, `cantidad` INTEGER NOT NULL, `celdas` INTEGER NOT NULL, `row` INTEGER NOT NULL, PRIMARY KEY(`id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `shipment` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mIdCelda` TEXT, `mIdActivo` TEXT, `mKeyActivo` TEXT, `mObjectType` TEXT, `mIdUser` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `activo` (`idCelda` TEXT NOT NULL, `slotN` INTEGER NOT NULL, `name` TEXT, `cantidad` INTEGER NOT NULL, `celdas` INTEGER NOT NULL, `row` INTEGER NOT NULL, `objectType` TEXT, `enabled` INTEGER NOT NULL, PRIMARY KEY(`idCelda`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f2d465a0a1c2cbc2015a81e69b18f5c6\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"3d12e3ecc1f84a8dfaf263c0bc48b97c\")");
       }
 
       @Override
@@ -110,10 +110,13 @@ public class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoUser + "\n"
                   + " Found:\n" + _existingUser);
         }
-        final HashMap<String, TableInfo.Column> _columnsShipment = new HashMap<String, TableInfo.Column>(6);
+        final HashMap<String, TableInfo.Column> _columnsShipment = new HashMap<String, TableInfo.Column>(9);
         _columnsShipment.put("mId", new TableInfo.Column("mId", "TEXT", true, 1));
         _columnsShipment.put("mCreatedAt", new TableInfo.Column("mCreatedAt", "INTEGER", true, 0));
-        _columnsShipment.put("mSlotNumber", new TableInfo.Column("mSlotNumber", "INTEGER", true, 0));
+        _columnsShipment.put("mIdCelda", new TableInfo.Column("mIdCelda", "TEXT", false, 0));
+        _columnsShipment.put("mIdActivo", new TableInfo.Column("mIdActivo", "TEXT", false, 0));
+        _columnsShipment.put("mKeyActivo", new TableInfo.Column("mKeyActivo", "TEXT", false, 0));
+        _columnsShipment.put("mObjectType", new TableInfo.Column("mObjectType", "TEXT", false, 0));
         _columnsShipment.put("mIdUser", new TableInfo.Column("mIdUser", "TEXT", false, 0));
         _columnsShipment.put("mIsVerified", new TableInfo.Column("mIsVerified", "INTEGER", true, 0));
         _columnsShipment.put("estado", new TableInfo.Column("estado", "INTEGER", true, 0));
@@ -126,13 +129,15 @@ public class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoShipment + "\n"
                   + " Found:\n" + _existingShipment);
         }
-        final HashMap<String, TableInfo.Column> _columnsActivo = new HashMap<String, TableInfo.Column>(6);
-        _columnsActivo.put("id", new TableInfo.Column("id", "TEXT", true, 1));
+        final HashMap<String, TableInfo.Column> _columnsActivo = new HashMap<String, TableInfo.Column>(8);
+        _columnsActivo.put("idCelda", new TableInfo.Column("idCelda", "TEXT", true, 1));
         _columnsActivo.put("slotN", new TableInfo.Column("slotN", "INTEGER", true, 0));
         _columnsActivo.put("name", new TableInfo.Column("name", "TEXT", false, 0));
         _columnsActivo.put("cantidad", new TableInfo.Column("cantidad", "INTEGER", true, 0));
         _columnsActivo.put("celdas", new TableInfo.Column("celdas", "INTEGER", true, 0));
         _columnsActivo.put("row", new TableInfo.Column("row", "INTEGER", true, 0));
+        _columnsActivo.put("objectType", new TableInfo.Column("objectType", "TEXT", false, 0));
+        _columnsActivo.put("enabled", new TableInfo.Column("enabled", "INTEGER", true, 0));
         final HashSet<TableInfo.ForeignKey> _foreignKeysActivo = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesActivo = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoActivo = new TableInfo("activo", _columnsActivo, _foreignKeysActivo, _indicesActivo);
@@ -143,7 +148,7 @@ public class AppDatabase_Impl extends AppDatabase {
                   + " Found:\n" + _existingActivo);
         }
       }
-    }, "f2d465a0a1c2cbc2015a81e69b18f5c6", "30c9b1b5e56811c662bef2161efb0200");
+    }, "3d12e3ecc1f84a8dfaf263c0bc48b97c", "e6f5084c33df8c760414cfbdd9d541b8");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

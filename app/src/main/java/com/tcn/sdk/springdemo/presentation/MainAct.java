@@ -23,6 +23,8 @@ import com.tcn.springboard.control.TcnVendEventResultID;
 import com.tcn.springboard.control.TcnVendIF;
 import com.tcn.springboard.control.VendEventInfo;
 
+import java.util.UUID;
+
 public class MainAct extends TcnMainActivity {
 	private static final String TAG = "MainAct";
 	private static final int CMD_SET_SLOTNO_SPRING     = 32;
@@ -1038,7 +1040,7 @@ public class MainAct extends TcnMainActivity {
 						int slotNo = Integer.valueOf(strParam);//出货的货道号 dispensing slot number
 						String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
 						String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
-						String tradeNo = "1811020095201811150126888";//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+						String tradeNo = UUID.randomUUID().toString();;//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
 						TcnVendIF.getInstance().reqShip(slotNo,shipMethod,amount,tradeNo);
 //						Intent in = new Intent(MainAct.this, SerialPortSetting.class);
 					}

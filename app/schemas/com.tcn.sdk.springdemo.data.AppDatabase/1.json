@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f2d465a0a1c2cbc2015a81e69b18f5c6",
+    "identityHash": "3d12e3ecc1f84a8dfaf263c0bc48b97c",
     "entities": [
       {
         "tableName": "celda",
@@ -94,7 +94,7 @@
       },
       {
         "tableName": "shipment",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mSlotNumber` INTEGER NOT NULL, `mIdUser` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mIdCelda` TEXT, `mIdActivo` TEXT, `mKeyActivo` TEXT, `mObjectType` TEXT, `mIdUser` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
         "fields": [
           {
             "fieldPath": "mId",
@@ -109,10 +109,28 @@
             "notNull": true
           },
           {
-            "fieldPath": "mSlotNumber",
-            "columnName": "mSlotNumber",
-            "affinity": "INTEGER",
-            "notNull": true
+            "fieldPath": "mIdCelda",
+            "columnName": "mIdCelda",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mIdActivo",
+            "columnName": "mIdActivo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mKeyActivo",
+            "columnName": "mKeyActivo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mObjectType",
+            "columnName": "mObjectType",
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "mIdUser",
@@ -144,11 +162,11 @@
       },
       {
         "tableName": "activo",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `slotN` INTEGER NOT NULL, `name` TEXT, `cantidad` INTEGER NOT NULL, `celdas` INTEGER NOT NULL, `row` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCelda` TEXT NOT NULL, `slotN` INTEGER NOT NULL, `name` TEXT, `cantidad` INTEGER NOT NULL, `celdas` INTEGER NOT NULL, `row` INTEGER NOT NULL, `objectType` TEXT, `enabled` INTEGER NOT NULL, PRIMARY KEY(`idCelda`))",
         "fields": [
           {
-            "fieldPath": "id",
-            "columnName": "id",
+            "fieldPath": "idCelda",
+            "columnName": "idCelda",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -181,11 +199,23 @@
             "columnName": "row",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "objectType",
+            "columnName": "objectType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enabled",
+            "columnName": "enabled",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "id"
+            "idCelda"
           ],
           "autoGenerate": false
         },
@@ -195,7 +225,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f2d465a0a1c2cbc2015a81e69b18f5c6\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"3d12e3ecc1f84a8dfaf263c0bc48b97c\")"
     ]
   }
 }

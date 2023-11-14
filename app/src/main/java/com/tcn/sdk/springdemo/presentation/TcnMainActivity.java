@@ -56,23 +56,23 @@ public class TcnMainActivity extends AppCompatActivity {
 	}
 
 
-	@Override // android.app.Activity, android.view.Window.Callback
-	public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-		if (motionEvent.getAction() == 0) {
-			View currentFocus = getCurrentFocus();
-
-				InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-				if (inputMethodManager != null) {
-					assert currentFocus != null;
-					inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
-				}
-
-			return super.dispatchTouchEvent(motionEvent);
-		}
-		if (getWindow().superDispatchTouchEvent(motionEvent)) {
-			return true;
-		}
-		return onTouchEvent(motionEvent);
-	}
+//	@Override // android.app.Activity, android.view.Window.Callback
+//	public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+//		if (motionEvent.getAction() == 0) {
+//			View currentFocus = getCurrentFocus();
+//
+//				InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//				if (inputMethodManager != null) {
+//					assert currentFocus != null;
+//					inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+//				}
+//
+//			return super.dispatchTouchEvent(motionEvent);
+//		}
+//		if (getWindow().superDispatchTouchEvent(motionEvent)) {
+//			return true;
+//		}
+//		return onTouchEvent(motionEvent);
+//	}
 
 }

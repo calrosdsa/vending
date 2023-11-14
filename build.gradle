@@ -36,7 +36,7 @@ ext {
     gsonVersion = "2.8.5"
     eventbusVersion = "3.1.1"
     room_version = "1.1.1"
-
+    work_version = "1.0.1"
 
 }
 

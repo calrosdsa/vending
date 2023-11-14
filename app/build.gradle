@@ -98,6 +98,8 @@ dependencies {
 
     implementation 'com.android.support:multidex:1.0.3'
 
+    
+    implementation "android.arch.work:work-runtime:$work_version"
 
 
     implementation "android.arch.persistence.room:runtime:$room_version"

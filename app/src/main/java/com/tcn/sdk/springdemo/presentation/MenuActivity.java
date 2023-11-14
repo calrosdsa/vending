@@ -2,20 +2,26 @@ package com.tcn.sdk.springdemo.presentation;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.tcn.sdk.springdemo.Injection;
 import com.tcn.sdk.springdemo.R;
+import com.tcn.sdk.springdemo.domain.util.FileLogger;
 import com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter;
 import com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener;
 import com.tcn.sdk.springdemo.data.models.Celda;
@@ -55,11 +61,15 @@ public class MenuActivity extends TcnMainActivity {
     AlertDialog loadingDialog;
     AlertDialog messageDialog;
     int currentPosition = -1;
+    int positionSlot = -1;
     int currentRow = -1;
     Celda mCelda;
     List<Celda> mCeldas;
     TextView mPosition;
     AppPreferences preferences;
+    private OutDialog m_OutDialog = null;
+    private LoadingDialog m_LoadingDialog = null;
+
     private final CompositeDisposable mDisposable = new CompositeDisposable();
 
     @Override
@@ -96,16 +106,25 @@ public class MenuActivity extends TcnMainActivity {
     }
 
     protected void  initView(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_menu);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         setRecyclerView();
 
-        mPosition = findViewById(R.id.position);
+        if (m_OutDialog == null) {
+            m_OutDialog = new OutDialog(MenuActivity.this, "", getString(R.string.background_drive_setting));
+            m_OutDialog.setShowTime(10000);
+        }
 
+        mPosition = findViewById(R.id.position);
         splitButton = findViewById(R.id.splitButton);
         mergeButton = findViewById(R.id.mergeButton);
         splitAllB = findViewById(R.id.splitAllB);
         Button testSlotB = findViewById(R.id.testSlot);
+        Button viewLogs = findViewById(R.id.view_logs);
         testSlotB.setOnClickListener(view -> {
-            int slotNo = currentPosition;//出货的货道号 dispensing slot number
+            int slotNo = positionSlot+1;//出货的货道号 dispensing slot number
             String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
             String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
             String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
@@ -122,6 +141,10 @@ public class MenuActivity extends TcnMainActivity {
 //            wSocker.start();
 //            showMessage();(hubConnection.getConnectionState().name());
         });
+        viewLogs.setOnClickListener(view-> {
+            Intent intent = new Intent(this,LogActivity.class);
+            startActivity(intent);
+        });
 
         loadingDialog = new SpotsDialog.Builder().setContext(MenuActivity.this)
                 .build();
@@ -132,6 +155,16 @@ public class MenuActivity extends TcnMainActivity {
                 .setPositiveButton("OK", null)
 //                .setNegativeButton("Cancel", null)
                 .create();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     protected void populateDb() {
@@ -170,7 +203,7 @@ public class MenuActivity extends TcnMainActivity {
                 Celda celda = new Celda(i, i, 6,true);
                 list.add(celda);
             }
-            list.add(new Celda(60, 60, 2,false));
+            list.add(new Celda(60, 60, 6,false));
             dataSource.insertAllCeldas(list);
         });
     }
@@ -303,6 +336,8 @@ public class MenuActivity extends TcnMainActivity {
     }
 
     protected void selectCurrentSlot(int position,int row){
+        try{
+
         if(currentPosition != -1 && currentRow != -1){
             showMessage("REMOVE ----");
             Drawable card = ContextCompat.getDrawable(this,R.drawable.card);
@@ -360,15 +395,21 @@ public class MenuActivity extends TcnMainActivity {
         List<Celda> filterRows = mCeldas.stream()
                 .filter(p -> p.mRowNumber == row).collect(Collectors.toList());
         mCelda = filterRows.get(position);
+        positionSlot = mCelda.mSlotNumber - 1;
         currentPosition = position;
         currentRow = row;
         mPosition.setText(String.format("%s",mCelda.mSlotNumber));
+        }catch (Exception e){
+            FileLogger.logError("selectCurrentSlot",e.getLocalizedMessage());
+        }
     }
 
     protected void mergeCelda() {
-        Log.d("DEBUG_APP_C",String.format("%s --- %s",mCelda.mSlotNumber,mCelda.mCanMerged));
-        if(mCeldas.size() > currentPosition){
-        Celda nextSlot = mCeldas.get(currentPosition+1);
+        try{
+
+        Log.d("DEBUG_APP_C",String.format("%s --- %s---",mCeldas.size(),positionSlot));
+        if(60 > positionSlot){
+        Celda nextSlot = mCeldas.get(positionSlot +1);
         if(nextSlot.mIsMerged){
             showMessage("La siguiente celda ya ha sido unida");
             return;
@@ -385,6 +426,9 @@ public class MenuActivity extends TcnMainActivity {
             }
         }else {
             showMessage("No se puede unir con la siguiente celda");
+        }
+        }catch (Exception e){
+            FileLogger.logError("mergeCelda",e.getLocalizedMessage());
         }
     }
 
@@ -438,15 +482,11 @@ public class MenuActivity extends TcnMainActivity {
                                     adapter = new CeldaAdapter(entry.getValue());
                                     recyclerView6.setAdapter(adapter);
                             }
-//                        if(entry.getKey() == 1){
-//                            adapter = new CeldaAdapter(entry.getValue());
-//                            recyclerView1.setAdapter(adapter);
-//                        }
                         }
 
                     }
 
-                }, thorwable -> Log.d("DEBUG_APP_ERR", "DASDAS", thorwable)));
+                }, thorwable -> FileLogger.logError("observeCeldas",thorwable.getLocalizedMessage())));
     }
 
 
@@ -466,44 +506,83 @@ public class MenuActivity extends TcnMainActivity {
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPMENT_FAILURE:
-                    showMessage(String.format("Command_SHIPMENT FAILURE %s",cEventInfo.m_lParam4));
+                    String loadText = "Error de dispensación, llame al servicio de atención al cliente";
+                    String loadTitle = "";
+                    if (null != m_OutDialog) {
+                        m_OutDialog.cancel();
+                    }
+                    if (null == m_LoadingDialog) {
+                        m_LoadingDialog = new LoadingDialog(MenuActivity.this, loadText, loadTitle);
+                    }
+                    m_LoadingDialog.setLoadText(loadText);
+                    m_LoadingDialog.setTitle(loadTitle);
+                    m_LoadingDialog.setShowTime(3);
+                    m_LoadingDialog.show();
                     AsyncTask.execute(()-> {
                         dataSource.updateShipmentState(ShipmentState.FAILURE.ordinal(), cEventInfo.m_lParam4);
                     });
-                    loadingDialog.dismiss();
-                    messageDialog.show();
-//                    TcnVendIF.getInstance().closeTrade(true);
-//                    TcnUtilityUI.getToast(MenuActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
                 case TcnVendEventID.COMMAND_SHIPMENT_FAULT:
-                    showMessage(String.format("Command_SHIPMENT FAULT %s",cEventInfo.m_lParam4));
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.FAULT.ordinal(),cEventInfo.m_lParam4);
                     });
-                    loadingDialog.dismiss();
-//                    TcnUtilityUI.getToast(MenuActivity.this, cEventInfo.m_lParam4, 20).show();
+                    if ((cEventInfo.m_lParam4 != null) && ((cEventInfo.m_lParam4).length() > 0)) {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(MenuActivity.this, String.valueOf(cEventInfo.m_lParam1), cEventInfo.m_lParam4);
+                        } else {
+                            m_OutDialog.setText(cEventInfo.m_lParam4);
+                        }
+                        m_OutDialog.cleanData();
+                    } else {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(MenuActivity.this, String.valueOf(cEventInfo.m_lParam1), getString(R.string.ui_base_notify_shipping));
+                        } else {
+                            m_OutDialog.setText("Porfavor spere");
+                        }
+                    }
+                    m_OutDialog.setNumber(String.valueOf(cEventInfo.m_lParam1));
+                    m_OutDialog.show();
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPPING:
-                    showMessage(String.format("Command_SHIPPING %s -- %s -- %s",cEventInfo.m_lParam4,cEventInfo.m_lParam3,cEventInfo.m_lParam2));
+                    if ((cEventInfo.m_lParam4 != null) && ((cEventInfo.m_lParam4).length() > 0)) {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(MenuActivity.this, String.valueOf(cEventInfo.m_lParam1), cEventInfo.m_lParam4);
+                        } else {
+                            m_OutDialog.setText(cEventInfo.m_lParam4);
+                        }
+                        m_OutDialog.cleanData();
+                    } else {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(MenuActivity.this, String.valueOf(cEventInfo.m_lParam1), getString(R.string.ui_base_notify_shipping));
+                        } else {
+                            m_OutDialog.setText(MenuActivity.this.getString(R.string.ui_base_notify_shipping));
+                        }
+                    }
+                    m_OutDialog.setNumber(String.valueOf(cEventInfo.m_lParam1));
+                    m_OutDialog.show();
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.SHIPPING.ordinal(),cEventInfo.m_lParam4);
                     });
-                    loadingDialog.setMessage("Dispensando activo...");
 
-//                    Log.d("DEBUG_APP_",String.format("%s - %s - %s - %s",cEventInfo.m_lParam5.toString(),cEventInfo.m_lParam3,cEventInfo.m_lParam2,cEventInfo.m_lParam1));
-//                    AsyncTask.execute(()-> {
-//                        Shipment shipment = new Shipment() ;
-//                    });
-//                    TcnUtilityUI.getToast(MenuActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPMENT_SUCCESS:
-                    showMessage(String.format("Command_SHIPMENT SUCCESS %s -- %s -- %s",cEventInfo.m_lParam4,cEventInfo.m_lParam3,cEventInfo.m_lParam2));
+
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.SUCCESS.ordinal(),cEventInfo.m_lParam4);
                     });
-                    loadingDialog.dismiss();
+                    if (null != m_OutDialog) {
+                        m_OutDialog.cancel();
+                    }
+                    if (m_LoadingDialog == null) {
+                        m_LoadingDialog = new LoadingDialog(MenuActivity.this, "Entrega exitosa", "Recoge tu producto");
+                    } else {
+                        m_LoadingDialog.setLoadText("Entrega exitosa");
+                        m_LoadingDialog.setTitle("Recoge tu producto");
+                    }
+                    m_LoadingDialog.setShowTime(3);
+                    m_LoadingDialog.show();
 //                    TcnUtilityUI.getToast(MenuActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
 

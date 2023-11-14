@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,14 +23,16 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.tcn.sdk.springdemo.Injection;
 import com.tcn.sdk.springdemo.R;
-import com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter;
+import com.tcn.sdk.springdemo.data.models.Activo;
+import com.tcn.sdk.springdemo.data.models.Shipment;
+import com.tcn.sdk.springdemo.domain.util.FileLogger;
+import com.tcn.sdk.springdemo.presentation.adapter.ActivoAdapter;
 import com.tcn.sdk.springdemo.presentation.adapter.MainSliderAdapter;
 import com.tcn.sdk.springdemo.presentation.adapter.PicassoImageLoadingService;
 import com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener;
 import com.tcn.sdk.springdemo.data.dto.Marcacion;
 import com.tcn.sdk.springdemo.data.dto.RequestItem;
 import com.tcn.sdk.springdemo.data.dto.RequestItemResponse;
-import com.tcn.sdk.springdemo.data.models.Celda;
 import com.tcn.sdk.springdemo.data.models.ShipmentState;
 import com.tcn.sdk.springdemo.data.models.User;
 import com.tcn.sdk.springdemo.domain.repository.AppDataSource;
@@ -60,8 +64,12 @@ import ss.com.bannerslider.Slider;
 public class ComposeActivity extends TcnMainActivity {
     RecyclerView recyclerView1;
     RecyclerView recyclerView2;
+    RecyclerView recyclerView3;
+    RecyclerView recyclerView4;
+    RecyclerView recyclerView5;
+    RecyclerView recyclerView6;
 //    RecyclerView recyclerView1;
-    CeldaAdapter adapter;
+    ActivoAdapter adapter;
     AppDataSource dataSource;
     User currrentUser = null;
     AlertDialog loadingDialog;
@@ -70,14 +78,19 @@ public class ComposeActivity extends TcnMainActivity {
     Button mButton;
     Button hideButton;
     EditText input;
+    List<Activo> mActivos;
     private Slider slider;
+    private OutDialog m_OutDialog = null;
+    private LoadingDialog m_LoadingDialog = null;
     private final CompositeDisposable mDisposable = new CompositeDisposable();
+    private static final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
+//    FileLogger logger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//        logger = new FileLogger();
         dataSource = Injection.provideUserDataSource(this);
 
         mButton = findViewById(R.id.mtitle);
@@ -107,8 +120,10 @@ public class ComposeActivity extends TcnMainActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        observeCeldas();
+        observeActivos();
         createWebSocketClient();
+        FileLogger.init();
+//        FileLogger.addRecordToLog("LOG TEST");
 //        wSocker.start();
     }
 
@@ -131,6 +146,7 @@ public class ComposeActivity extends TcnMainActivity {
         try {
             uri = new URI("ws://172.20.20.76:8000/v1/ws/suscribe/user/");
         } catch (URISyntaxException e) {
+//            FileLogger.logError("createWebSockerClient",e.getLocalizedMessage());
             e.printStackTrace();
             return;
         }
@@ -145,6 +161,8 @@ public class ComposeActivity extends TcnMainActivity {
 
             @Override
             public void onTextReceived(String message) {
+                try{
+
                 Gson gson = new Gson();
                 Marcacion obj = gson.fromJson(message, Marcacion.class);
                 Log.d("DEBUG_APP_WS", "onTextReceived" + obj.name);
@@ -152,9 +170,17 @@ public class ComposeActivity extends TcnMainActivity {
 //                currrentUser = new User("jorge","123123123");
                 runOnUiThread(() -> {
                     mButton.setText(obj.name);
+                    Runnable delayedTask = () -> {
+                       closeSession();
+                        Log.d("DEBUG_APP_TIMER","456");
+                    };
+                    mainThreadHandler.postDelayed(delayedTask, 10000);
                     // Stuff that updates the UI
 
                 });
+                }catch(Exception e){
+                    FileLogger.logError("onTextReceived",e.getLocalizedMessage());
+                }
             }
 
             @Override
@@ -176,12 +202,14 @@ public class ComposeActivity extends TcnMainActivity {
             public void onException(Exception e) {
                 Log.d("DEBUG_APP_WS", e.getLocalizedMessage());
                 System.out.println(e.getMessage());
+                FileLogger.logError("ws_onException",e.getLocalizedMessage());
             }
 
             @Override
             public void onCloseReceived(int reason, String description) {
                 System.out.println("onCloseReceived");
                 Log.d("DEBUG_APP_WS", description);
+                FileLogger.logError("ws_onCloseRecived",description);
 
             }
 
@@ -194,35 +222,51 @@ public class ComposeActivity extends TcnMainActivity {
         webSocketClient.connect();
     }
 
+    protected void closeSession(){
+        mButton.setVisibility(View.GONE);
+        currrentUser = null;
+    }
 
-    protected void observeCeldas() {
-        mDisposable.add(dataSource.observeCeldas()
+    protected void observeActivos() {
+        mDisposable.add(dataSource.observeActivos()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(celdas -> {
+                .subscribe(activos -> {
+                    mActivos = activos;
+                    Map<Integer, List<Activo>> groupCeldas =
+                            activos.stream().collect(Collectors.groupingBy(w -> w.row));
 
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                        Map<Integer, List<Celda>> groupCeldas =
-                                celdas.stream().collect(Collectors.groupingBy(w -> w.mRowNumber));
-
-                        for (Map.Entry<Integer, List<Celda>> entry : groupCeldas.entrySet()) {
-                            switch (entry.getKey()) {
-                                case 1:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView1.setAdapter(adapter);
-                                case 2:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView2.setAdapter(adapter);
-                            }
+                    for (Map.Entry<Integer, List<Activo>> entry : groupCeldas.entrySet()) {
+                        switch (entry.getKey()) {
+                            case 1:
+                                adapter = new ActivoAdapter(entry.getValue());
+                                recyclerView1.setAdapter(adapter);
+                            case 2:
+                                adapter = new ActivoAdapter(entry.getValue());
+                                recyclerView2.setAdapter(adapter);
+                            case 3:
+                                adapter = new ActivoAdapter(entry.getValue());
+                                recyclerView3.setAdapter(adapter);
+                            case 4:
+                                adapter = new ActivoAdapter(entry.getValue());
+                                recyclerView4.setAdapter(adapter);
+                            case 5:
+                                adapter = new ActivoAdapter(entry.getValue());
+                                recyclerView5.setAdapter(adapter);
+                            case 6:
+                                adapter = new ActivoAdapter(entry.getValue());
+                                recyclerView6.setAdapter(adapter);
+                        }
 //                        if(entry.getKey() == 1){
-//                            adapter = new CeldaAdapter(entry.getValue());
+//                            adapter = new ActivoAdapter(entry.getValue());
 //                            recyclerView1.setAdapter(adapter);
 //                        }
-                        }
-
                     }
 
-                }, thorwable -> Log.d("DEBUG_APP_ERR", "DASDAS", thorwable)));
+                }, thorwable -> {
+                    Log.d("DEBUG_APP_ERR", "DASDAS", thorwable);
+                    FileLogger.logError("observeActivos",thorwable.getLocalizedMessage());
+                }));
     }
 
     public boolean isSessionEnabled() {
@@ -231,7 +275,7 @@ public class ComposeActivity extends TcnMainActivity {
         long now = System.currentTimeMillis();
         long now2 = currrentUser.mCreatedAt;
         long diff = now - now2;
-        Log.d("DEBUG_APP_SESSION", String.format("%d --- %d = %d", now, now2, TimeUnit.MILLISECONDS.toSeconds(diff)));
+//        Log.d("DEBUG_APP_SESSION", String.format("%d --- %d = %d", now, now2, TimeUnit.MILLISECONDS.toSeconds(diff)));
         return TimeUnit.MILLISECONDS.toSeconds(diff) < 120;
     }
 
@@ -248,6 +292,11 @@ public class ComposeActivity extends TcnMainActivity {
         setRecyclerView();
         setDialogPassword();
 
+        if (m_OutDialog == null) {
+            m_OutDialog = new OutDialog(this, "", "");
+            m_OutDialog.setShowTime(10000);
+        }
+
         Slider.init(new PicassoImageLoadingService(this));
         slider = findViewById(R.id.banner_slider1);
         slider.setAdapter(new MainSliderAdapter());
@@ -258,37 +307,42 @@ public class ComposeActivity extends TcnMainActivity {
     }
 
     private void setDialogPassword() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Title");
+        try {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Title");
 // I'm using fragment here so I'm using getView() to provide ViewGroup
 // but you can provide here any other instance of ViewGroup from your Fragment / Activity
-        View viewInflated = LayoutInflater.from(this).inflate(R.layout.text_input_password, null, false);
+            View viewInflated = LayoutInflater.from(this).inflate(R.layout.text_input_password, null, false);
 // Set up the input
-        input = (EditText) viewInflated.findViewById(R.id.input);
-        final TextView textError = (TextView) viewInflated.findViewById(R.id.error_text);
+            input = (EditText) viewInflated.findViewById(R.id.input);
+            final TextView textError = (TextView) viewInflated.findViewById(R.id.error_text);
 // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-        builder.setView(viewInflated);
+            builder.setView(viewInflated);
 
 // Set up the buttons
-        builder.setPositiveButton(android.R.string.ok, (dialog, which) -> {
-            if (Objects.equals(input.getText().toString(), "123")) {
-                View view = this.getCurrentFocus();
-                if (view != null) {
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    assert imm != null;
-                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                }
-                input.setText("");
-                Intent mainIntent = new Intent(ComposeActivity.this, MenuActivity.class);
-                ComposeActivity.this.startActivity(mainIntent);
-                dialog.dismiss();
+            builder.setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                if (Objects.equals(input.getText().toString(), "123")) {
+                    View view = this.getCurrentFocus();
+                    if (view != null) {
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        assert imm != null;
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
+                    input.setText("");
+                    Intent mainIntent = new Intent(ComposeActivity.this, MenuActivity.class);
+                    ComposeActivity.this.startActivity(mainIntent);
+                    dialog.dismiss();
 
-            } else {
-                textError.setText("Contraseña incorrecta");
-            }
-        });
-        builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.cancel());
-        passworDialog = builder.create();
+                } else {
+                    textError.setText("Contraseña incorrecta");
+                }
+            });
+            builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> dialog.cancel());
+            passworDialog = builder.create();
+        } catch (Exception e) {
+            FileLogger.logError("setDialogPassword", e.getLocalizedMessage());
+        }
     }
 
     private void setRecyclerView() {
@@ -298,16 +352,51 @@ public class ComposeActivity extends TcnMainActivity {
         recyclerView2
                 = findViewById(
                 R.id.row_2);
-
+        recyclerView3
+                = findViewById(
+                R.id.row_3);
+        recyclerView4
+                = findViewById(
+                R.id.row_4);
+        recyclerView5
+                = findViewById(
+                R.id.row_5);
+        recyclerView6
+                = findViewById(
+                R.id.row_6);
 
         RecyclerView.LayoutManager RecyclerViewLayoutManager
                 = new LinearLayoutManager(
                 getApplicationContext(),
                 LinearLayoutManager.HORIZONTAL,
                 false
-                );
+        );
 
         RecyclerView.LayoutManager RecyclerViewLayoutManager2
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager3
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager4
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager5
+                = new LinearLayoutManager(
+                getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+        );
+        RecyclerView.LayoutManager RecyclerViewLayoutManager6
                 = new LinearLayoutManager(
                 getApplicationContext(),
                 LinearLayoutManager.HORIZONTAL,
@@ -317,39 +406,55 @@ public class ComposeActivity extends TcnMainActivity {
         // Set LayoutManager on Recycler View
         recyclerView1.setLayoutManager(
                 RecyclerViewLayoutManager);
+        recyclerView1.addOnItemTouchListener(clickItem(recyclerView1));
 
         recyclerView2.setLayoutManager(
                 RecyclerViewLayoutManager2);
-        recyclerView1.addOnItemTouchListener(clickItem(recyclerView1));
         recyclerView2.addOnItemTouchListener(clickItem(recyclerView2));
+
+        recyclerView3.setLayoutManager(
+                RecyclerViewLayoutManager3);
+        recyclerView3.addOnItemTouchListener(clickItem(recyclerView3));
+
+        recyclerView4.setLayoutManager(
+                RecyclerViewLayoutManager4);
+        recyclerView4.addOnItemTouchListener(clickItem(recyclerView4));
+
+        recyclerView5.setLayoutManager(
+                RecyclerViewLayoutManager5);
+        recyclerView5.addOnItemTouchListener(clickItem(recyclerView5));
+
+        recyclerView6.setLayoutManager(
+                RecyclerViewLayoutManager6);
+        recyclerView6.addOnItemTouchListener(clickItem(recyclerView6));
     }
 
     RecyclerItemClickListener clickItem(RecyclerView recycler) {
        return  new RecyclerItemClickListener(this, recycler, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                if (loadingDialog.isShowing()) return;
-                loadingDialog.show();
-
                         if(isSessionEnabled()) {
-                            RequestItem r = new RequestItem(String.valueOf(position+1),"12122");
+                            Activo activo = mActivos.get(position);
+                            RequestItem r = new RequestItem(activo.idCelda,currrentUser.mId);
 
                             Call<RequestItemResponse> call = dataSource.requestActivo(r);
                             call.enqueue(new Callback<RequestItemResponse>() {
                                 @Override
                                 public void onResponse(Call<RequestItemResponse> call, Response<RequestItemResponse> response) {
-                                    loadingDialog.show();
+                                    try{
                                     Log.d("DEBUG_APP_API",response.message());
                                     Log.d("DEBUG_APP_API",String.format("%s", response.isSuccessful()));
                                     if (response.isSuccessful()) {
-                                        assert response.body() != null;
-                                        if (response.body().result != null) {
-                                            if (response.body().result.disponible) {
-                                                Toast.makeText(ComposeActivity.this, String.format("Ship item %d", position), Toast.LENGTH_SHORT).show();
+                                        RequestItemResponse res =response.body();
+                                        assert res != null;
+                                        if (res.result != null) {
+                                            if (res.result.disponible) {
                                                 int slotNo = position + 1;//出货的货道号 dispensing slot number
                                                 String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
                                                 String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
                                                 String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+                                                Shipment shipment = new Shipment(activo.idCelda,currrentUser.mId,tradeNo,res.result.idActivo,res.result.keyActivo,activo.objectType);
+                                                dataSource.insertShipment(shipment);
                                                 TcnVendIF.getInstance().ship(slotNo, shipMethod, amount, tradeNo);
                                             } else {
                                                 Snackbar.make(view, "El usuario --- no tiene asignado este activo",
@@ -361,23 +466,20 @@ public class ComposeActivity extends TcnMainActivity {
                                                 Snackbar.LENGTH_LONG).show();
                                     }
                                     loadingDialog.dismiss();
+                                    }catch(Exception e){
+                                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
+                                    }
                                 }
 
                                 @Override
                                 public void onFailure(Call<RequestItemResponse> call, Throwable t) {
-                                    loadingDialog.dismiss();
+                                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
                                     Log.d("DEBUG_APP_API",t.getLocalizedMessage());
-                                    Snackbar.make(view, "Ocurrio un error inesperado",
-                                            Snackbar.LENGTH_LONG).show();
+                                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
                                     call.cancel();
                                 }
                             });
-
-
-                            Log.d("DEBUG_APP", "ITEMCLICKED");
-
                         }else {
-                            loadingDialog.dismiss();
                             Snackbar.make(view,"Por favor, antes de solicitar un activo, realice una marcación con su credencial",
                                     Snackbar.LENGTH_LONG).show();
                         }
@@ -418,44 +520,88 @@ public class ComposeActivity extends TcnMainActivity {
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPMENT_FAILURE:
-                    makeToast(String.format("Command_SHIPMENT FAILURE %s",cEventInfo.m_lParam4));
+                    String loadText = "Error de dispensación, llame al servicio de atención al cliente";
+                    String loadTitle = "";
+                    if (null != m_OutDialog) {
+                        m_OutDialog.cancel();
+                    }
+                    if (null == m_LoadingDialog) {
+                        m_LoadingDialog = new LoadingDialog(ComposeActivity.this, loadText, loadTitle);
+                    }
+                    m_LoadingDialog.setLoadText(loadText);
+                    m_LoadingDialog.setTitle(loadTitle);
+                    m_LoadingDialog.setShowTime(3);
+                    m_LoadingDialog.show();
                     AsyncTask.execute(()-> {
                                 dataSource.updateShipmentState(ShipmentState.FAILURE.ordinal(), cEventInfo.m_lParam4);
                             });
-                    loadingDialog.dismiss();
-                    messageDialog.show();
+                    closeSession();
 //                    TcnVendIF.getInstance().closeTrade(true);
 //                    TcnUtilityUI.getToast(ComposeActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
                 case TcnVendEventID.COMMAND_SHIPMENT_FAULT:
-                    makeToast(String.format("Command_SHIPMENT FAULT %s",cEventInfo.m_lParam4));
+                    if ((cEventInfo.m_lParam4 != null) && ((cEventInfo.m_lParam4).length() > 0)) {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(ComposeActivity.this, String.valueOf(cEventInfo.m_lParam1), cEventInfo.m_lParam4);
+                        } else {
+                            m_OutDialog.setText(cEventInfo.m_lParam4);
+                        }
+                        m_OutDialog.cleanData();
+                    } else {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(ComposeActivity.this, String.valueOf(cEventInfo.m_lParam1), getString(R.string.ui_base_notify_shipping));
+                        } else {
+                            m_OutDialog.setText("Porfavor spere");
+                        }
+                    }
+                    m_OutDialog.setNumber(String.valueOf(cEventInfo.m_lParam1));
+                    m_OutDialog.show();
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.FAULT.ordinal(),cEventInfo.m_lParam4);
                     });
-                    loadingDialog.dismiss();
+                    closeSession();
 //                    TcnUtilityUI.getToast(ComposeActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPPING:
-                    makeToast(String.format("Command_SHIPPING %s -- %s -- %s",cEventInfo.m_lParam4,cEventInfo.m_lParam3,cEventInfo.m_lParam2));
+                    if ((cEventInfo.m_lParam4 != null) && ((cEventInfo.m_lParam4).length() > 0)) {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(ComposeActivity.this, String.valueOf(cEventInfo.m_lParam1), cEventInfo.m_lParam4);
+                        } else {
+                            m_OutDialog.setText(cEventInfo.m_lParam4);
+                        }
+                        m_OutDialog.cleanData();
+                    } else {
+                        if (m_OutDialog == null) {
+                            m_OutDialog = new OutDialog(ComposeActivity.this, String.valueOf(cEventInfo.m_lParam1), "Porfavor espere");
+                        } else {
+                            m_OutDialog.setText("Porfavor espere");
+                        }
+                    }
+                    m_OutDialog.setNumber(String.valueOf(cEventInfo.m_lParam1));
+                    m_OutDialog.show();
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.SHIPPING.ordinal(),cEventInfo.m_lParam4);
                     });
-                    loadingDialog.setMessage("Dispensando activo...");
-
-                    Log.d("DEBUG_APP_SHIPPING",cEventInfo.m_lParam4);
-//                    AsyncTask.execute(()-> {
-//                        Shipment shipment = new Shipment() ;
-//                    });
-//                    TcnUtilityUI.getToast(ComposeActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPMENT_SUCCESS:
-                    makeToast(String.format("Command_SHIPMENT SUCCESS %s -- %s -- %s",cEventInfo.m_lParam4,cEventInfo.m_lParam3,cEventInfo.m_lParam2));
+                    if (null != m_OutDialog) {
+                        m_OutDialog.cancel();
+                    }
+                    if (m_LoadingDialog == null) {
+                        m_LoadingDialog = new LoadingDialog(ComposeActivity.this, "Entrega exitosa", "Recoge tu producto");
+                    } else {
+                        m_LoadingDialog.setLoadText("Entrega exitosa");
+                        m_LoadingDialog.setTitle("Recoge tu producto");
+                    }
+                    m_LoadingDialog.setShowTime(3);
+                    m_LoadingDialog.show();
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.SUCCESS.ordinal(),cEventInfo.m_lParam4);
+                        dataSource.requestDispensar(cEventInfo.m_lParam4);
                     });
-                    loadingDialog.dismiss();
+                    closeSession();
 //                    TcnUtilityUI.getToast(ComposeActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
             }

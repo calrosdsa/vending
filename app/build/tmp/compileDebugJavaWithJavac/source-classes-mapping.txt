@@ -1,3 +1,6 @@
+com/tcn/sdk/springdemo/presentation/adapter/LogsAdapter.java
+ com.tcn.sdk.springdemo.presentation.adapter.LogsAdapter
+ com.tcn.sdk.springdemo.presentation.adapter.LogsAdapter$MyView
 com/tcn/sdk/springdemo/presentation/Resources.java
  com.tcn.sdk.springdemo.presentation.Resources
 com/tcn/sdk/springdemo/domain/repository/ApiInterface.java
@@ -33,9 +36,14 @@ com/tcn/sdk/springdemo/presentation/GropInfoBack.java
  com.tcn.sdk.springdemo.presentation.GropInfoBack
 com/tcn/sdk/springdemo/presentation/TcnMainActivity.java
  com.tcn.sdk.springdemo.presentation.TcnMainActivity
+com/tcn/sdk/springdemo/domain/util/FileLogger.java
+ com.tcn.sdk.springdemo.domain.util.FileLogger
 com/tcn/sdk/springdemo/data/repository/LocalAppDataSource.java
  com.tcn.sdk.springdemo.data.repository.LocalAppDataSource
  com.tcn.sdk.springdemo.data.repository.LocalAppDataSource$1
+ com.tcn.sdk.springdemo.data.repository.LocalAppDataSource$2
+com/tcn/sdk/springdemo/data/dto/DispensarResponse.java
+ com.tcn.sdk.springdemo.data.dto.DispensarResponse
 com/tcn/sdk/springdemo/presentation/DialogInput.java
  com.tcn.sdk.springdemo.presentation.DialogInput
  com.tcn.sdk.springdemo.presentation.DialogInput$1
@@ -120,6 +128,9 @@ com/tcn/sdk/springdemo/presentation/adapter/MainSliderAdapter.java
 com/tcn/sdk/springdemo/presentation/MySlipSwitch.java
  com.tcn.sdk.springdemo.presentation.MySlipSwitch
  com.tcn.sdk.springdemo.presentation.MySlipSwitch$OnSwitchListener
+com/tcn/sdk/springdemo/presentation/LogActivity.java
+ com.tcn.sdk.springdemo.presentation.LogActivity
+ com.tcn.sdk.springdemo.presentation.LogActivity$1
 controller/VendService.java
  controller.VendService
  controller.VendService$1
@@ -157,6 +168,8 @@ com/tcn/sdk/springdemo/presentation/MenuActivity.java
  com.tcn.sdk.springdemo.presentation.MenuActivity
  com.tcn.sdk.springdemo.presentation.MenuActivity$1
  com.tcn.sdk.springdemo.presentation.MenuActivity$VendListener
+com/tcn/sdk/springdemo/data/dto/RequestDispensar.java
+ com.tcn.sdk.springdemo.data.dto.RequestDispensar
 com/tcn/sdk/springdemo/data/dao/ShipmentDao.java
  com.tcn.sdk.springdemo.data.dao.ShipmentDao
 com/tcn/sdk/springdemo/data/models/ShipmentState.java
@@ -167,6 +180,9 @@ com/tcn/sdk/springdemo/Injection.java
  com.tcn.sdk.springdemo.Injection
 com/tcn/sdk/springdemo/BuildConfig.java
  com.tcn.sdk.springdemo.BuildConfig
+com/tcn/sdk/springdemo/presentation/adapter/ActivoAdapter.java
+ com.tcn.sdk.springdemo.presentation.adapter.ActivoAdapter
+ com.tcn.sdk.springdemo.presentation.adapter.ActivoAdapter$MyView
 com/tcn/sdk/springdemo/presentation/TcnParamStandJs.java
  com.tcn.sdk.springdemo.presentation.TcnParamStandJs
 com/tcn/sdk/springdemo/data/models/Shipment.java

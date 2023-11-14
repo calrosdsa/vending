@@ -77,7 +77,11 @@ public class CeldaAdapter  extends RecyclerView.Adapter<CeldaAdapter.MyView> {
 
         // Set the text of each item of
         // Recycler view with the list items
-        holder.textView.setText(String.valueOf(list.get(position).mId));
+        Celda celda = list.get(position);
+        if(celda.mCanShow){
+        holder.textView.setText(String.valueOf(celda.mId));
+        holder.itemView.findViewById(R.id.cardview).setMinimumWidth(130);
+        }
     }
 
     // Override getItemCount which Returns

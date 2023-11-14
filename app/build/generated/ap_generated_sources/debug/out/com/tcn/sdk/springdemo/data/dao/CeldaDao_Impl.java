@@ -108,7 +108,7 @@ public class CeldaDao_Impl implements CeldaDao {
 
   @Override
   public Flowable<List<Celda>> observeCeldas() {
-    final String _sql = "select * from celda where mCanShow = 1";
+    final String _sql = "select * from celda";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return RxRoom.createFlowable(__db, new String[]{"celda"}, new Callable<List<Celda>>() {
       @Override

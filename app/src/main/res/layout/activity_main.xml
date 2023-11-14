@@ -20,32 +20,38 @@
     <ss.com.bannerslider.Slider
         android:id="@+id/banner_slider1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:padding="15dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="right"
+        android:padding="15dp"
         >
-    <Button
-        android:id="@+id/mtitle"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="DSA"
-        >
-    </Button>
-
     <Button
         android:id="@+id/hiddenButton"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:text=""
         android:background="@color/ui_base_transparent"
-        >
-    </Button>
+        />
+
+
+    <Button
+        android:id="@+id/mtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbutton"
+        android:textColor="@color/ui_base_white"
+        android:text="Jorge"
+        />
+
+
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -57,18 +63,13 @@
 
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1F"
-        android:textSize="20sp"
-        />
+
     <!--Recycler View widget-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/row_1"
         android:scrollbars="horizontal"
-        android:paddingVertical="10dp"
-        android:layout_marginTop="10dp"
+        android:paddingVertical="5dp"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="false"
@@ -77,12 +78,51 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/row_2"
         android:scrollbars="horizontal"
-        android:paddingVertical="10dp"
-        android:layout_marginTop="10dp"
+        android:paddingVertical="5dp"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="false"
         android:layout_centerHorizontal="false" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/row_3"
+            android:scrollbars="horizontal"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="false"
+            android:layout_centerHorizontal="false" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/row_4"
+            android:scrollbars="horizontal"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="false"
+            android:layout_centerHorizontal="false" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/row_5"
+            android:scrollbars="horizontal"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="false"
+            android:layout_centerHorizontal="false" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/row_6"
+            android:scrollbars="horizontal"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="false"
+            android:layout_centerHorizontal="false" />
 
     </LinearLayout>
 

@@ -11,18 +11,24 @@ public class Shipment {
     @PrimaryKey
     public String mId;
     public long mCreatedAt;
-    public int mSlotNumber;
+    public String mIdCelda;
+    public String mIdActivo;
+    public String mKeyActivo;
+    public String mObjectType;
     public String mIdUser;
     public boolean mIsVerified = false;
     public int estado = ShipmentState.SHIPPING.ordinal();
 
 
     @Ignore
-    public Shipment(int slotNumber,String idUser,String id){
+    public Shipment(String idCelda,String idUser,String id,String idActivo,String keyActivo,String objectType){
         this.mCreatedAt = System.currentTimeMillis();
-        this.mSlotNumber = slotNumber;
+        this.mIdCelda = idCelda;
         this.mIdUser = idUser;
         this.mId = id;
+        this.mKeyActivo = keyActivo;
+        this.mIdActivo = idActivo;
+        this.mObjectType = objectType;
     }
 
     public Shipment() {

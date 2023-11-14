@@ -11,6 +11,16 @@
     android:paddingHorizontal="15dp"
     android:paddingTop="55dp"
     android:id="@+id/relativelayout">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        />
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="425dp"
@@ -65,8 +75,18 @@
         android:textColor="@color/ui_base_whitesmoke"
         android:text="Fusionar"
         android:layout_marginRight="20dp"
-        >
-    </Button>
+        />
+
+        <Button
+            android:id="@+id/view_logs"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/roundedbutton"
+            android:textColor="@color/ui_base_whitesmoke"
+            android:text="Ver logs"
+            android:layout_marginRight="20dp"
+            />
+
         <TextView
             android:id="@+id/position"
             android:layout_width="match_parent"
@@ -102,7 +122,7 @@
         />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/row_3"
+        android:id="@+id/row_2"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
         android:layout_width="wrap_content"
@@ -119,7 +139,7 @@
         />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/row_4"
+        android:id="@+id/row_3"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
         android:layout_width="wrap_content"
@@ -136,7 +156,7 @@
         />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/row_5"
+        android:id="@+id/row_4"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
         android:layout_width="wrap_content"
@@ -153,7 +173,7 @@
         />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/row_6"
+        android:id="@+id/row_5"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
         android:layout_width="wrap_content"
@@ -170,7 +190,7 @@
         />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/row_2"
+        android:id="@+id/row_6"
         android:scrollbars="horizontal"
         android:paddingVertical="10dp"
         android:layout_width="wrap_content"

@@ -1,7 +1,6 @@
 package com.tcn.sdk.springdemo.data.models;
 
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -9,12 +8,14 @@ import android.support.annotation.NonNull;
 public class Activo {
     @NonNull
     @PrimaryKey
-    public String id;
+    public String idCelda;
     public int slotN;
     public String name;
     public int cantidad;
     public int celdas;
     public int row;
+    public String objectType;
+    public boolean enabled;
 
 //    @Ignore
 //    public Activo(int id,int slotNumber,int rowNumber){

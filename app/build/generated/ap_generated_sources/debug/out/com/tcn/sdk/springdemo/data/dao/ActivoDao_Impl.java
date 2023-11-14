@@ -27,15 +27,15 @@ public class ActivoDao_Impl implements ActivoDao {
     this.__insertionAdapterOfActivo = new EntityInsertionAdapter<Activo>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `activo`(`id`,`slotN`,`name`,`cantidad`,`celdas`,`row`) VALUES (?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `activo`(`idCelda`,`slotN`,`name`,`cantidad`,`celdas`,`row`,`objectType`,`enabled`) VALUES (?,?,?,?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Activo value) {
-        if (value.id == null) {
+        if (value.idCelda == null) {
           stmt.bindNull(1);
         } else {
-          stmt.bindString(1, value.id);
+          stmt.bindString(1, value.idCelda);
         }
         stmt.bindLong(2, value.slotN);
         if (value.name == null) {
@@ -46,6 +46,14 @@ public class ActivoDao_Impl implements ActivoDao {
         stmt.bindLong(4, value.cantidad);
         stmt.bindLong(5, value.celdas);
         stmt.bindLong(6, value.row);
+        if (value.objectType == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindString(7, value.objectType);
+        }
+        final int _tmp;
+        _tmp = value.enabled ? 1 : 0;
+        stmt.bindLong(8, _tmp);
       }
     };
   }
@@ -70,22 +78,28 @@ public class ActivoDao_Impl implements ActivoDao {
       public List<Activo> call() throws Exception {
         final Cursor _cursor = __db.query(_statement);
         try {
-          final int _cursorIndexOfId = _cursor.getColumnIndexOrThrow("id");
+          final int _cursorIndexOfIdCelda = _cursor.getColumnIndexOrThrow("idCelda");
           final int _cursorIndexOfSlotN = _cursor.getColumnIndexOrThrow("slotN");
           final int _cursorIndexOfName = _cursor.getColumnIndexOrThrow("name");
           final int _cursorIndexOfCantidad = _cursor.getColumnIndexOrThrow("cantidad");
           final int _cursorIndexOfCeldas = _cursor.getColumnIndexOrThrow("celdas");
           final int _cursorIndexOfRow = _cursor.getColumnIndexOrThrow("row");
+          final int _cursorIndexOfObjectType = _cursor.getColumnIndexOrThrow("objectType");
+          final int _cursorIndexOfEnabled = _cursor.getColumnIndexOrThrow("enabled");
           final List<Activo> _result = new ArrayList<Activo>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Activo _item;
             _item = new Activo();
-            _item.id = _cursor.getString(_cursorIndexOfId);
+            _item.idCelda = _cursor.getString(_cursorIndexOfIdCelda);
             _item.slotN = _cursor.getInt(_cursorIndexOfSlotN);
             _item.name = _cursor.getString(_cursorIndexOfName);
             _item.cantidad = _cursor.getInt(_cursorIndexOfCantidad);
             _item.celdas = _cursor.getInt(_cursorIndexOfCeldas);
             _item.row = _cursor.getInt(_cursorIndexOfRow);
+            _item.objectType = _cursor.getString(_cursorIndexOfObjectType);
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfEnabled);
+            _item.enabled = _tmp != 0;
             _result.add(_item);
           }
           return _result;

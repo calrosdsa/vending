@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Result {
     public boolean disponible;
-    public List<String> activoKey;
+    public String idActivo;
+    public String keyActivo;
     public int codeUser;
 }

@@ -15,7 +15,7 @@ import io.reactivex.Flowable;
 @Dao
 public interface CeldaDao {
 
-    @Query("select * from celda where mCanShow = 1")
+    @Query("select * from celda")
     Flowable<List<Celda>> observeCeldas();
 
 

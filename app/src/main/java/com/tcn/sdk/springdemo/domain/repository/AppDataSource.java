@@ -1,5 +1,6 @@
 package com.tcn.sdk.springdemo.domain.repository;
 
+import com.tcn.sdk.springdemo.data.dto.RequestDispensar;
 import com.tcn.sdk.springdemo.data.dto.RequestItem;
 import com.tcn.sdk.springdemo.data.dto.RequestItemResponse;
 import com.tcn.sdk.springdemo.data.models.Activo;
@@ -34,6 +35,7 @@ public interface AppDataSource {
 
     //apicalls
     Call<RequestItemResponse> requestActivo(RequestItem r);
+    void requestDispensar(String id);
 
     void getActivos();
 }
