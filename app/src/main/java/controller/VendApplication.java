@@ -1,6 +1,9 @@
 package controller;
 
 
+import androidx.work.Configuration;
+import androidx.work.WorkManager;
+
 import com.tcn.springboard.control.TcnShareUseData;
 import com.tcn.springboard.control.TcnVendApplication;
 import com.tcn.springboard.control.TcnVendIF;
@@ -10,10 +13,16 @@ import com.tcn.springboard.control.TcnVendIF;
  * 作者 Author：Jiancheng,Song on 2016/5/31 15:53
  * 邮箱 mailbox：m68013@qq.com
  */
-public class VendApplication extends TcnVendApplication {
+public class VendApplication extends TcnVendApplication   {
     @Override
     public void onCreate() {
         super.onCreate();
+//        TcnShareUseData.getInstance().setBoardSerPortFirst("/dev/ttyS2");
+
+//        Configuration conf = new Configuration.Builder()
+//                .setMinimumLoggingLevel(android.util.Log.INFO)
+//                .build();
+//        WorkManager.initialize(this, conf);
 //        TcnShareUseData.getInstance().setBoardSerPortFirst("/dev/ttyS1");
 //        TcnShareUseData.getInstance().setBoardType("thj");
 //        TcnShareUseData.getInstance().setSerPortGroupMapFirst("0");

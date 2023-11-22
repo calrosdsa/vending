@@ -79,7 +79,7 @@ public class CeldaAdapter  extends RecyclerView.Adapter<CeldaAdapter.MyView> {
         // Recycler view with the list items
         Celda celda = list.get(position);
         if(celda.mCanShow){
-        holder.textView.setText(String.valueOf(celda.mId));
+        holder.textView.setText(String.valueOf(celda.mSlotNumber));
         holder.itemView.findViewById(R.id.cardview).setMinimumWidth(130);
         }
     }

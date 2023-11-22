@@ -7,8 +7,14 @@ import android.arch.persistence.room.Query;
 
 import com.tcn.sdk.springdemo.data.models.Celda;
 import com.tcn.sdk.springdemo.data.models.Shipment;
+
+import java.util.List;
+
 @Dao
 public interface ShipmentDao {
+    @Query("select * from shipment where mIsVerified = 0 and estado = :estado")
+    List<Shipment> getUnverifiedSuccessfullShipments(int estado);
+
     @Query("select * from shipment where mId = :id")
     Shipment getShipment(String id);
 

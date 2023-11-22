@@ -1,10 +1,12 @@
 package com.tcn.sdk.springdemo.presentation;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -96,14 +98,25 @@ public class MenuActivity extends TcnMainActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("DEBUG_APP_LIST_2","REGISTER LISTENER");
         TcnVendIF.getInstance().registerListener(m_vendListener);
+//        TcnVendIF.getInstance().setOnShipListener();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d("DEBUG_APP_LIST_2","UNREGISTER LISTENER");
         TcnVendIF.getInstance().unregisterListener(m_vendListener);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        m_vendListener = null;
+        Log.d("DEBUG_APP_LIST_2","DESTROY LISTENER");
+    }
+
 
     protected void  initView(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_menu);
@@ -124,11 +137,12 @@ public class MenuActivity extends TcnMainActivity {
         Button testSlotB = findViewById(R.id.testSlot);
         Button viewLogs = findViewById(R.id.view_logs);
         testSlotB.setOnClickListener(view -> {
+
             int slotNo = positionSlot+1;//出货的货道号 dispensing slot number
             String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
             String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
             String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
-            TcnVendIF.getInstance().ship(slotNo, shipMethod, amount, tradeNo);
+            TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
         });
         splitAllB.setOnClickListener(view -> {
             splitAll();
@@ -142,8 +156,10 @@ public class MenuActivity extends TcnMainActivity {
 //            showMessage();(hubConnection.getConnectionState().name());
         });
         viewLogs.setOnClickListener(view-> {
-            Intent intent = new Intent(this,LogActivity.class);
-            startActivity(intent);
+
+//            Intent intent = new Intent(this,LogActivity.class);
+//            startActivity(intent);
+            clearAppData();
         });
 
         loadingDialog = new SpotsDialog.Builder().setContext(MenuActivity.this)
@@ -155,6 +171,18 @@ public class MenuActivity extends TcnMainActivity {
                 .setPositiveButton("OK", null)
 //                .setNegativeButton("Cancel", null)
                 .create();
+    }
+
+    private void clearAppData() {
+        try {
+            // clearing app data
+                String packageName = getApplicationContext().getPackageName();
+                Runtime runtime = Runtime.getRuntime();
+                runtime.exec("pm clear "+packageName);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -329,6 +357,8 @@ public class MenuActivity extends TcnMainActivity {
 
             @Override
             public void onLongItemClick(View view, int position) {
+//                Intent mainIntent = new Intent(MenuActivity.this, MainAct.class);
+//                MenuActivity.this.startActivity(mainIntent);
                 Log.d("DEBUG_APP", "ITEMLOBGCLICKED");
                 // do whatever
             }
@@ -457,40 +487,51 @@ public class MenuActivity extends TcnMainActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(celdas -> {
                     mCeldas = celdas;
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                        Map<Integer, List<Celda>> groupCeldas =
-                                celdas.stream().collect(Collectors.groupingBy(w -> w.mRowNumber));
-
-                        for (Map.Entry<Integer, List<Celda>> entry : groupCeldas.entrySet()) {
-                            switch (entry.getKey()) {
-                                case 1:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView1.setAdapter(adapter);
-                                case 2:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView2.setAdapter(adapter);
-                                case 3:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView3.setAdapter(adapter);
-                                case 4:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView4.setAdapter(adapter);
-                                case 5:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView5.setAdapter(adapter);
-                                case 6:
-                                    adapter = new CeldaAdapter(entry.getValue());
-                                    recyclerView6.setAdapter(adapter);
-                            }
+                    Log.d("DEBUG_APP","RETRIEVE CELDAS");
+                    Map<Integer, List<Celda>> groupCeldas =
+                            celdas.stream().collect(Collectors.groupingBy(w -> w.mRowNumber));
+                    Log.d("DEBUG_APP",String.format("RETRIEVE CELDAS %s",groupCeldas.size()));
+                    for (Map.Entry<Integer, List<Celda>> entry : groupCeldas.entrySet()) {
+                        switch (entry.getKey()) {
+                            case 1:
+                                Log.d("DEBUG_APP","1");
+                                adapter = new CeldaAdapter(entry.getValue());
+                                recyclerView1.setAdapter(adapter);
+                                break;
+                            case 2:
+                                Log.d("DEBUG_APP","2");
+                                adapter = new CeldaAdapter(entry.getValue());
+                                recyclerView2.setAdapter(adapter);
+                                break;
+                            case 3:
+                                Log.d("DEBUG_APP","3");
+                                adapter = new CeldaAdapter(entry.getValue());
+                                recyclerView3.setAdapter(adapter);
+                                break;
+                            case 4:
+                                Log.d("DEBUG_APP","4");
+                                adapter = new CeldaAdapter(entry.getValue());
+                                recyclerView4.setAdapter(adapter);
+                                break;
+                            case 5:
+                                Log.d("DEBUG_APP","5");
+                                adapter = new CeldaAdapter(entry.getValue());
+                                recyclerView5.setAdapter(adapter);
+                                break;
+                            case 6:
+                                Log.d("DEBUG_APP","6");
+                                adapter = new CeldaAdapter(entry.getValue());
+                                recyclerView6.setAdapter(adapter);
+                                break;
                         }
-
                     }
 
                 }, thorwable -> FileLogger.logError("observeCeldas",thorwable.getLocalizedMessage())));
     }
 
 
-    private MenuActivity.VendListener m_vendListener = new VendListener();
+
+    private VendListener m_vendListener = new VendListener();
     private class VendListener implements TcnVendIF.VendEventListener {
         @Override
         public void VendEvent(VendEventInfo cEventInfo) {
@@ -518,9 +559,7 @@ public class MenuActivity extends TcnMainActivity {
                     m_LoadingDialog.setTitle(loadTitle);
                     m_LoadingDialog.setShowTime(3);
                     m_LoadingDialog.show();
-                    AsyncTask.execute(()-> {
-                        dataSource.updateShipmentState(ShipmentState.FAILURE.ordinal(), cEventInfo.m_lParam4);
-                    });
+                    TcnVendIF.getInstance().unregisterListener(m_vendListener);
                     break;
                 case TcnVendEventID.COMMAND_SHIPMENT_FAULT:
                     AsyncTask.execute(()->{
@@ -564,7 +603,6 @@ public class MenuActivity extends TcnMainActivity {
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.SHIPPING.ordinal(),cEventInfo.m_lParam4);
                     });
-
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPMENT_SUCCESS:
@@ -583,6 +621,7 @@ public class MenuActivity extends TcnMainActivity {
                     }
                     m_LoadingDialog.setShowTime(3);
                     m_LoadingDialog.show();
+                    TcnVendIF.getInstance().unregisterListener(m_vendListener);
 //                    TcnUtilityUI.getToast(MenuActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
 
@@ -599,4 +638,17 @@ public class MenuActivity extends TcnMainActivity {
 
         }
     }
+
+//    protected void restoreAppData(){
+//        final RoomBackup roomBackup = new RoomBackup(MainActivityJava.this);
+//        roomBackup.database(FruitDatabase.Companion.getInstance(getApplicationContext()));
+//        roomBackup.enableLogDebug(enableLog);
+//        roomBackup.backupIsEncrypted(encryptBackup);
+//        roomBackup.backupLocation(RoomBackup.BACKUP_FILE_LOCATION_INTERNAL);
+//        roomBackup.maxFileCount(5);
+//        roomBackup.onCompleteListener((success, message, exitCode) -> {
+//            Log.d(TAG, "success: " + success + ", message: " + message + ", exitCode: " + exitCode);
+//            if (success) roomBackup.restartApp(new Intent(getApplicationContext(), MainActivityJava.class));
+//        });
+//        roomBackup.backup();    }
 }

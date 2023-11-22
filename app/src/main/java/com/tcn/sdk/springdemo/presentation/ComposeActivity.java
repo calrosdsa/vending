@@ -1,12 +1,21 @@
 package com.tcn.sdk.springdemo.presentation;
 
+import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,9 +29,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.work.Configuration;
+import androidx.work.Constraints;
+import androidx.work.NetworkType;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
+import androidx.work.WorkRequest;
+
 import com.google.gson.Gson;
 import com.tcn.sdk.springdemo.Injection;
 import com.tcn.sdk.springdemo.R;
+import com.tcn.sdk.springdemo.data.AppDatabase;
+import com.tcn.sdk.springdemo.data.Backup;
 import com.tcn.sdk.springdemo.data.models.Activo;
 import com.tcn.sdk.springdemo.data.models.Shipment;
 import com.tcn.sdk.springdemo.domain.util.FileLogger;
@@ -37,10 +55,17 @@ import com.tcn.sdk.springdemo.data.models.ShipmentState;
 import com.tcn.sdk.springdemo.data.models.User;
 import com.tcn.sdk.springdemo.domain.repository.AppDataSource;
 import com.tcn.springboard.control.PayMethod;
+import com.tcn.springboard.control.TcnShareUseData;
 import com.tcn.springboard.control.TcnVendEventID;
 import com.tcn.springboard.control.TcnVendIF;
 import com.tcn.springboard.control.VendEventInfo;
 
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
@@ -51,6 +76,11 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import android_serialport_api.SerialPortController;
+import controller.OverlayService;
+import controller.SyncShipmentsSchedule;
+import controller.VendApplication;
+import controller.VendIF;
 import dev.gustavoavila.websocketclient.WebSocketClient;
 import dmax.dialog.SpotsDialog;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -90,7 +120,14 @@ public class ComposeActivity extends TcnMainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        logger = new FileLogger();
+        Bundle extras = getIntent().getExtras();
+
+        if (!Settings.canDrawOverlays(this)) {
+            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
+            startActivityForResult(intent, 0);
+        }else{
+//            startOverlayService();
+        };
         dataSource = Injection.provideUserDataSource(this);
 
         mButton = findViewById(R.id.mtitle);
@@ -102,26 +139,101 @@ public class ComposeActivity extends TcnMainActivity {
             return false;
         });
         mButton.setOnClickListener(view -> {
-            String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
-            new Thread(()->{
-                TcnVendIF.getInstance().reqShip(1, shipMethod, "1", UUID.randomUUID().toString());
-            }).start();
-            new Thread(()->{
-                TcnVendIF.getInstance().reqShip(3, shipMethod, "1", UUID.randomUUID().toString());
-            }).start();
-
 //            wSocker.start();
 //            makeToast(hubConnection.getConnectionState().name());
         });
+
+
+//        mButton.setVisibility(View.INVISIBLE);
         AsyncTask.execute(()->dataSource.getActivos());
         initView();
+        scheduleJob();
+
+
+        if (extras != null) {
+            String name = extras.getString("name");
+            String id = extras.getString("id");
+            Log.d("DEBUG_APP_",name+id);
+            currrentUser = new User(id,name);
+//                currrentUser = new User("jorge","123123123");
+            mButton.setVisibility(View.VISIBLE);
+            mButton.setText(name);
+            Runnable delayedTask = () -> {
+                closeSession();
+                clearAppData();
+                Log.d("DEBUG_APP_TIMER","456");
+            };
+            mainThreadHandler.postDelayed(delayedTask, 10000);
+
+            //The key argument here must match that used in the other activity
+        }
+    }
+    private void startOverlayService() {
+        Intent intent = new Intent(this, OverlayService.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
+        }
+    }
+
+    private void clearAppData() {
+        try {
+//            Backup.backupDatabase(this);
+            // clearing app data
+//            PendingIntent intent = PendingIntent.getActivity(
+//                    getApplicationContext(),
+//                    0,
+//                    new Intent(getApplicationContext(),ComposeActivity.class),
+//                    PendingIntent.FLAG_IMMUTABLE);
+//            AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//            assert mgr != null;
+//            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 2000, intent);
+//            System.exit(0);
+            String packageName = getApplicationContext().getPackageName();
+            Runtime runtime = Runtime.getRuntime();
+            runtime.exec("pm clear "+packageName);
+
+        } catch (Exception e) {
+            Log.d("DEBUG_APP_EXCP",e.getLocalizedMessage());
+        }
+    }
+
+
+
+    private void restoreDBIntent() {
+        try {
+            Log.d("DEBUG_APP_BACK","CLICKED");
+            File file = new File(Backup.getPath());
+//            Log.d("DEBUG_APP_BACKUP",String.format("%s",file.getTotalSpace()));
+//                String ewe = "dasdas";
+//                FileInputStream inputStream = new FileInputStream("/document/primary:Files/vending");
+            AppDatabase appDatabase = AppDatabase.getInstance(getApplicationContext());
+            appDatabase.close();
+            InputStream inputStream = new FileInputStream(file);
+            Log.d("DEBUG_APP_BACK",inputStream.toString());
+//            if (Backup.validFile(this,fileUri)) {
+                Backup.restoreDatabase(this,inputStream);
+//            } else {
+//                makeToast("Fail to restore");
+//                    Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.restore_failed), 1);
+//            }
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        } catch (IOException e) {
+            Log.d("DEBUG_APP_ERROR",e.getLocalizedMessage());
+            e.printStackTrace();
+        }
+//        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+//        i.setType("*/*");
+//        startActivityForResult(Intent.createChooser(i, "Select DB File"), 12);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         observeActivos();
-        createWebSocketClient();
         FileLogger.init();
 //        FileLogger.addRecordToLog("LOG TEST");
 //        wSocker.start();
@@ -131,100 +243,28 @@ public class ComposeActivity extends TcnMainActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        TcnVendIF.getInstance().registerListener(m_vendListener);
+        Log.d("DEBUG_APP_LIST_1","REGISTER LISTENER");
+//        TcnVendIF.getInstance().registerListener(m_vendListener);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d("DEBUG_APP_LIST_1","UNREGISTER LISTENER");
         TcnVendIF.getInstance().unregisterListener(m_vendListener);
     }
 
-
-    private void createWebSocketClient() {
-        URI uri;
-        try {
-            uri = new URI("ws://172.20.20.76:8000/v1/ws/suscribe/user/");
-        } catch (URISyntaxException e) {
-//            FileLogger.logError("createWebSockerClient",e.getLocalizedMessage());
-            e.printStackTrace();
-            return;
-        }
-
-        //                webSocketClient.send("Hello, World!");
-        WebSocketClient webSocketClient = new WebSocketClient(uri) {
-            @Override
-            public void onOpen() {
-                Log.d("DEBUG_APP_WS", "onOpen");
-//                webSocketClient.send("Hello, World!");
-            }
-
-            @Override
-            public void onTextReceived(String message) {
-                try{
-
-                Gson gson = new Gson();
-                Marcacion obj = gson.fromJson(message, Marcacion.class);
-                Log.d("DEBUG_APP_WS", "onTextReceived" + obj.name);
-                currrentUser = new User(obj.id,obj.name);
-//                currrentUser = new User("jorge","123123123");
-                runOnUiThread(() -> {
-                    mButton.setText(obj.name);
-                    Runnable delayedTask = () -> {
-                       closeSession();
-                        Log.d("DEBUG_APP_TIMER","456");
-                    };
-                    mainThreadHandler.postDelayed(delayedTask, 10000);
-                    // Stuff that updates the UI
-
-                });
-                }catch(Exception e){
-                    FileLogger.logError("onTextReceived",e.getLocalizedMessage());
-                }
-            }
-
-            @Override
-            public void onBinaryReceived(byte[] data) {
-                Log.d("DEBUG_APP_WS", "onTextReceived" + Arrays.toString(data));
-            }
-
-            @Override
-            public void onPingReceived(byte[] data) {
-                Log.d("DEBUG_APP_WS", "onTextReceived" + Arrays.toString(data));
-            }
-
-            @Override
-            public void onPongReceived(byte[] data) {
-                Log.d("DEBUG_APP_WS", "onPongReceived" + Arrays.toString(data));
-            }
-
-            @Override
-            public void onException(Exception e) {
-                Log.d("DEBUG_APP_WS", e.getLocalizedMessage());
-                System.out.println(e.getMessage());
-                FileLogger.logError("ws_onException",e.getLocalizedMessage());
-            }
-
-            @Override
-            public void onCloseReceived(int reason, String description) {
-                System.out.println("onCloseReceived");
-                Log.d("DEBUG_APP_WS", description);
-                FileLogger.logError("ws_onCloseRecived",description);
-
-            }
-
-        };
-
-        webSocketClient.setConnectTimeout(10000);
-        webSocketClient.setReadTimeout(60000);
-//        webSocketClient.addHeader("Origin", "http://developer.example.com");
-        webSocketClient.enableAutomaticReconnection(5000);
-        webSocketClient.connect();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        m_vendListener = null;
+        Log.d("DEBUG_APP_LIST_1","DESTROY LISTENER");
     }
 
     protected void closeSession(){
         mButton.setVisibility(View.GONE);
         currrentUser = null;
+        TcnVendIF.getInstance().unregisterListener(m_vendListener);
     }
 
     protected void observeActivos() {
@@ -241,21 +281,27 @@ public class ComposeActivity extends TcnMainActivity {
                             case 1:
                                 adapter = new ActivoAdapter(entry.getValue());
                                 recyclerView1.setAdapter(adapter);
+                                break;
                             case 2:
                                 adapter = new ActivoAdapter(entry.getValue());
                                 recyclerView2.setAdapter(adapter);
+                                break;
                             case 3:
                                 adapter = new ActivoAdapter(entry.getValue());
                                 recyclerView3.setAdapter(adapter);
+                                break;
                             case 4:
                                 adapter = new ActivoAdapter(entry.getValue());
                                 recyclerView4.setAdapter(adapter);
+                                break;
                             case 5:
                                 adapter = new ActivoAdapter(entry.getValue());
                                 recyclerView5.setAdapter(adapter);
+                                break;
                             case 6:
                                 adapter = new ActivoAdapter(entry.getValue());
                                 recyclerView6.setAdapter(adapter);
+                                break;
                         }
 //                        if(entry.getKey() == 1){
 //                            adapter = new ActivoAdapter(entry.getValue());
@@ -270,13 +316,14 @@ public class ComposeActivity extends TcnMainActivity {
     }
 
     public boolean isSessionEnabled() {
-        if (currrentUser == null) return false;
-
-        long now = System.currentTimeMillis();
-        long now2 = currrentUser.mCreatedAt;
-        long diff = now - now2;
-//        Log.d("DEBUG_APP_SESSION", String.format("%d --- %d = %d", now, now2, TimeUnit.MILLISECONDS.toSeconds(diff)));
-        return TimeUnit.MILLISECONDS.toSeconds(diff) < 120;
+        return true;
+//        if (currrentUser == null) return false;
+//
+//        long now = System.currentTimeMillis();
+//        long now2 = currrentUser.mCreatedAt;
+//        long diff = now - now2;
+////        Log.d("DEBUG_APP_SESSION", String.format("%d --- %d = %d", now, now2, TimeUnit.MILLISECONDS.toSeconds(diff)));
+//        return TimeUnit.MILLISECONDS.toSeconds(diff) < 120;
     }
 
     private void initView() {
@@ -433,64 +480,73 @@ public class ComposeActivity extends TcnMainActivity {
        return  new RecyclerItemClickListener(this, recycler, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                        if(isSessionEnabled()) {
-                            Activo activo = mActivos.get(position);
-                            RequestItem r = new RequestItem(activo.idCelda,currrentUser.mId);
-
-                            Call<RequestItemResponse> call = dataSource.requestActivo(r);
-                            call.enqueue(new Callback<RequestItemResponse>() {
-                                @Override
-                                public void onResponse(Call<RequestItemResponse> call, Response<RequestItemResponse> response) {
-                                    try{
-                                    Log.d("DEBUG_APP_API",response.message());
-                                    Log.d("DEBUG_APP_API",String.format("%s", response.isSuccessful()));
-                                    if (response.isSuccessful()) {
-                                        RequestItemResponse res =response.body();
-                                        assert res != null;
-                                        if (res.result != null) {
-                                            if (res.result.disponible) {
-                                                int slotNo = position + 1;//出货的货道号 dispensing slot number
-                                                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
-                                                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
-                                                String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
-                                                Shipment shipment = new Shipment(activo.idCelda,currrentUser.mId,tradeNo,res.result.idActivo,res.result.keyActivo,activo.objectType);
-                                                dataSource.insertShipment(shipment);
-                                                TcnVendIF.getInstance().ship(slotNo, shipMethod, amount, tradeNo);
-                                            } else {
-                                                Snackbar.make(view, "El usuario --- no tiene asignado este activo",
-                                                        Snackbar.LENGTH_LONG).show();
-                                            }
-                                        }
-                                    }else{
-                                        Snackbar.make(view, "Ocurrio un error inesperado",
-                                                Snackbar.LENGTH_LONG).show();
-                                    }
-                                    loadingDialog.dismiss();
-                                    }catch(Exception e){
-                                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
-                                    }
-                                }
-
-                                @Override
-                                public void onFailure(Call<RequestItemResponse> call, Throwable t) {
-                                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
-                                    Log.d("DEBUG_APP_API",t.getLocalizedMessage());
-                                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
-                                    call.cancel();
-                                }
-                            });
-                        }else {
-                            Snackbar.make(view,"Por favor, antes de solicitar un activo, realice una marcación con su credencial",
-                                    Snackbar.LENGTH_LONG).show();
-                        }
+//                TcnVendIF.getInstance().startWorkThread();
+                TcnVendIF.getInstance().registerListener(m_vendListener);
+                int slotNo = position + 1;//出货的货道号 dispensing slot number
+                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
+                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
+                String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+                TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
+//                        if(isSessionEnabled()) {
+//                            Activo activo = mActivos.get(position);
+//                            RequestItem r = new RequestItem(activo.idCelda,currrentUser.mId);
+//
+//                            Call<RequestItemResponse> call = dataSource.requestActivo(r);
+//                            call.enqueue(new Callback<RequestItemResponse>() {
+//                                @Override
+//                                public void onResponse(Call<RequestItemResponse> call, Response<RequestItemResponse> response) {
+//                                    try{
+//                                    Log.d("DEBUG_APP_API",response.message());
+//                                    Log.d("DEBUG_APP_API",String.format("%s", response.isSuccessful()));
+//                                    if (response.isSuccessful()) {
+//                                        RequestItemResponse res =response.body();
+//                                        assert res != null;
+//                                        if (res.result != null) {
+//                                            if (res.result.disponible) {
+//                                                int slotNo = position + 1;//出货的货道号 dispensing slot number
+//                                                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
+//                                                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
+//                                                String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+//                                                Shipment shipment = new Shipment(activo.idCelda,currrentUser.mId,tradeNo,res.result.idActivo,res.result.keyActivo,activo.objectType);
+//                                                dataSource.insertShipment(shipment);
+//                                                TcnVendIF.getInstance().ship(slotNo, shipMethod, amount, tradeNo);
+//                                            } else {
+//                                                Snackbar.make(view, "El usuario --- no tiene asignado este activo",
+//                                                        Snackbar.LENGTH_LONG).show();
+//                                            }
+//                                        }
+//                                    }else{
+//                                        Snackbar.make(view, "Ocurrio un error inesperado",
+//                                                Snackbar.LENGTH_LONG).show();
+//                                    }
+//                                    loadingDialog.dismiss();
+//                                    }catch(Exception e){
+//                                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
+//                                    }
+//                                }
+//
+//                                @Override
+//                                public void onFailure(Call<RequestItemResponse> call, Throwable t) {
+//                                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
+//                                    Log.d("DEBUG_APP_API",t.getLocalizedMessage());
+//                                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
+//                                    call.cancel();
+//                                }
+//                            });
+//                        }else {
+//                            Snackbar.make(view,"Por favor, antes de solicitar un activo, realice una marcación con su credencial",
+//                                    Snackbar.LENGTH_LONG).show();
+//                        }
 //
             }
 
             @Override
             public void onLongItemClick(View view, int position) {
                 Log.d("DEBUG_APP", "ITEMLOBGCLICKED");
-                Intent mainIntent = new Intent(ComposeActivity.this, MainAct.class);
-                ComposeActivity.this.startActivity(mainIntent);
+                TcnVendIF.getInstance().stopWorkThread();
+
+//                Intent mainIntent = new Intent(ComposeActivity.this, MainAct.class);
+//                ComposeActivity.this.startActivity(mainIntent);
                 // do whatever
             }
         });
@@ -612,7 +668,23 @@ public class ComposeActivity extends TcnMainActivity {
     @Override // com.tcn.app_common.view.TcnMainActivity, android.app.Activity, android.view.Window.Callback
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         return super.dispatchTouchEvent(motionEvent);
+    }
+    protected Constraints constraints = new Constraints.Builder()
+            .setRequiredNetworkType(NetworkType.UNMETERED)
+            .build();
 
+    private void scheduleJob() {
+        JobScheduler jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+        ComponentName componentName = new ComponentName(this, SyncShipmentsSchedule.class);
+
+        JobInfo jobInfo = new JobInfo.Builder(1001, componentName)
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
+                .setPeriodic(1 * 60 * 1000 )
+                .build();
+
+        if (jobScheduler != null) {
+            jobScheduler.schedule(jobInfo);
+        }
     }
 
         @Override

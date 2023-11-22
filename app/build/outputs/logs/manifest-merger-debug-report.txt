@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
-INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
-INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
-INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
 MERGED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\de0151e446039cdc1a9280ae05eb2e08\appcompat-v7-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\3096558a38985002a92148241fdc5dd1\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -16,12 +16,13 @@ MERGED from [com.android.support:recyclerview-v7:26.1.0] D:\AndroidStudio\jbr\ca
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\89b197a7df772f8e9d77e1dcb4660ffa\rxandroid-2.0.1\AndroidManifest.xml:15:1-21:12
 MERGED from [android.arch.persistence.room:rxjava2:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c641e38f0d863fe0ecae8556098810c4\rxjava2-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.persistence.room:guava:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\7cfdb70fc4d9e516ae8decd0537ed76b\guava-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:17:1-123:12
 MERGED from [android.arch.persistence.room:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1934370e5550339690bea12b39e2b900\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\4e6388e4d2d8386d17959dc633465ffd\animated-vector-drawable-26.1.0\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\9c05138ea17506cfb9be762095605c39\support-vector-drawable-26.1.0\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:transition:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\2a946e799d018349a9131ae56b3a7f18\transition-26.1.0\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c081efe360d2ecfbe87509e297f48325\support-v4-26.1.0\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:17:1-30:12
 MERGED from [com.android.support:support-fragment:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\b2e6e17dcc1e8d54c4961f900c8f858f\support-fragment-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-ui:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\969d988f4cb245ca4939ec8deb431faf\support-core-ui-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-utils:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\861153540464e98d449e33361efb140b\support-core-utils-26.1.0\AndroidManifest.xml:17:1-31:12
@@ -29,22 +30,25 @@ MERGED from [com.android.support:support-media-compat:26.1.0] D:\AndroidStudio\j
 MERGED from [com.android.support:support-compat:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a6156778c787bc8b8a4d2f712332c91b\support-compat-26.1.0\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.persistence:db-framework:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\96d0e84c64aa3a461103924defae4f57\db-framework-1.1.1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence:db:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d8cc929439f0c404fa165134981bc04\db-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\8ed9196b52e6da2d713b5f3a55b72c85\livedata-1.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\ba3499d5781b28a83cf5ca68070c5a12\livedata-core-1.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\d5cbe8b0b1251409790892e23d0396e1\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:17:1-30:12
-INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
-INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
-INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1142520bd637e46fa101e7e8c863f8a4\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\8c6d72147bfb9157f053fdddde31e497\viewmodel-1.1.0\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
 	package
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:3:11-43
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-100:12
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-113:12
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:11-69
@@ -58,6 +62,8 @@ ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:6
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:6:22-73
 uses-permission#android.permission.WAKE_LOCK
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:7:5-68
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:23:5-68
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:23:5-68
 	android:name
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:7:22-65
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
@@ -80,6 +86,8 @@ ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:1
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:16:22-64
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:17:5-81
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:25:5-81
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:25:5-81
 	android:name
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:17:22-78
 uses-permission#android.permission.RESTART_PACKAGES
@@ -95,37 +103,47 @@ ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2
 	android:name
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:20:22-77
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:21:5-79
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:26:5-79
 MERGED from [:sdk_auth_lib-release:] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1f0004ddeed05a7b95c49b5635b5b326\sdk_auth_lib-release\AndroidManifest.xml:11:5-79
 MERGED from [:sdk_auth_lib-release:] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1f0004ddeed05a7b95c49b5635b5b326\sdk_auth_lib-release\AndroidManifest.xml:11:5-79
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:24:5-79
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:21:22-76
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:26:22-76
 uses-permission#android.permission.CWJ_GROUP
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:24:5-25:23
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:29:5-30:23
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:24:22-65
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:29:22-65
 uses-permission#android.permission.MTWEAK_USER
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:28:5-70
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:33:5-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:28:22-67
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:33:22-67
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:31:5-70
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:36:5-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:31:22-68
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:36:22-68
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:32:5-80
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:37:5-80
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:32:22-77
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:37:22-77
 uses-permission#android.permission.GET_TASKS
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:34:5-68
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:39:5-68
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:34:22-65
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:39:22-65
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:35:5-78
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:40:5-78
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:35:22-75
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:40:22-75
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:41:5-77
+	android:name
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:41:22-74
+uses-permission#android.permission.DISABLE_KEYGUARD
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:43:5-75
+	android:name
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:43:22-72
 application
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:38:5-98:19
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:45:5-111:19
 MERGED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\de0151e446039cdc1a9280ae05eb2e08\appcompat-v7-26.1.0\AndroidManifest.xml:25:5-29:19
@@ -140,6 +158,8 @@ MERGED from [com.android.support:cardview-v7:26.1.0] D:\AndroidStudio\jbr\caches
 MERGED from [com.android.support:cardview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d64b5052513c769d51b27624bb35b4c\cardview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\efc76bc500edcf09b07e25c94010c0fc\recyclerview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\efc76bc500edcf09b07e25c94010c0fc\recyclerview-v7-26.1.0\AndroidManifest.xml:22:5-26:19
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:27:5-121:19
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:27:5-121:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\4e6388e4d2d8386d17959dc633465ffd\animated-vector-drawable-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\4e6388e4d2d8386d17959dc633465ffd\animated-vector-drawable-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-vector-drawable:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\9c05138ea17506cfb9be762095605c39\support-vector-drawable-26.1.0\AndroidManifest.xml:22:5-26:19
@@ -148,6 +168,8 @@ MERGED from [com.android.support:transition:26.1.0] D:\AndroidStudio\jbr\caches\
 MERGED from [com.android.support:transition:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\2a946e799d018349a9131ae56b3a7f18\transition-26.1.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-v4:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c081efe360d2ecfbe87509e297f48325\support-v4-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c081efe360d2ecfbe87509e297f48325\support-v4-26.1.0\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:22:5-28:19
+MERGED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:22:5-28:19
 MERGED from [com.android.support:support-fragment:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\b2e6e17dcc1e8d54c4961f900c8f858f\support-fragment-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-fragment:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\b2e6e17dcc1e8d54c4961f900c8f858f\support-fragment-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-core-ui:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\969d988f4cb245ca4939ec8deb431faf\support-core-ui-26.1.0\AndroidManifest.xml:25:5-29:19
@@ -158,100 +180,102 @@ MERGED from [com.android.support:support-media-compat:26.1.0] D:\AndroidStudio\j
 MERGED from [com.android.support:support-media-compat:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\f7649c99294c8c3827dab29d571f544a\support-media-compat-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a6156778c787bc8b8a4d2f712332c91b\support-compat-26.1.0\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a6156778c787bc8b8a4d2f712332c91b\support-compat-26.1.0\AndroidManifest.xml:25:5-29:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:42:9-35
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:49:9-35
 	android:label
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:41:9-41
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:9-41
 	android:allowBackup
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:40:9-35
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:47:9-35
 	android:theme
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:43:9-65
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:50:9-65
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:39:9-50
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:9-50
 activity#com.tcn.sdk.springdemo.presentation.ComposeActivity
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:45:9-51:20
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-58:20
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:45:19-63
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:19-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:13-50:29
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-57:29
 action#android.intent.action.MAIN
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:47:17-68
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:17-68
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:47:25-66
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:49:17-76
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:56:17-76
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:49:27-74
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:56:27-74
 activity#com.tcn.sdk.springdemo.presentation.MenuActivity
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:9-56:15
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:60:9-63:15
 	android:configChanges
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:55:13-70
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:62:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:13-54
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:61:13-54
 activity#com.tcn.sdk.springdemo.presentation.LogActivity
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:59:9-62:15
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:66:9-69:15
 	android:configChanges
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:61:13-70
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:68:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:60:13-53
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:67:13-53
 activity#com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:65:9-68:46
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:72:9-75:46
 	android:launchMode
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:68:13-44
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:13-44
 	android:configChanges
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:67:13-70
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:74:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:66:13-69
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:73:13-69
 activity#com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:70:9-73:46
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:77:9-80:46
 	android:launchMode
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:73:13-44
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:13-44
 	android:configChanges
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:72:13-70
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:79:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:71:13-69
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:78:13-69
 activity#com.tcn.sdk.springdemo.presentation.MainAct
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:9-78:46
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:82:9-85:46
 	android:launchMode
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:78:13-44
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:13-44
 	android:configChanges
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:77:13-70
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:76:13-49
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:83:13-49
 activity#com.tcn.sdk.springdemo.presentation.SerialPortSetting
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:9-84:20
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:87:9-91:20
 	android:launchMode
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:81:13-44
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:88:13-44
 	android:configChanges
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:83:13-70
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:90:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:82:13-59
-activity#com.tcn.sdk_auth_lib.floatwindow.FloatActivity
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:86:9-90:20
-	android:launchMode
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:87:13-44
-	android:configChanges
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:13-70
-	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:88:13-74
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:13-59
 receiver#controller.BootBroadcastReceiver
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:92:9-96:20
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:99:9-103:20
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:92:19-66
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:99:19-66
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:93:13-95:29
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:100:13-102:29
 	android:priority
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:93:28-50
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:100:28-50
 action#android.intent.action.BOOT_COMPLETED
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:94:17-79
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:17-79
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:94:25-76
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:25-76
 service#controller.VendService
-ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:97:9-66
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:105:9-58
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:97:18-55
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:105:18-55
+service#controller.OverlayService
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:106:9-108:39
+	android:exported
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:108:13-37
+	android:name
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:107:13-53
+service#controller.SyncShipmentsSchedule
+ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:109:9-110:68
+	android:permission
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:110:9-65
+	android:name
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:109:18-65
 uses-sdk
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
@@ -280,8 +304,8 @@ MERGED from [android.arch.persistence.room:rxjava2:1.1.1] D:\AndroidStudio\jbr\c
 MERGED from [android.arch.persistence.room:rxjava2:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c641e38f0d863fe0ecae8556098810c4\rxjava2-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.3] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c17b26d299806c50d026640195a505cf\multidex-1.0.3\AndroidManifest.xml:20:5-43
-MERGED from [android.arch.persistence.room:guava:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\7cfdb70fc4d9e516ae8decd0537ed76b\guava-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.persistence.room:guava:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\7cfdb70fc4d9e516ae8decd0537ed76b\guava-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:21:5-44
+MERGED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:21:5-44
 MERGED from [android.arch.persistence.room:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1934370e5550339690bea12b39e2b900\runtime-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence.room:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1934370e5550339690bea12b39e2b900\runtime-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\4e6388e4d2d8386d17959dc633465ffd\animated-vector-drawable-26.1.0\AndroidManifest.xml:20:5-44
@@ -292,6 +316,8 @@ MERGED from [com.android.support:transition:26.1.0] D:\AndroidStudio\jbr\caches\
 MERGED from [com.android.support:transition:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\2a946e799d018349a9131ae56b3a7f18\transition-26.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c081efe360d2ecfbe87509e297f48325\support-v4-26.1.0\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\c081efe360d2ecfbe87509e297f48325\support-v4-26.1.0\AndroidManifest.xml:21:5-23:54
+MERGED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\b2e6e17dcc1e8d54c4961f900c8f858f\support-fragment-26.1.0\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-fragment:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\b2e6e17dcc1e8d54c4961f900c8f858f\support-fragment-26.1.0\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-core-ui:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\969d988f4cb245ca4939ec8deb431faf\support-core-ui-26.1.0\AndroidManifest.xml:21:5-23:58
@@ -306,10 +332,16 @@ MERGED from [android.arch.persistence:db-framework:1.1.1] D:\AndroidStudio\jbr\c
 MERGED from [android.arch.persistence:db-framework:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\96d0e84c64aa3a461103924defae4f57\db-framework-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence:db:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d8cc929439f0c404fa165134981bc04\db-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence:db:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1d8cc929439f0c404fa165134981bc04\db-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\8ed9196b52e6da2d713b5f3a55b72c85\livedata-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\8ed9196b52e6da2d713b5f3a55b72c85\livedata-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\ba3499d5781b28a83cf5ca68070c5a12\livedata-core-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\ba3499d5781b28a83cf5ca68070c5a12\livedata-core-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\d5cbe8b0b1251409790892e23d0396e1\runtime-1.1.1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\d5cbe8b0b1251409790892e23d0396e1\runtime-1.1.1\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1142520bd637e46fa101e7e8c863f8a4\runtime-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\1142520bd637e46fa101e7e8c863f8a4\runtime-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\8c6d72147bfb9157f053fdddde31e497\viewmodel-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\8c6d72147bfb9157f053fdddde31e497\viewmodel-1.1.0\AndroidManifest.xml:20:5-44
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
@@ -352,9 +384,189 @@ MERGED from [com.android.support:support-compat:26.1.0] D:\AndroidStudio\jbr\cac
 		ADDED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:28:13-35
 	android:name
 		ADDED from [com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:27:13-51
-meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
-	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:27:13-44
+provider#androidx.work.impl.WorkManagerInitializer
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:28:9-34:35
+	android:authorities
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:30:13-68
+	android:multiprocess
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:33:13-40
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:32:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:31:13-44
 	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\a4648a0143858cf12968afdb93520f2e\runtime-1.0.0\AndroidManifest.xml:26:13-58
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:29:13-69
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:36:9-41:35
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:39:13-72
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:40:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:41:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:38:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:37:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:42:9-48:35
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:45:13-70
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:46:13-36
+	android:permission
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:47:13-69
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:48:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:44:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:43:13-84
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:50:9-55:35
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:53:13-35
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:54:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:55:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:52:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:51:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:56:9-66:20
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:59:13-36
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:60:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:61:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:58:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:57:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:62:13-65:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:63:17-87
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:63:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:64:17-90
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:64:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:67:9-77:20
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:70:13-36
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:71:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:72:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:69:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:68:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:73:13-76:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:74:17-77
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:74:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:75:17-76
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:75:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:78:9-88:20
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:81:13-36
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:82:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:83:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:80:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:79:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:84:13-87:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:85:17-83
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:85:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:86:17-82
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:86:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:89:9-98:20
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:92:13-36
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:93:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:94:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:91:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:90:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:95:13-97:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:96:17-79
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:96:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:99:9-110:20
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:102:13-36
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:103:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:104:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:101:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:100:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:105:13-109:29
+action#android.intent.action.TIME_SET
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:107:17-73
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:107:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:108:17-81
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:108:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:111:9-120:20
+	android:enabled
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:114:13-72
+	android:exported
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:115:13-37
+	tools:targetApi
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:116:13-32
+	android:directBootAware
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:113:13-44
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:112:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:117:13-119:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:118:17-98
+	android:name
+		ADDED from [android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:118:25-95
+provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:25:13-68
+	android:multiprocess
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:24:13-83

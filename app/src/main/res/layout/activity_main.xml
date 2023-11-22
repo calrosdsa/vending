@@ -31,7 +31,9 @@
         android:gravity="right"
         android:padding="15dp"
         >
-    <Button
+
+
+        <Button
         android:id="@+id/hiddenButton"
         android:layout_width="100dp"
         android:layout_height="40dp"

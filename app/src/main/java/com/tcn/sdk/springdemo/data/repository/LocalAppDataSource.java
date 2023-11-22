@@ -14,9 +14,11 @@ import com.tcn.sdk.springdemo.data.dto.RequestItemResponse;
 import com.tcn.sdk.springdemo.data.models.Activo;
 import com.tcn.sdk.springdemo.data.models.Celda;
 import com.tcn.sdk.springdemo.data.models.Shipment;
+import com.tcn.sdk.springdemo.data.models.ShipmentState;
 import com.tcn.sdk.springdemo.data.models.User;
 import com.tcn.sdk.springdemo.domain.repository.ApiInterface;
 import com.tcn.sdk.springdemo.domain.repository.AppDataSource;
+import com.tcn.sdk.springdemo.domain.util.FileLogger;
 
 import java.util.List;
 
@@ -70,15 +72,18 @@ public class LocalAppDataSource implements AppDataSource {
                         }
                     }else{
                         Log.d("DEBUG_APP_ERR","NO SUCCESS");
+                        FileLogger.logError("requestDispenser_onResponse","Unsuccessfull response");
                         call.cancel();
                     }
                 }catch(Exception e){
+                    FileLogger.logError("requestDispenser_onResponse",e.getLocalizedMessage());
                     Log.d("DEBUG_APP_ERR",e.getLocalizedMessage());
                 }
             }
             @Override
             public void onFailure(Call<DispensarResponse> call, Throwable t) {
                 Log.d("DEBUG_APP_API",t.getLocalizedMessage());
+                FileLogger.logError("requestDispenser_onFailure",t.getLocalizedMessage());
                 call.cancel();
             }
         });
@@ -95,21 +100,31 @@ public class LocalAppDataSource implements AppDataSource {
                     List<Activo> activos = response.body();
                     AsyncTask.execute(()-> mActivoDao.insertActivos(activos));
                 }else{
+                    FileLogger.logError("getActivos_onResponse","Unsuccessfull response");
                     Log.d("DEBUG_APP_ERR","NO SUCCESS");
                     call.cancel();
                 }
                 }catch(Exception e){
+                    FileLogger.logError("getActivos_onResponse",e.getLocalizedMessage());
                     Log.d("DEBUG_APP_ERR",e.getLocalizedMessage());
                 }
             }
             @Override
             public void onFailure(Call<List<Activo>> call, Throwable t) {
+                FileLogger.logError("getActivos_onFailure",t.getLocalizedMessage());
                 Log.d("DEBUG_APP_API",t.getLocalizedMessage());
                 call.cancel();
             }
         });
     }
 
+    @Override
+    public void syncUnverifiedShipments() {
+        List<Shipment> shipments = mShipmentDao.getUnverifiedSuccessfullShipments(ShipmentState.SUCCESS.ordinal());
+        for(int i = 0;i<shipments.size();i++) {
+            requestDispensar(shipments.get(i).mId);
+        }
+    }
 
 
     //ACTIVOS

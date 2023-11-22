@@ -453,6 +453,9 @@ bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
 bool abc_config_closeDialogWhenTouchOutside
 bool abc_config_showMenuShortcutsWhenKeyboardPresent
+bool enable_system_alarm_service_default
+bool enable_system_job_service_default
+bool workmanager_test_configuration
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
 color abc_btn_colored_borderless_text_material
@@ -1123,6 +1126,7 @@ id checkbox
 id chronometer
 id clip_horizontal
 id clip_vertical
+id close_button
 id collapseActionView
 id container
 id contentPanel
@@ -1183,6 +1187,7 @@ id icon_group
 id ifRoom
 id image
 id info
+id init_button
 id input
 id invisible
 id italic
@@ -1443,6 +1448,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dmax_spots_dialog
+layout drawer_layout
 layout item
 layout item_slide_image
 layout layout_bcomm_help_qrcode

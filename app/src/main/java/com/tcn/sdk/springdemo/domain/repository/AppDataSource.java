@@ -38,4 +38,6 @@ public interface AppDataSource {
     void requestDispensar(String id);
 
     void getActivos();
+
+    void syncUnverifiedShipments();
 }

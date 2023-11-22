@@ -36,6 +36,7 @@ public class TcnMainActivity extends AppCompatActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		FullScreencall();
 	}
 
 	@Override
@@ -53,6 +54,13 @@ public class TcnMainActivity extends AppCompatActivity {
 		activity.getWindow().setFlags(
 				WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+	}
+
+	public void FullScreencall() {
+		//for new api versions.
+		View decorView = getWindow().getDecorView();
+		int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+		decorView.setSystemUiVisibility(uiOptions);
 	}
 
 

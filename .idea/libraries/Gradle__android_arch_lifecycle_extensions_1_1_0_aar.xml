@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: android.arch.lifecycle:extensions:1.1.0@aar">
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/339e38c0e9f7d1f5c9c2b474423a3344/extensions-1.1.0/jars/classes.jar!/" />
+      <root url="file://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/339e38c0e9f7d1f5c9c2b474423a3344/extensions-1.1.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/modules-2/files-2.1/android.arch.lifecycle/extensions/1.1.0/31cc84796248971fb31e4206e181d502f34d8608/extensions-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

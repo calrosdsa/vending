@@ -18,6 +18,11 @@
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+<!--    <uses-permission-->
+<!--        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"-->
+<!--        android:minSdkVersion="30" />-->
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- 允许CWJ账户组访问底层信息  Allow CWJ account groups to access underlying information-->
@@ -33,7 +38,9 @@
 
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
     <application
         android:name="controller.VendApplication"
@@ -83,18 +90,24 @@
             android:configChanges="locale|keyboardHidden|orientation">
         </activity>
 
-        <activity
-            android:launchMode="singleTask"
-            android:name="com.tcn.sdk_auth_lib.floatwindow.FloatActivity"
-            android:configChanges="locale|keyboardHidden|orientation">
-        </activity>
+<!--        <activity-->
+<!--            android:launchMode="singleTask"-->
+<!--            android:name="com.tcn.sdk_auth_lib.floatwindow.FloatActivity"-->
+<!--            android:configChanges="locale|keyboardHidden|orientation">-->
+<!--        </activity>-->
 
         <receiver android:name="controller.BootBroadcastReceiver" >
             <intent-filter android:priority="999">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <service android:name="controller.VendService"></service>
+
+        <service android:name="controller.VendService" />
+        <service
+            android:name="controller.OverlayService"
+            android:exported="false"/>
+        <service android:name="controller.SyncShipmentsSchedule"
+        android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>

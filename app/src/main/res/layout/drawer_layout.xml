@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_base_white"
+    android:padding="10dp"
+    >
+
+
+
+    <Button
+        android:id="@+id/init_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbutton"
+        android:textColor="@color/ui_base_white"
+        android:text="Init"
+        />
+
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbutton"
+        android:textColor="@color/ui_base_white"
+        android:text="close_drawer"
+        />
+
+</android.support.v7.widget.LinearLayoutCompat>

@@ -38,9 +38,9 @@ public class LogActivity extends  TcnMainActivity {
         setContentView(R.layout.activity_log);
 
 
+        FileLogger.init();
         initView();
         logger = new FileLogger();
-        FileLogger.init();
     }
 
     @Override

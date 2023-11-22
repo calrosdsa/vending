@@ -2,6 +2,7 @@ package controller;
 
 
 import android.content.res.Configuration;
+import android.util.Log;
 
 import com.tcn.springboard.TcnService;
 import com.tcn.springboard.control.TcnVendIF;
@@ -33,6 +34,7 @@ public class VendService extends TcnService {
 
         TcnVendIF.getInstance().LoggerInfoForce(TAG, "onCreate()");
         VendIF.getInstance().initialize();
+        Log.d("DEBUG_APP_S","onCreate Service");
     }
 
     @Override
@@ -48,5 +50,7 @@ public class VendService extends TcnService {
         m_UncaughHandler = null;
         Thread.setDefaultUncaughtExceptionHandler(null);
         TcnVendIF.getInstance().LoggerInfoForce(TAG, "onDestroy()");
+        Log.d("DEBUG_APP_S","onDestroy Service");
+
     }
 }

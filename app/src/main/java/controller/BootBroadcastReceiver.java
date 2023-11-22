@@ -29,11 +29,9 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
         if(action_boot.equals(intent.getAction())){
             TcnVendIF.getInstance().LoggerDebug("BootBroadcastReceiver", "action_boot");
             //启动服务与主板进行通讯 Start the service to communicate with the motherboard
-            m_intent_Service = new Intent(m_context, VendService.class);
-            m_context.startService(m_intent_Service);
-
+//            m_intent_Service = new Intent(m_context, VendService.class);
+//            m_context.startService(m_intent_Service);
             startApp(this.m_context);
-
         }
     }
 
