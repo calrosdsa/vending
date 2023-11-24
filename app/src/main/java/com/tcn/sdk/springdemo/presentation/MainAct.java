@@ -1049,12 +1049,12 @@ public class MainAct extends TcnMainActivity {
 				if (ButtonEditSelectD.BUTTON_ID_QUERY == buttonId) {
 					String strParam = menu_spr_ship_slot_test.getButtonEditInputText();
 					if ((null == strParam) || (strParam.length() < 1)) {
-						Intent mainIntent = new Intent(MainAct.this,ComposeActivity.class);
+						Intent mainIntent = new Intent(MainAct.this, MainActivity.class);
 						mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						startActivity(mainIntent);
 //						TcnUtilityUI.getToast(MainAct.this, getString(R.string.background_drive_tips_input_slotno));
 					} else {
-						Intent mainIntent = new Intent(MainAct.this,ComposeActivity.class);
+						Intent mainIntent = new Intent(MainAct.this, MainActivity.class);
 						mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 						startActivity(mainIntent);
 //						TcnVendIF.getInstance().reqShipTest(Integer.parseInt(strParam));

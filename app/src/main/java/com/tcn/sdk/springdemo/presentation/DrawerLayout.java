@@ -1,12 +1,10 @@
 package com.tcn.sdk.springdemo.presentation;
 
-import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutCompat;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
@@ -31,6 +29,7 @@ public class DrawerLayout extends LinearLayoutCompat {
 
     }
 
+
     public interface CloseDrawer {
         void onClick(DrawerLayout var1);
     }
@@ -43,7 +42,7 @@ public class DrawerLayout extends LinearLayoutCompat {
             PendingIntent intent = PendingIntent.getActivity(
                     context,
                     0,
-                    new Intent(context,ComposeActivity.class),
+                    new Intent(context, MainActivity.class),
                     PendingIntent.FLAG_IMMUTABLE);
             AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             assert mgr != null;

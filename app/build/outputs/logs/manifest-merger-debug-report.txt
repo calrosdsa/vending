@@ -190,10 +190,10 @@ MERGED from [com.android.support:support-compat:26.1.0] D:\AndroidStudio\jbr\cac
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:50:9-65
 	android:name
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:9-50
-activity#com.tcn.sdk.springdemo.presentation.ComposeActivity
+activity#com.tcn.sdk.springdemo.presentation.MainActivity
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-58:20
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:19-63
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:19-60
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-57:29
 action#android.intent.action.MAIN

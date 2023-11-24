@@ -31,7 +31,7 @@ public class Backup {
         File sdir = new File(Environment.getExternalStorageDirectory().getPath()+ "/Files");
         String fileName = FILE_NAME;
         String sfpath = sdir.getPath() + File.separator + fileName;
-        File file = new File(sfpath);
+//        File file = new File(sfpath);
         return sfpath;
     }
 

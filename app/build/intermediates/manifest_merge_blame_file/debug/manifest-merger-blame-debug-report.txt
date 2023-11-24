@@ -98,284 +98,283 @@
 52-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:48:9-41
 53        android:supportsRtl="true"
 53-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:49:9-35
-54        android:testOnly="true"
-55        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-55-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:50:9-65
-56        <activity android:name="com.tcn.sdk.springdemo.presentation.ComposeActivity" >
-56-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-58:20
-56-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:19-63
-57            <intent-filter>
-57-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-57:29
-58                <action android:name="android.intent.action.MAIN" />
-58-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:17-68
-58-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:25-66
-59
-60                <category android:name="android.intent.category.LAUNCHER" />
-60-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:56:17-76
-60-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:56:27-74
-61            </intent-filter>
-62        </activity>
-63        <activity
-63-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:60:9-63:15
-64            android:name="com.tcn.sdk.springdemo.presentation.MenuActivity"
-64-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:61:13-54
-65            android:configChanges="locale|keyboardHidden|orientation" />
-65-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:62:13-70
-66        <activity
-66-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:66:9-69:15
-67            android:name="com.tcn.sdk.springdemo.presentation.LogActivity"
-67-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:67:13-53
-68            android:configChanges="locale|keyboardHidden|orientation" />
-68-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:68:13-70
-69        <activity
-69-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:72:9-75:46
-70            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity"
-70-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:73:13-69
-71            android:configChanges="locale|keyboardHidden|orientation"
-71-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:74:13-70
-72            android:launchMode="singleTask" />
-72-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:13-44
-73        <activity
-73-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:77:9-80:46
-74            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity"
-74-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:78:13-69
-75            android:configChanges="locale|keyboardHidden|orientation"
-75-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:79:13-70
-76            android:launchMode="singleTask" />
-76-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:13-44
-77        <activity
-77-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:82:9-85:46
-78            android:name="com.tcn.sdk.springdemo.presentation.MainAct"
-78-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:83:13-49
-79            android:configChanges="locale|keyboardHidden|orientation"
-79-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:13-70
-80            android:launchMode="singleTask" />
-80-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:13-44
-81        <activity
-81-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:87:9-91:20
-82            android:name="com.tcn.sdk.springdemo.presentation.SerialPortSetting"
-82-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:13-59
-83            android:configChanges="locale|keyboardHidden|orientation"
-83-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:90:13-70
-84            android:launchMode="singleTask" >
-84-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:88:13-44
-85        </activity>
-86
-87        <!-- <activity -->
-88        <!-- android:launchMode="singleTask" -->
-89        <!-- android:name="com.tcn.sdk_auth_lib.floatwindow.FloatActivity" -->
-90        <!-- android:configChanges="locale|keyboardHidden|orientation"> -->
-91        <!-- </activity> -->
-92
-93        <receiver android:name="controller.BootBroadcastReceiver" >
-93-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:99:9-103:20
-93-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:99:19-66
-94            <intent-filter android:priority="999" >
-94-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:100:13-102:29
-94-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:100:28-50
-95                <action android:name="android.intent.action.BOOT_COMPLETED" />
-95-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:17-79
-95-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:25-76
-96            </intent-filter>
-97        </receiver>
-98
-99        <service android:name="controller.VendService" />
-99-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:105:9-58
-99-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:105:18-55
-100        <service
-100-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:106:9-108:39
-101            android:name="controller.OverlayService"
-101-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:107:13-53
-102            android:exported="false" />
-102-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:108:13-37
-103        <service
-103-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:109:9-110:68
-104            android:name="controller.SyncShipmentsSchedule"
-104-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:109:18-65
-105            android:permission="android.permission.BIND_JOB_SERVICE" />
-105-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:110:9-65
-106
-107        <meta-data
-107-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:26:9-28:38
-108            android:name="android.support.VERSION"
-108-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:27:13-51
-109            android:value="26.1.0" />
-109-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:28:13-35
-110
-111        <provider
-111-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:28:9-34:35
-112            android:name="androidx.work.impl.WorkManagerInitializer"
-112-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:29:13-69
-113            android:authorities="com.tcn.sdk.springdemo.workmanager-init"
-113-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:30:13-68
-114            android:directBootAware="false"
-114-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:31:13-44
-115            android:exported="false"
-115-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:32:13-37
-116            android:multiprocess="true" />
-116-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:33:13-40
-117
-118        <service
-118-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:36:9-41:35
-119            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-119-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:37:13-88
-120            android:directBootAware="false"
-120-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:38:13-44
-121            android:enabled="@bool/enable_system_alarm_service_default"
-121-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:39:13-72
-122            android:exported="false" />
-122-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:40:13-37
-123        <service
-123-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:42:9-48:35
-124            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-124-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:43:13-84
-125            android:directBootAware="false"
-125-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:44:13-44
-126            android:enabled="@bool/enable_system_job_service_default"
-126-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:45:13-70
-127            android:exported="true"
-127-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:46:13-36
-128            android:permission="android.permission.BIND_JOB_SERVICE" />
-128-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:47:13-69
-129
-130        <receiver
-130-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:50:9-55:35
-131            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-131-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:51:13-88
-132            android:directBootAware="false"
-132-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:52:13-44
-133            android:enabled="true"
-133-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:53:13-35
-134            android:exported="false" />
-134-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:54:13-37
-135        <receiver
-135-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:56:9-66:20
-136            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-136-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:57:13-106
-137            android:directBootAware="false"
-137-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:58:13-44
-138            android:enabled="false"
-138-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:59:13-36
-139            android:exported="false" >
-139-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:60:13-37
-140            <intent-filter>
-140-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:62:13-65:29
-141                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-141-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:63:17-87
-141-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:63:25-84
-142                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-142-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:64:17-90
-142-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:64:25-87
-143            </intent-filter>
-144        </receiver>
-145        <receiver
-145-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:67:9-77:20
-146            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-146-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:68:13-104
-147            android:directBootAware="false"
-147-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:69:13-44
-148            android:enabled="false"
-148-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:70:13-36
-149            android:exported="false" >
-149-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:71:13-37
-150            <intent-filter>
-150-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:73:13-76:29
-151                <action android:name="android.intent.action.BATTERY_OKAY" />
-151-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:74:17-77
-151-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:74:25-74
-152                <action android:name="android.intent.action.BATTERY_LOW" />
-152-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:75:17-76
-152-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:75:25-73
-153            </intent-filter>
-154        </receiver>
-155        <receiver
-155-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:78:9-88:20
-156            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-156-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:79:13-104
-157            android:directBootAware="false"
-157-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:80:13-44
-158            android:enabled="false"
-158-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:81:13-36
-159            android:exported="false" >
-159-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:82:13-37
-160            <intent-filter>
-160-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:84:13-87:29
-161                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-161-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:85:17-83
-161-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:85:25-80
-162                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-162-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:86:17-82
-162-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:86:25-79
-163            </intent-filter>
-164        </receiver>
-165        <receiver
-165-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:89:9-98:20
-166            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-166-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:90:13-103
-167            android:directBootAware="false"
-167-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:91:13-44
-168            android:enabled="false"
-168-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:92:13-36
-169            android:exported="false" >
-169-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:93:13-37
-170            <intent-filter>
-170-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:95:13-97:29
-171                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-171-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:96:17-79
-171-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:96:25-76
-172            </intent-filter>
-173        </receiver>
-174        <receiver
-174-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:99:9-110:20
-175            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-175-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:100:13-88
-176            android:directBootAware="false"
-176-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:101:13-44
-177            android:enabled="false"
-177-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:102:13-36
-178            android:exported="false" >
-178-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:103:13-37
-179            <intent-filter>
-179-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:105:13-109:29
-180                <action android:name="android.intent.action.BOOT_COMPLETED" />
-180-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:17-79
-180-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:25-76
-181                <action android:name="android.intent.action.TIME_SET" />
-181-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:107:17-73
-181-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:107:25-70
-182                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-182-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:108:17-81
-182-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:108:25-78
-183            </intent-filter>
-184        </receiver>
-185        <receiver
-185-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:111:9-120:20
-186            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-186-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:112:13-99
-187            android:directBootAware="false"
-187-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:113:13-44
-188            android:enabled="@bool/enable_system_alarm_service_default"
-188-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:114:13-72
-189            android:exported="false" >
-189-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:115:13-37
-190            <intent-filter>
-190-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:117:13-119:29
-191                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-191-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:118:17-98
-191-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:118:25-95
-192            </intent-filter>
-193        </receiver>
-194
-195        <provider
-195-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:23:9-27:43
-196            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
-196-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:24:13-83
-197            android:authorities="com.tcn.sdk.springdemo.lifecycle-trojan"
-197-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:25:13-68
-198            android:exported="false"
-198-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:26:13-37
-199            android:multiprocess="true" />
-199-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:27:13-40
-200    </application>
-201
-202</manifest>
+54        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+54-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:50:9-65
+55        <activity android:name="com.tcn.sdk.springdemo.presentation.MainActivity" >
+55-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-58:20
+55-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:19-60
+56            <intent-filter>
+56-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-57:29
+57                <action android:name="android.intent.action.MAIN" />
+57-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:17-68
+57-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:25-66
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:56:17-76
+59-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:56:27-74
+60            </intent-filter>
+61        </activity>
+62        <activity
+62-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:60:9-63:15
+63            android:name="com.tcn.sdk.springdemo.presentation.MenuActivity"
+63-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:61:13-54
+64            android:configChanges="locale|keyboardHidden|orientation" />
+64-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:62:13-70
+65        <activity
+65-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:66:9-69:15
+66            android:name="com.tcn.sdk.springdemo.presentation.LogActivity"
+66-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:67:13-53
+67            android:configChanges="locale|keyboardHidden|orientation" />
+67-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:68:13-70
+68        <activity
+68-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:72:9-75:46
+69            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity"
+69-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:73:13-69
+70            android:configChanges="locale|keyboardHidden|orientation"
+70-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:74:13-70
+71            android:launchMode="singleTask" />
+71-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:13-44
+72        <activity
+72-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:77:9-80:46
+73            android:name="com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity"
+73-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:78:13-69
+74            android:configChanges="locale|keyboardHidden|orientation"
+74-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:79:13-70
+75            android:launchMode="singleTask" />
+75-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:13-44
+76        <activity
+76-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:82:9-85:46
+77            android:name="com.tcn.sdk.springdemo.presentation.MainAct"
+77-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:83:13-49
+78            android:configChanges="locale|keyboardHidden|orientation"
+78-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:84:13-70
+79            android:launchMode="singleTask" />
+79-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:13-44
+80        <activity
+80-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:87:9-91:20
+81            android:name="com.tcn.sdk.springdemo.presentation.SerialPortSetting"
+81-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:89:13-59
+82            android:configChanges="locale|keyboardHidden|orientation"
+82-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:90:13-70
+83            android:launchMode="singleTask" >
+83-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:88:13-44
+84        </activity>
+85
+86        <!-- <activity -->
+87        <!-- android:launchMode="singleTask" -->
+88        <!-- android:name="com.tcn.sdk_auth_lib.floatwindow.FloatActivity" -->
+89        <!-- android:configChanges="locale|keyboardHidden|orientation"> -->
+90        <!-- </activity> -->
+91
+92        <receiver android:name="controller.BootBroadcastReceiver" >
+92-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:99:9-103:20
+92-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:99:19-66
+93            <intent-filter android:priority="999" >
+93-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:100:13-102:29
+93-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:100:28-50
+94                <action android:name="android.intent.action.BOOT_COMPLETED" />
+94-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:17-79
+94-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:25-76
+95            </intent-filter>
+96        </receiver>
+97
+98        <service android:name="controller.VendService" />
+98-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:105:9-58
+98-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:105:18-55
+99        <service
+99-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:106:9-108:39
+100            android:name="controller.OverlayService"
+100-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:107:13-53
+101            android:exported="false" />
+101-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:108:13-37
+102        <service
+102-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:109:9-110:68
+103            android:name="controller.SyncShipmentsSchedule"
+103-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:109:18-65
+104            android:permission="android.permission.BIND_JOB_SERVICE" />
+104-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:110:9-65
+105
+106        <meta-data
+106-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:26:9-28:38
+107            android:name="android.support.VERSION"
+107-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:27:13-51
+108            android:value="26.1.0" />
+108-->[com.android.support:design:26.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\504b6b8c46dec5aadb88a8f30d96dabb\design-26.1.0\AndroidManifest.xml:28:13-35
+109
+110        <provider
+110-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:28:9-34:35
+111            android:name="androidx.work.impl.WorkManagerInitializer"
+111-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:29:13-69
+112            android:authorities="com.tcn.sdk.springdemo.workmanager-init"
+112-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:30:13-68
+113            android:directBootAware="false"
+113-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:31:13-44
+114            android:exported="false"
+114-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:32:13-37
+115            android:multiprocess="true" />
+115-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:33:13-40
+116
+117        <service
+117-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:36:9-41:35
+118            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+118-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:37:13-88
+119            android:directBootAware="false"
+119-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:38:13-44
+120            android:enabled="@bool/enable_system_alarm_service_default"
+120-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:39:13-72
+121            android:exported="false" />
+121-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:40:13-37
+122        <service
+122-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:42:9-48:35
+123            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+123-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:43:13-84
+124            android:directBootAware="false"
+124-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:44:13-44
+125            android:enabled="@bool/enable_system_job_service_default"
+125-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:45:13-70
+126            android:exported="true"
+126-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:46:13-36
+127            android:permission="android.permission.BIND_JOB_SERVICE" />
+127-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:47:13-69
+128
+129        <receiver
+129-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:50:9-55:35
+130            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+130-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:51:13-88
+131            android:directBootAware="false"
+131-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:52:13-44
+132            android:enabled="true"
+132-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:53:13-35
+133            android:exported="false" />
+133-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:54:13-37
+134        <receiver
+134-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:56:9-66:20
+135            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+135-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:57:13-106
+136            android:directBootAware="false"
+136-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:58:13-44
+137            android:enabled="false"
+137-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:59:13-36
+138            android:exported="false" >
+138-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:60:13-37
+139            <intent-filter>
+139-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:62:13-65:29
+140                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+140-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:63:17-87
+140-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:63:25-84
+141                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+141-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:64:17-90
+141-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:64:25-87
+142            </intent-filter>
+143        </receiver>
+144        <receiver
+144-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:67:9-77:20
+145            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+145-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:68:13-104
+146            android:directBootAware="false"
+146-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:69:13-44
+147            android:enabled="false"
+147-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:70:13-36
+148            android:exported="false" >
+148-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:71:13-37
+149            <intent-filter>
+149-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:73:13-76:29
+150                <action android:name="android.intent.action.BATTERY_OKAY" />
+150-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:74:17-77
+150-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:74:25-74
+151                <action android:name="android.intent.action.BATTERY_LOW" />
+151-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:75:17-76
+151-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:75:25-73
+152            </intent-filter>
+153        </receiver>
+154        <receiver
+154-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:78:9-88:20
+155            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+155-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:79:13-104
+156            android:directBootAware="false"
+156-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:80:13-44
+157            android:enabled="false"
+157-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:81:13-36
+158            android:exported="false" >
+158-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:82:13-37
+159            <intent-filter>
+159-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:84:13-87:29
+160                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+160-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:85:17-83
+160-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:85:25-80
+161                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+161-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:86:17-82
+161-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:86:25-79
+162            </intent-filter>
+163        </receiver>
+164        <receiver
+164-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:89:9-98:20
+165            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+165-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:90:13-103
+166            android:directBootAware="false"
+166-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:91:13-44
+167            android:enabled="false"
+167-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:92:13-36
+168            android:exported="false" >
+168-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:93:13-37
+169            <intent-filter>
+169-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:95:13-97:29
+170                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+170-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:96:17-79
+170-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:96:25-76
+171            </intent-filter>
+172        </receiver>
+173        <receiver
+173-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:99:9-110:20
+174            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+174-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:100:13-88
+175            android:directBootAware="false"
+175-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:101:13-44
+176            android:enabled="false"
+176-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:102:13-36
+177            android:exported="false" >
+177-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:103:13-37
+178            <intent-filter>
+178-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:105:13-109:29
+179                <action android:name="android.intent.action.BOOT_COMPLETED" />
+179-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:17-79
+179-->D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:101:25-76
+180                <action android:name="android.intent.action.TIME_SET" />
+180-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:107:17-73
+180-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:107:25-70
+181                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+181-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:108:17-81
+181-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:108:25-78
+182            </intent-filter>
+183        </receiver>
+184        <receiver
+184-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:111:9-120:20
+185            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+185-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:112:13-99
+186            android:directBootAware="false"
+186-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:113:13-44
+187            android:enabled="@bool/enable_system_alarm_service_default"
+187-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:114:13-72
+188            android:exported="false" >
+188-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:115:13-37
+189            <intent-filter>
+189-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:117:13-119:29
+190                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+190-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:118:17-98
+190-->[android.arch.work:work-runtime:1.0.1] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\280d146c8b2567f8e465d8c7407ca43f\work-runtime-1.0.1\AndroidManifest.xml:118:25-95
+191            </intent-filter>
+192        </receiver>
+193
+194        <provider
+194-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:23:9-27:43
+195            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+195-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:24:13-83
+196            android:authorities="com.tcn.sdk.springdemo.lifecycle-trojan"
+196-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:25:13-68
+197            android:exported="false"
+197-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:26:13-37
+198            android:multiprocess="true" />
+198-->[android.arch.lifecycle:extensions:1.1.0] D:\AndroidStudio\jbr\caches\transforms-2\files-2.1\339e38c0e9f7d1f5c9c2b474423a3344\extensions-1.1.0\AndroidManifest.xml:27:13-40
+199    </application>
+200
+201</manifest>

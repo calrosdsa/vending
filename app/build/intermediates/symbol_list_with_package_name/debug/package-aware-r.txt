@@ -1009,6 +1009,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable baseline_close_24
+drawable baseline_help_outline_24
 drawable btn_normal
 drawable btn_pressed
 drawable btn_selector
@@ -1020,6 +1022,8 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dmax_spots_spot
+drawable exit_icon
+drawable help_dialog_back
 drawable ic_launcher_background
 drawable indicator_circle_selected
 drawable indicator_circle_unselected
@@ -1063,6 +1067,7 @@ drawable ui_base_pic_selector
 drawable ui_base_toastbackbutton
 drawable ui_base_toaststyle
 drawable ui_base_weixin_selector_btn_back
+drawable user_icon
 id ALT
 id CTRL
 id FUNCTION
@@ -1096,7 +1101,6 @@ id all
 id always
 id async
 id auto
-id banner_slider1
 id barrier
 id beginning
 id blocking
@@ -1127,6 +1131,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id close_button
+id close_help_dialog
 id collapseActionView
 id container
 id contentPanel
@@ -1160,6 +1165,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id error_text
 id exitUntilCollapsed
+id exit_btn
 id expand_activities_button
 id expanded_menu
 id fill
@@ -1179,6 +1185,7 @@ id func_paper_open_set_btn
 id ghost_view
 id gone
 id groups
+id helpButton
 id hiddenButton
 id home
 id homeAsUp
@@ -1350,6 +1357,7 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id text_counter
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1449,6 +1457,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dmax_spots_dialog
 layout drawer_layout
+layout help_dialog
 layout item
 layout item_slide_image
 layout layout_bcomm_help_qrcode

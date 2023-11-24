@@ -5,19 +5,17 @@
     android:gravity="center" >
 
     <LinearLayout
-        android:layout_width="500dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical" 
-        android:paddingTop="50dp"
-        android:paddingBottom="50dp"
+        android:padding="20dp"
         android:background="@drawable/ui_base_dialoback"
         >
 
         <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center" >
 
             <TextView
@@ -28,7 +26,7 @@
                 android:layout_centerVertical="true"
                 android:padding="3dp"
                 android:textColor="@color/app_steelblue"
-                android:textSize="45sp" />
+                android:textSize="25sp" />
             
 
            <!-- <ImageView
@@ -42,8 +40,8 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -57,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/app_steelblue"
-                android:textSize="55sp"
+                android:textSize="30sp"
+
                 android:singleLine="true"
                  />
 
