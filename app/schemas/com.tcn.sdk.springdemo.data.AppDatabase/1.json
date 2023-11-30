@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "3d12e3ecc1f84a8dfaf263c0bc48b97c",
+    "identityHash": "4f8497ceba39dc829497ecd6a83fdcdb",
     "entities": [
       {
         "tableName": "celda",
@@ -94,7 +94,7 @@
       },
       {
         "tableName": "shipment",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mIdCelda` TEXT, `mIdActivo` TEXT, `mKeyActivo` TEXT, `mObjectType` TEXT, `mIdUser` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mIdCelda` TEXT, `mIdActivo` TEXT, `mKeyActivo` TEXT, `mObjectType` TEXT, `mCodeUsuario` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
         "fields": [
           {
             "fieldPath": "mId",
@@ -133,8 +133,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "mIdUser",
-            "columnName": "mIdUser",
+            "fieldPath": "mCodeUsuario",
+            "columnName": "mCodeUsuario",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -225,7 +225,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"3d12e3ecc1f84a8dfaf263c0bc48b97c\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"4f8497ceba39dc829497ecd6a83fdcdb\")"
     ]
   }
 }

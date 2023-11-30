@@ -1,6 +1,5 @@
 package com.tcn.sdk.springdemo.domain.repository;
 
-import static com.tcn.sdk.springdemo.data.APIClient.hostUrl;
 import static com.tcn.sdk.springdemo.data.APIClient.hostUrlTest;
 
 import com.tcn.sdk.springdemo.data.APIClient;
@@ -16,12 +15,13 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Url;
 
 public interface ApiInterface {
-    @POST("/api/GenetecApi/validar/ValidarPeticion")
-    Call<RequestItemResponse> requestActivo(@Body RequestItem requestItem);
-    @POST("/api/GenetecApi/dispensar/DispensarActivo")
-    Call<DispensarResponse> requestDispensar(@Body RequestDispensar requestDispensar);
+    @POST
+    Call<RequestItemResponse> requestActivo(@Url String url,@Body RequestItem requestItem);
+    @POST
+    Call<DispensarResponse> requestDispensar(@Url String url, @Body RequestDispensar requestDispensar);
 
     @GET("activos/")
     Call<List<Activo>> getActivos();

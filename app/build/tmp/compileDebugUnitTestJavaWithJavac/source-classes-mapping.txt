@@ -1,4 +1,4 @@
-com/tcn/sdk/springdemo/ExampleUnitTest.java
- com.tcn.sdk.springdemo.ExampleUnitTest
 com/tcn/sdk/springdemo/MainActivityTest2.java
  com.tcn.sdk.springdemo.MainActivityTest2
+com/tcn/sdk/springdemo/ExampleUnitTest.java
+ com.tcn.sdk.springdemo.ExampleUnitTest

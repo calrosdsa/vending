@@ -4,7 +4,7 @@ import java.util.List;
 
 public class RequestItemResponse {
     public boolean isSuccess;
-    public String displayMessage;
-    public String errorMessages;
+    public String DisplayMessage;
+    public String ErrorMessages;
     public Result result;
 }

@@ -15,7 +15,7 @@ public class Shipment {
     public String mIdActivo;
     public String mKeyActivo;
     public String mObjectType;
-    public String mIdUser;
+    public String mCodeUsuario;
     public boolean mIsVerified = false;
     public int estado = ShipmentState.SHIPPING.ordinal();
 
@@ -24,7 +24,7 @@ public class Shipment {
     public Shipment(String idCelda,String idUser,String id,String idActivo,String keyActivo,String objectType){
         this.mCreatedAt = System.currentTimeMillis();
         this.mIdCelda = idCelda;
-        this.mIdUser = idUser;
+        this.mCodeUsuario = idUser;
         this.mId = id;
         this.mKeyActivo = keyActivo;
         this.mIdActivo = idActivo;

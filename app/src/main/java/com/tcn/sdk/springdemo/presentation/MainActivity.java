@@ -17,6 +17,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -36,7 +37,10 @@ import com.tcn.sdk.springdemo.Injection;
 import com.tcn.sdk.springdemo.R;
 import com.tcn.sdk.springdemo.data.AppDatabase;
 import com.tcn.sdk.springdemo.data.Backup;
+import com.tcn.sdk.springdemo.data.dto.RequestItem;
+import com.tcn.sdk.springdemo.data.dto.RequestItemResponse;
 import com.tcn.sdk.springdemo.data.models.Activo;
+import com.tcn.sdk.springdemo.data.models.Shipment;
 import com.tcn.sdk.springdemo.domain.util.FileLogger;
 import com.tcn.sdk.springdemo.presentation.adapter.ActivoAdapter;
 import com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener;
@@ -53,18 +57,25 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import controller.OverlayService;
 import controller.SyncShipmentsSchedule;
+import controller.VendService;
 import dmax.dialog.SpotsDialog;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends TcnMainActivity {
     RecyclerView recyclerView1;
@@ -97,7 +108,7 @@ public class MainActivity extends TcnMainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        restoreDB();
+//        restoreDB();
         setContentView(R.layout.activity_main);
         Bundle extras = getIntent().getExtras();
         if (!Settings.canDrawOverlays(this)) {
@@ -173,11 +184,11 @@ public class MainActivity extends TcnMainActivity {
 
     private void clearAppData() {
         try {
-            TcnVendIF.getInstance().stopWorkThread();
 //            Backup.backupDatabase(this);
 //            String packageName = getApplicationContext().getPackageName();
 //            Runtime runtime = Runtime.getRuntime();
 //            runtime.exec("pm clear "+packageName);
+            stopService(new Intent(getApplication(), VendService.class));
             System.exit(0);
         } catch (Exception e) {
             Log.d("DEBUG_APP_EXCP",e.getLocalizedMessage());
@@ -298,16 +309,15 @@ public class MainActivity extends TcnMainActivity {
                     FileLogger.logError("observeActivos",thorwable.getLocalizedMessage());
                 }));
     }
-
     public boolean isSessionEnabled() {
-        return true;
-//        if (currrentUser == null) return false;
-//
-//        long now = System.currentTimeMillis();
-//        long now2 = currrentUser.mCreatedAt;
-//        long diff = now - now2;
-////        Log.d("DEBUG_APP_SESSION", String.format("%d --- %d = %d", now, now2, TimeUnit.MILLISECONDS.toSeconds(diff)));
-//        return TimeUnit.MILLISECONDS.toSeconds(diff) < 120;
+//        return true;
+        if (currrentUser == null) return false;
+
+        long now = System.currentTimeMillis();
+        long now2 = currrentUser.mCreatedAt;
+        long diff = now - now2;
+//        Log.d("DEBUG_APP_SESSION", String.format("%d --- %d = %d", now, now2, TimeUnit.MILLISECONDS.toSeconds(diff)));
+        return TimeUnit.MILLISECONDS.toSeconds(diff) < 120;
     }
 
     private void initView() {
@@ -356,18 +366,18 @@ public class MainActivity extends TcnMainActivity {
             TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
         });
 
-        findViewById(R.id.helpButton).setOnClickListener(view->{
         Dialog helpDialog = new HelpDialog(this,"Dialog text","Dialog title");
         helpDialog.setCanceledOnTouchOutside(true);
         helpDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialogInterface) {
                     Log.d("DEBUG_APP_","CANCEL_DIALOG");
-                    if(timer != null){
+                    if(timer == null){
                     resumeTimer();
                     }
                 }
             });
+        findViewById(R.id.helpButton).setOnClickListener(view->{
         if(timer != null){
             stopTimer();
         }
@@ -522,26 +532,54 @@ public class MainActivity extends TcnMainActivity {
 
         };
     }
+    Activo getActivoByRowAndPosition(int position,int row){
+        ArrayList<Activo> activos = new ArrayList<>();
+        for (int i = 0;i < mActivos.size();i++){
+            Activo currentActivo = mActivos.get(i);
+            if(currentActivo.row == row){
+                activos.add(currentActivo);
+            }
+        }
+        return activos.get(position);
+    }
     RecyclerItemClickListener clickItem(RecyclerView recycler) {
        return  new RecyclerItemClickListener(this, recycler, new RecyclerItemClickListener.OnItemClickListener() {
+            @SuppressLint("NonConstantResourceId")
             @Override
             public void onItemClick(View view, int position) {
                 if(timer == null) {
                     Log.d("DEBUG_APP","TIMER IS NULL");
                     return;
                 }
+                Activo activo = null;
+                switch (recycler.getId()){
+                    case R.id.row_1:
+                        activo =getActivoByRowAndPosition(position,1);
+                        break;
+                    case R.id.row_2:
+                        activo =getActivoByRowAndPosition(position,2);
+                        break;
+                    case R.id.row_3:
+                        activo =getActivoByRowAndPosition(position,3);
+                        break;
+                    case R.id.row_4:
+                        activo =getActivoByRowAndPosition(position,4);
+                        break;
+                    case R.id.row_5:
+                        activo =getActivoByRowAndPosition(position,5);
+                        break;
+                    case R.id.row_6:
+                        activo =getActivoByRowAndPosition(position,6);
+                        break;
+                }
+                if (activo== null) return;
                stopTimer();
-
-//                TcnVendIF.getInstance().startWorkThread();
-//                TcnVendIF.getInstance().registerListener(m_vendListener);
-//                TcnVendIF.getInstance().stopWorkThread();
-                int slotNo = position + 1;//出货的货道号 dispensing slot number
+                int slotNo = activo.slotN;//出货的货道号 dispensing slot number
                 String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
                 String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
                 String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
                 TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
 
-//                        if(isSessionEnabled()) {
 //                            Activo activo = mActivos.get(position);
 //                            RequestItem r = new RequestItem(activo.idCelda,currrentUser.mId);
 //
@@ -558,6 +596,7 @@ public class MainActivity extends TcnMainActivity {
 //                                        if (res.result != null) {
 //                                            if (res.result.disponible) {
 //                                                int slotNo = position + 1;//出货的货道号 dispensing slot number
+//                                                initLoader(slotNo);
 //                                                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
 //                                                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
 //                                                String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
@@ -567,13 +606,13 @@ public class MainActivity extends TcnMainActivity {
 //                                            } else {
 //                                                Snackbar.make(view, "El usuario --- no tiene asignado este activo",
 //                                                        Snackbar.LENGTH_LONG).show();
+//                                                resumeTimer();
 //                                            }
 //                                        }
 //                                    }else{
 //                                        Snackbar.make(view, "Ocurrio un error inesperado",
 //                                                Snackbar.LENGTH_LONG).show();
 //                                    }
-//                                    loadingDialog.dismiss();
 //                                    }catch(Exception e){
 //                                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
 //                                    }
@@ -581,17 +620,13 @@ public class MainActivity extends TcnMainActivity {
 //
 //                                @Override
 //                                public void onFailure(Call<RequestItemResponse> call, Throwable t) {
+//                                    resumeTimer();
 //                                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
 //                                    Log.d("DEBUG_APP_API",t.getLocalizedMessage());
 //                                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
 //                                    call.cancel();
 //                                }
 //                            });
-//                        }else {
-//                            Snackbar.make(view,"Por favor, antes de solicitar un activo, realice una marcación con su credencial",
-//                                    Snackbar.LENGTH_LONG).show();
-//                        }
-//
             }
 
             @Override

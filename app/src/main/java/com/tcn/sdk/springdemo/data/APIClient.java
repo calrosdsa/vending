@@ -10,8 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
 
-    public static final String hostUrl = "http://172.20.20.104:22272";
-    public static final String hostUrlTest = "http://172.20.20.76:8000/v1/";
+//    public static final String hostUrl = "http://172.20.20.104:22272";
+//    public static final String hostUrlTest = "http://10.0.3.82:92/v1/";
+    public static final String hostUrlTest = "http://172.20.20.76:92/v1/";
 
     public static ApiInterface getRestService() {
 

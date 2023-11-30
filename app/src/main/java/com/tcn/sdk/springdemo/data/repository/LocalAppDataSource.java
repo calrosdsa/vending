@@ -47,19 +47,19 @@ public class LocalAppDataSource implements AppDataSource {
     //API
     @Override
     public Call<RequestItemResponse> requestActivo(RequestItem r){
-       return mRestService.requestActivo(r);
+       return mRestService.requestActivo("http://10.0.3.82:91/validar/ValidarPeticion",r);
     }
     @Override
     public void requestDispensar(String id) {
         Shipment shipment = mShipmentDao.getShipment(id);
         RequestDispensar request = new RequestDispensar(
                 shipment.mIdCelda,
-                shipment.mIdUser,
+                shipment.mCodeUsuario,
                 shipment.mIdActivo,
                 shipment.mKeyActivo,
                 shipment.mObjectType
                 );
-        Call<DispensarResponse> call = mRestService.requestDispensar(request);
+        Call<DispensarResponse> call = mRestService.requestDispensar("http://10.0.3.82:91/dispensar/DispensarActivo",request);
         call.enqueue(new Callback<DispensarResponse>() {
             @Override
             public void onResponse(Call<DispensarResponse> call, Response<DispensarResponse> response) {

@@ -28,7 +28,7 @@ public class ShipmentDao_Impl implements ShipmentDao {
     this.__insertionAdapterOfShipment = new EntityInsertionAdapter<Shipment>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `shipment`(`mId`,`mCreatedAt`,`mIdCelda`,`mIdActivo`,`mKeyActivo`,`mObjectType`,`mIdUser`,`mIsVerified`,`estado`) VALUES (?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `shipment`(`mId`,`mCreatedAt`,`mIdCelda`,`mIdActivo`,`mKeyActivo`,`mObjectType`,`mCodeUsuario`,`mIsVerified`,`estado`) VALUES (?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -59,10 +59,10 @@ public class ShipmentDao_Impl implements ShipmentDao {
         } else {
           stmt.bindString(6, value.mObjectType);
         }
-        if (value.mIdUser == null) {
+        if (value.mCodeUsuario == null) {
           stmt.bindNull(7);
         } else {
-          stmt.bindString(7, value.mIdUser);
+          stmt.bindString(7, value.mCodeUsuario);
         }
         final int _tmp;
         _tmp = value.mIsVerified ? 1 : 0;
@@ -151,7 +151,7 @@ public class ShipmentDao_Impl implements ShipmentDao {
       final int _cursorIndexOfMIdActivo = _cursor.getColumnIndexOrThrow("mIdActivo");
       final int _cursorIndexOfMKeyActivo = _cursor.getColumnIndexOrThrow("mKeyActivo");
       final int _cursorIndexOfMObjectType = _cursor.getColumnIndexOrThrow("mObjectType");
-      final int _cursorIndexOfMIdUser = _cursor.getColumnIndexOrThrow("mIdUser");
+      final int _cursorIndexOfMCodeUsuario = _cursor.getColumnIndexOrThrow("mCodeUsuario");
       final int _cursorIndexOfMIsVerified = _cursor.getColumnIndexOrThrow("mIsVerified");
       final int _cursorIndexOfEstado = _cursor.getColumnIndexOrThrow("estado");
       final List<Shipment> _result = new ArrayList<Shipment>(_cursor.getCount());
@@ -164,7 +164,7 @@ public class ShipmentDao_Impl implements ShipmentDao {
         _item.mIdActivo = _cursor.getString(_cursorIndexOfMIdActivo);
         _item.mKeyActivo = _cursor.getString(_cursorIndexOfMKeyActivo);
         _item.mObjectType = _cursor.getString(_cursorIndexOfMObjectType);
-        _item.mIdUser = _cursor.getString(_cursorIndexOfMIdUser);
+        _item.mCodeUsuario = _cursor.getString(_cursorIndexOfMCodeUsuario);
         final int _tmp;
         _tmp = _cursor.getInt(_cursorIndexOfMIsVerified);
         _item.mIsVerified = _tmp != 0;
@@ -196,7 +196,7 @@ public class ShipmentDao_Impl implements ShipmentDao {
       final int _cursorIndexOfMIdActivo = _cursor.getColumnIndexOrThrow("mIdActivo");
       final int _cursorIndexOfMKeyActivo = _cursor.getColumnIndexOrThrow("mKeyActivo");
       final int _cursorIndexOfMObjectType = _cursor.getColumnIndexOrThrow("mObjectType");
-      final int _cursorIndexOfMIdUser = _cursor.getColumnIndexOrThrow("mIdUser");
+      final int _cursorIndexOfMCodeUsuario = _cursor.getColumnIndexOrThrow("mCodeUsuario");
       final int _cursorIndexOfMIsVerified = _cursor.getColumnIndexOrThrow("mIsVerified");
       final int _cursorIndexOfEstado = _cursor.getColumnIndexOrThrow("estado");
       final Shipment _result;
@@ -208,7 +208,7 @@ public class ShipmentDao_Impl implements ShipmentDao {
         _result.mIdActivo = _cursor.getString(_cursorIndexOfMIdActivo);
         _result.mKeyActivo = _cursor.getString(_cursorIndexOfMKeyActivo);
         _result.mObjectType = _cursor.getString(_cursorIndexOfMObjectType);
-        _result.mIdUser = _cursor.getString(_cursorIndexOfMIdUser);
+        _result.mCodeUsuario = _cursor.getString(_cursorIndexOfMCodeUsuario);
         final int _tmp;
         _tmp = _cursor.getInt(_cursorIndexOfMIsVerified);
         _result.mIsVerified = _tmp != 0;
