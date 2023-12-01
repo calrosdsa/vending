@@ -1605,7 +1605,7 @@ public class MainAct extends TcnMainActivity {
 						m_OutDialog.cancel();
 					}
 					if (m_LoadingDialog == null) {
-						m_LoadingDialog = new LoadingDialog(MainAct.this, getString(R.string.ui_base_notify_shipment_success), getString(R.string.ui_base_notify_receive_goods));
+						m_LoadingDialog = new LoadingDialog(MainAct.this, getString(R.string.ui_base_notify_shipment_success), getString(R.string.ui_base_notify_receive_goods),null);
 					} else {
 						m_LoadingDialog.setLoadText(getString(R.string.ui_base_notify_shipment_success));
 						m_LoadingDialog.setTitle(getString(R.string.ui_base_notify_receive_goods));
@@ -1618,7 +1618,7 @@ public class MainAct extends TcnMainActivity {
 						m_OutDialog.cancel();
 					}
 					if (null == m_LoadingDialog) {
-						m_LoadingDialog = new LoadingDialog(MainAct.this, getString(R.string.ui_base_notify_shipment_fail), getString(R.string.ui_base_notify_contact_merchant));
+						m_LoadingDialog = new LoadingDialog(MainAct.this, getString(R.string.ui_base_notify_shipment_fail), getString(R.string.ui_base_notify_contact_merchant),null);
 					}
 					m_LoadingDialog.setLoadText(getString(R.string.ui_base_notify_shipment_fail));
 					m_LoadingDialog.setTitle(getString(R.string.ui_base_notify_contact_merchant));

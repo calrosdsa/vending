@@ -1186,6 +1186,7 @@ id ghost_view
 id gone
 id groups
 id helpButton
+id help_text
 id hiddenButton
 id home
 id homeAsUp

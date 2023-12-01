@@ -17,7 +17,7 @@ public class VendApplication extends TcnVendApplication   {
     @Override
     public void onCreate() {
         super.onCreate();
-//        TcnShareUseData.getInstance().setBoardSerPortFirst("/dev/ttyS2");
+        TcnShareUseData.getInstance().setBoardSerPortFirst("/dev/ttyS2");
 
 //        Configuration conf = new Configuration.Builder()
 //                .setMinimumLoggingLevel(android.util.Log.INFO)

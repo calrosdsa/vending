@@ -553,7 +553,7 @@ public class MenuActivity extends TcnMainActivity {
                         m_OutDialog.cancel();
                     }
                     if (null == m_LoadingDialog) {
-                        m_LoadingDialog = new LoadingDialog(MenuActivity.this, loadText, loadTitle);
+                        m_LoadingDialog = new LoadingDialog(MenuActivity.this, loadText, loadTitle,null);
                     }
                     m_LoadingDialog.setLoadText(loadText);
                     m_LoadingDialog.setTitle(loadTitle);
@@ -614,7 +614,7 @@ public class MenuActivity extends TcnMainActivity {
                         m_OutDialog.cancel();
                     }
                     if (m_LoadingDialog == null) {
-                        m_LoadingDialog = new LoadingDialog(MenuActivity.this, "Entrega exitosa", "Recoge tu producto");
+                        m_LoadingDialog = new LoadingDialog(MenuActivity.this, "Entrega exitosa", "Recoge tu producto",null);
                     } else {
                         m_LoadingDialog.setLoadText("Entrega exitosa");
                         m_LoadingDialog.setTitle("Recoge tu producto");

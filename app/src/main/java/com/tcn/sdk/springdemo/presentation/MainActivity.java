@@ -101,8 +101,10 @@ public class MainActivity extends TcnMainActivity {
 //    private Slider slider;
     private OutDialog m_OutDialog = null;
     private LoadingDialog m_LoadingDialog = null;
+    Activo activo = null;
+
     private final CompositeDisposable mDisposable = new CompositeDisposable();
-    private static final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
+//    private static final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
 //    FileLogger logger;
 
     @Override
@@ -144,8 +146,9 @@ public class MainActivity extends TcnMainActivity {
             String id = extras.getString("id");
             Log.d("DEBUG_APP_",name+id);
             currrentUser = new User(id,name);
-            CountDownTimer initTimer = startTimer();
-            timer = initTimer.start();
+//            CountDownTimer initTimer = startTimer();
+//            timer = initTimer.start();
+
 //                currrentUser = new User("jorge","123123123");
             mUseText.setVisibility(View.VISIBLE);
             mUseText.setText(name);
@@ -239,6 +242,7 @@ public class MainActivity extends TcnMainActivity {
     protected void onResume() {
         super.onResume();
         Log.d("DEBUG_APP_LIST_1","REGISTER LISTENER");
+        resumeTimer();
         TcnVendIF.getInstance().registerListener(m_vendListener);
     }
 
@@ -341,7 +345,7 @@ public class MainActivity extends TcnMainActivity {
             m_OutDialog.setShowTime(30);
         }
         if (m_LoadingDialog == null) {
-            m_LoadingDialog = new LoadingDialog(MainActivity.this, "", "");
+            m_LoadingDialog = new LoadingDialog(MainActivity.this, "", "",this::clearAppData);
         }
 
 
@@ -349,22 +353,22 @@ public class MainActivity extends TcnMainActivity {
             exitDialog.show();
         });
 
-        findViewById(R.id.testSlot).setOnClickListener(view -> {
-            if(timer == null) {
-                Log.d("DEBUG_APP","TIMER IS NULL");
-                return;
-            }
-            timer.cancel();
-            timer = null;
-
-//                TcnVendIF.getInstance().startWorkThread();
-//                TcnVendIF.getInstance().registerListener(m_vendListener);
-            int slotNo = 1;//出货的货道号 dispensing slot number
-            String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
-            String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
-            String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
-            TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
-        });
+//        findViewById(R.id.testSlot).setOnClickListener(view -> {
+//            if(timer == null) {
+//                Log.d("DEBUG_APP","TIMER IS NULL");
+//                return;
+//            }
+//            timer.cancel();
+//            timer = null;
+//
+////                TcnVendIF.getInstance().startWorkThread();
+////                TcnVendIF.getInstance().registerListener(m_vendListener);
+//            int slotNo = 1;//出货的货道号 dispensing slot number
+//            String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
+//            String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
+//            String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+//            TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
+//        });
 
         Dialog helpDialog = new HelpDialog(this,"Dialog text","Dialog title");
         helpDialog.setCanceledOnTouchOutside(true);
@@ -409,6 +413,7 @@ public class MainActivity extends TcnMainActivity {
 // Set up the buttons
             builder.setPositiveButton(android.R.string.ok, (dialog, which) -> {
                 if (Objects.equals(input.getText().toString(), "123")) {
+                    stopTimer();
                     View view = this.getCurrentFocus();
                     if (view != null) {
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -551,7 +556,6 @@ public class MainActivity extends TcnMainActivity {
                     Log.d("DEBUG_APP","TIMER IS NULL");
                     return;
                 }
-                Activo activo = null;
                 switch (recycler.getId()){
                     case R.id.row_1:
                         activo =getActivoByRowAndPosition(position,1);
@@ -573,12 +577,23 @@ public class MainActivity extends TcnMainActivity {
                         break;
                 }
                 if (activo== null) return;
-               stopTimer();
-                int slotNo = activo.slotN;//出货的货道号 dispensing slot number
-                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
-                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
-                String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
-                TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
+                if(!activo.enabled) {
+                    showAlertMessage("El activo que has seleccionado parece no estar en tu inventario.","");
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Para continuar confirme su solicitud");
+                builder.setMessage("Si desea continuar con la dispensacion de un Maouse Rowel porfavor presione confirmar");
+                builder.setCancelable(true);
+                builder.setPositiveButton("Confirmar", (dialogInterface, i) -> {
+                    shipItem();
+                });
+//                builder.setOnCancelListener(dialogInterface -> resumeTimer());
+                builder.setNegativeButton("Cancelar", null);
+                builder.show();
+
+
+
 
 //                            Activo activo = mActivos.get(position);
 //                            RequestItem r = new RequestItem(activo.idCelda,currrentUser.mId);
@@ -641,6 +656,46 @@ public class MainActivity extends TcnMainActivity {
         });
 }
 
+   private void shipItem(){
+       stopTimer();
+       int slotNo = activo.slotN;//出货的货道号 dispensing slot number
+       initLoader(slotNo);
+       if(slotNo == 34){
+           Handler handler = new Handler();
+           handler.postDelayed(new Runnable() {
+               @Override
+               public void run() {
+                   // Do something after 5s = 5000ms
+                   String content = "Error de conexión. Por favor, inténtelo nuevamente o comuníquese con el servicio de soporte.";
+                   showAlertMessage(content,"Error");
+                   resumeTimer();
+               }
+           }, 3000);
+
+           return;
+       }
+
+       if(slotNo == 41){
+           Handler handler = new Handler();
+           handler.postDelayed(new Runnable() {
+               @Override
+               public void run() {
+                   // Do something after 5s = 5000ms
+                   String content = "Se produjo un error inesperado al intentar sincronizar los datos. Por favor, inténtelo nuevamente o póngase en contacto con el servicio de soporte.";
+                   showAlertMessage(content,"Error");
+                   resumeTimer();
+               }
+           }, 3000);
+
+           return;
+       }
+
+       String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
+       String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
+       String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+       TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
+   }
+
 
 
 
@@ -648,23 +703,7 @@ public class MainActivity extends TcnMainActivity {
         Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
     }
 
-    private void initLoader(int slotNumber){
-            if (m_OutDialog == null) {
-                m_OutDialog = new OutDialog(MainActivity.this, String.valueOf(slotNumber), "Porfavor espere");
-            } else {
-                m_OutDialog.setText("Porfavor espere");
-            }
-            m_OutDialog.cleanData();
-//        } else {
-//            if (m_OutDialog == null) {
-//                m_OutDialog = new OutDialog(MainActivity.this, String.valueOf(cEventInfo.m_lParam1), "Porfavor espere");
-//            } else {
-//                m_OutDialog.setText("Porfavor espere");
-//            }
-//        }
-        m_OutDialog.setNumber(String.valueOf(slotNumber));
-        m_OutDialog.show();
-    }
+
 
     private VendListener m_vendListener = new VendListener();
     private class VendListener implements TcnVendIF.VendEventListener {
@@ -715,18 +754,9 @@ public class MainActivity extends TcnMainActivity {
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPMENT_FAILURE:
-                    String loadText = "Error de dispensación, llame al servicio de atención al cliente";
+                    String loadText = "Error de dispensación. Por favor, póngase en contacto con el servicio de soporte.";
                     String loadTitle = "Error";
-                    if (null != m_OutDialog) {
-                        m_OutDialog.cancel();
-                    }
-                    if (null == m_LoadingDialog) {
-                        m_LoadingDialog = new LoadingDialog(MainActivity.this, loadText, loadTitle);
-                    }
-                    m_LoadingDialog.setLoadText(loadText);
-                    m_LoadingDialog.setTitle(loadTitle);
-                    m_LoadingDialog.setShowTime(3);
-                    m_LoadingDialog.show();
+                    showAlertMessage(loadText,loadTitle);
 
 
                     AsyncTask.execute(()-> {
@@ -738,17 +768,7 @@ public class MainActivity extends TcnMainActivity {
                     break;
 
                 case TcnVendEventID.COMMAND_SHIPMENT_SUCCESS:
-                    if (null != m_OutDialog) {
-                        m_OutDialog.cancel();
-                    }
-                    if (m_LoadingDialog == null) {
-                        m_LoadingDialog = new LoadingDialog(MainActivity.this, "Entrega exitosa", "Recoge tu producto");
-                    } else {
-                        m_LoadingDialog.setLoadText("Entrega exitosa");
-                        m_LoadingDialog.setTitle("Recoge tu producto");
-                    }
-                    m_LoadingDialog.setShowTime(3);
-                    m_LoadingDialog.show();
+                    showAlertMessage("Entrega Exitosa","Recoge tu producto");
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.SUCCESS.ordinal(),cEventInfo.m_lParam4);
                         dataSource.requestDispensar(cEventInfo.m_lParam4);
@@ -760,6 +780,37 @@ public class MainActivity extends TcnMainActivity {
             }
 
         }
+    }
+
+    private void showAlertMessage(String loadText,String loadTitle){
+        if (null != m_OutDialog) {
+            m_OutDialog.cancel();
+        }
+       /* if (null == m_LoadingDialog) {
+            m_LoadingDialog = new LoadingDialog(MainActivity.this, loadText, loadTitle, this::clearAppData);
+        }*/
+        m_LoadingDialog.setLoadText(loadText);
+        m_LoadingDialog.setTitle(loadTitle);
+        m_LoadingDialog.setShowTime(4);
+        m_LoadingDialog.show();
+    }
+
+    private void initLoader(int slotNumber){
+        if (m_OutDialog == null) {
+            m_OutDialog = new OutDialog(MainActivity.this, String.valueOf(slotNumber), "Porfavor espere");
+        } else {
+            m_OutDialog.setText("Porfavor espere");
+        }
+        m_OutDialog.cleanData();
+//        } else {
+//            if (m_OutDialog == null) {
+//                m_OutDialog = new OutDialog(MainActivity.this, String.valueOf(cEventInfo.m_lParam1), "Porfavor espere");
+//            } else {
+//                m_OutDialog.setText("Porfavor espere");
+//            }
+//        }
+        m_OutDialog.setNumber(String.valueOf(slotNumber));
+        m_OutDialog.show();
     }
     private void resumeTimer(){
         CountDownTimer initTimer = startTimer();

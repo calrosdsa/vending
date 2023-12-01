@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.tcn.sdk.springdemo.R;
 
+interface Clear {
+	void clearData();
+}
 public class LoadingDialog extends Dialog {
 	private static final int CHANGE_TITLE_WHAT = 1;
 	private static final int CHNAGE_TITLE_DELAYMILLIS = 300;
@@ -24,6 +27,7 @@ public class LoadingDialog extends Dialog {
 	private TextView tv;
 	private TextView load_text;
 	private RotateAnimation mAnim;
+	private Clear  clear;
 
 
 	private Handler handler = new Handler(){
@@ -44,6 +48,7 @@ public class LoadingDialog extends Dialog {
 					handler.removeMessages(CHANGE_TITLE_WHAT);
 					timeCount = 0;
 					dismiss();
+					clear.clearData();
 					return;
 				}
 
@@ -57,17 +62,19 @@ public class LoadingDialog extends Dialog {
 		};
 	};
 
-	public LoadingDialog(Context context, String load, String tv) {
+	public LoadingDialog(Context context, String load, String tv,Clear mClear) {
 		super(context, R.style.ui_base_Dialog_bocop);
 		m_Context = context;
 		init(load, tv);
+		clear = mClear;
 	}
 
 	private void init(String load, String tv1) {
 		View contentView = View.inflate(m_Context, ResourceUtil.getLayoutId(m_Context, "app_activity_custom_loding_dialog_layout"), null);
 		//contentView.setBackgroundResource(R.drawable.dialoback);
 		setContentView(contentView);
-		setCancelable(false);
+		setCanceledOnTouchOutside(true);
+		setCancelable(true);
 		contentView.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

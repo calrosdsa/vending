@@ -1185,6 +1185,7 @@ int id ghost_view 0x7f090072
 int id gone 0x7f090073
 int id groups 0x7f090074
 int id helpButton 0x7f090075
+int id help_text 0x7f090149
 int id hiddenButton 0x7f090076
 int id home 0x7f090077
 int id homeAsUp 0x7f090078

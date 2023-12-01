@@ -1,6 +1,7 @@
 package com.tcn.sdk.springdemo.presentation.adapter;
 
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -84,7 +85,14 @@ public class ActivoAdapter extends RecyclerView.Adapter<ActivoAdapter.MyView> {
         int paddingWidth = 8;
         CardView cardView = holder.itemView.findViewById(R.id.cardview);
         cardView.setMinimumWidth((activo.celdas * defaultWidth)+ (paddingWidth * (activo.celdas-1)));
-
+        Context context = cardView.getContext();
+        if(activo.enabled){
+            cardView.setCardBackgroundColor(context.getColor(R.color.primary));
+            holder.textView.setTextColor(context.getColor(R.color.ui_base_white));
+        }else {
+            cardView.setCardBackgroundColor(context.getColor(R.color.ui_base_whitesmoke));
+            holder.textView.setTextColor(context.getColor(R.color.primary));
+        }
     }
 
     // Override getItemCount which Returns

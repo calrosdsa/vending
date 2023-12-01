@@ -57,6 +57,8 @@ com/tcn/sdk/springdemo/presentation/MainActivity.java
  com.tcn.sdk.springdemo.presentation.MainActivity$2
  com.tcn.sdk.springdemo.presentation.MainActivity$3
  com.tcn.sdk.springdemo.presentation.MainActivity$4
+ com.tcn.sdk.springdemo.presentation.MainActivity$5
+ com.tcn.sdk.springdemo.presentation.MainActivity$6
  com.tcn.sdk.springdemo.presentation.MainActivity$VendListener
 com/tcn/sdk/springdemo/presentation/MenuSettingsLatticeActivity.java
  com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity
@@ -150,6 +152,7 @@ com/tcn/sdk/springdemo/presentation/components/buttons/ButtonSwitch.java
 com/tcn/sdk/springdemo/data/repository/AppPreferences.java
  com.tcn.sdk.springdemo.data.repository.AppPreferences
 com/tcn/sdk/springdemo/presentation/LoadingDialog.java
+ com.tcn.sdk.springdemo.presentation.Clear
  com.tcn.sdk.springdemo.presentation.LoadingDialog
  com.tcn.sdk.springdemo.presentation.LoadingDialog$1
  com.tcn.sdk.springdemo.presentation.LoadingDialog$2

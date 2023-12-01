@@ -506,7 +506,7 @@ public class MenuSettingsLatticeActivity extends TcnMainActivity {
 							m_OutDialog.cancel();
 						}
 						if (m_LoadingDialog == null) {
-							m_LoadingDialog = new LoadingDialog(MenuSettingsLatticeActivity.this, cEventInfo.m_lParam4, String.valueOf(cEventInfo.m_lParam2));
+							m_LoadingDialog = new LoadingDialog(MenuSettingsLatticeActivity.this, cEventInfo.m_lParam4, String.valueOf(cEventInfo.m_lParam2),null);
 						} else {
 							m_LoadingDialog.setLoadText(cEventInfo.m_lParam4);
 							m_LoadingDialog.setTitle(String.valueOf(cEventInfo.m_lParam2));
@@ -519,7 +519,7 @@ public class MenuSettingsLatticeActivity extends TcnMainActivity {
 							m_OutDialog.cancel();
 						}
 						if (m_LoadingDialog == null) {
-							m_LoadingDialog = new LoadingDialog(MenuSettingsLatticeActivity.this, cEventInfo.m_lParam4, String.valueOf(cEventInfo.m_lParam2));
+							m_LoadingDialog = new LoadingDialog(MenuSettingsLatticeActivity.this, cEventInfo.m_lParam4, String.valueOf(cEventInfo.m_lParam2),null);
 						} else {
 							m_LoadingDialog.setLoadText(cEventInfo.m_lParam4);
 							m_LoadingDialog.setTitle(String.valueOf(cEventInfo.m_lParam2));
