@@ -1354,6 +1354,8 @@ id submenuarrow
 id submit_area
 id tabMode
 id testSlot
+id testSlot1
+id testSlot2
 id text
 id text2
 id textSpacerNoButtons

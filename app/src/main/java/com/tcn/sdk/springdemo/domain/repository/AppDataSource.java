@@ -35,7 +35,10 @@ public interface AppDataSource {
 
     //apicalls
     Call<RequestItemResponse> requestActivo(RequestItem r);
+    Call<RequestItemResponse> updateActivo(RequestDispensar r);
+
     void requestDispensar(String id);
+
 
     void getActivos();
 

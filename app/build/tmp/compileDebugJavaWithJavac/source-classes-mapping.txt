@@ -59,6 +59,8 @@ com/tcn/sdk/springdemo/presentation/MainActivity.java
  com.tcn.sdk.springdemo.presentation.MainActivity$4
  com.tcn.sdk.springdemo.presentation.MainActivity$5
  com.tcn.sdk.springdemo.presentation.MainActivity$6
+ com.tcn.sdk.springdemo.presentation.MainActivity$7
+ com.tcn.sdk.springdemo.presentation.MainActivity$8
  com.tcn.sdk.springdemo.presentation.MainActivity$VendListener
 com/tcn/sdk/springdemo/presentation/MenuSettingsLatticeActivity.java
  com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity

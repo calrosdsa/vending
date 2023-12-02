@@ -112,14 +112,22 @@
                 />
 
 
-<!--            <Button-->
-<!--                android:id="@+id/testSlot"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="35dp"-->
-<!--                android:text="Test slot"-->
-<!--                android:contentDescription="test button"-->
-<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--                />-->
+            <Button
+                android:id="@+id/testSlot1"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:text="Request Activo"
+                android:contentDescription="test button"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
+            <Button
+                android:id="@+id/testSlot2"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:text="Update"
+                android:contentDescription="test button"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
 
             <Button
                 android:id="@+id/helpButton"

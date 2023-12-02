@@ -15,7 +15,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.os.Looper;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,12 +34,12 @@ import androidx.work.NetworkType;
 
 import com.tcn.sdk.springdemo.Injection;
 import com.tcn.sdk.springdemo.R;
-import com.tcn.sdk.springdemo.data.AppDatabase;
 import com.tcn.sdk.springdemo.data.Backup;
+import com.tcn.sdk.springdemo.data.dto.DispensarResponse;
+import com.tcn.sdk.springdemo.data.dto.RequestDispensar;
 import com.tcn.sdk.springdemo.data.dto.RequestItem;
 import com.tcn.sdk.springdemo.data.dto.RequestItemResponse;
 import com.tcn.sdk.springdemo.data.models.Activo;
-import com.tcn.sdk.springdemo.data.models.Shipment;
 import com.tcn.sdk.springdemo.domain.util.FileLogger;
 import com.tcn.sdk.springdemo.presentation.adapter.ActivoAdapter;
 import com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener;
@@ -57,7 +56,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -188,11 +186,11 @@ public class MainActivity extends TcnMainActivity {
     private void clearAppData() {
         try {
 //            Backup.backupDatabase(this);
-//            String packageName = getApplicationContext().getPackageName();
-//            Runtime runtime = Runtime.getRuntime();
-//            runtime.exec("pm clear "+packageName);
-            stopService(new Intent(getApplication(), VendService.class));
-            System.exit(0);
+            String packageName = getApplicationContext().getPackageName();
+            Runtime runtime = Runtime.getRuntime();
+            runtime.exec("pm clear "+packageName);
+//            stopService(new Intent(getApplication(), VendService.class));
+//            System.exit(0);
         } catch (Exception e) {
             Log.d("DEBUG_APP_EXCP",e.getLocalizedMessage());
         }
@@ -353,22 +351,102 @@ public class MainActivity extends TcnMainActivity {
             exitDialog.show();
         });
 
-//        findViewById(R.id.testSlot).setOnClickListener(view -> {
+        findViewById(R.id.testSlot2).setOnClickListener(view -> {
+            RequestDispensar r = new RequestDispensar("3","900000100","39236","IY-39236","0");
+
+            Call<RequestItemResponse> call = dataSource.updateActivo(r);
+            call.enqueue(new Callback<RequestItemResponse>() {
+                @Override
+                public void onResponse(Call<RequestItemResponse> call, Response<RequestItemResponse> response) {
+                    try{
+                        Log.d("DEBUG_APP_API",response.message());
+                        Log.d("DEBUG_APP_API",response.body().toString());
+                        Log.d("DEBUG_APP_API",String.format("%s", response.isSuccessful()));
+                        if (response.isSuccessful()) {
+                            RequestItemResponse res =response.body();
+                            assert res != null;
+//                                        showAlertMessage(res.Result.idActivo,"REQUEST ACTIVO");
+                            if (res.Result != null) {
+                                if (res.Result.disponible) {
+                                    showAlertMessage(res.Result.keyActivo,"REQUEST ACTIVO Disponible");
+                                } else {
+                                    showAlertMessage("El usuario --- no tiene asignado este activo","");
+//                                                resumeTimer();
+                                }
+                            }
+                        }else{
+                            showAlertMessage("Response no successful","");
+                        }
+                    }catch(Exception e){
+                        Log.d("DEBUG_APP_API",e.getLocalizedMessage());
+                        showAlertMessage(String.format("Exception %s",e.getLocalizedMessage()),"");
+                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<RequestItemResponse> call, Throwable t) {
+//                                    resumeTimer();
+                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
+                    showAlertMessage(String.format("onFailure %s",t.getLocalizedMessage()),"");
+                    Log.d("DEBUG_APP_API",t.getLocalizedMessage());
+                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
+                    call.cancel();
+                }
+            });
+                 });
+
+        findViewById(R.id.testSlot1).setOnClickListener(view -> {
 //            if(timer == null) {
 //                Log.d("DEBUG_APP","TIMER IS NULL");
 //                return;
 //            }
-//            timer.cancel();
-//            timer = null;
-//
-////                TcnVendIF.getInstance().startWorkThread();
-////                TcnVendIF.getInstance().registerListener(m_vendListener);
-//            int slotNo = 1;//出货的货道号 dispensing slot number
-//            String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
-//            String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
-//            String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
-//            TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
-//        });
+
+            RequestItem r = new RequestItem("3","900000100");
+
+                            Call<RequestItemResponse> call = dataSource.requestActivo(r);
+                            call.enqueue(new Callback<RequestItemResponse>() {
+                                @Override
+                                public void onResponse(Call<RequestItemResponse> call, Response<RequestItemResponse> response) {
+                                    try{
+                                    Log.d("DEBUG_APP_API",response.message());
+                                        Log.d("DEBUG_APP_API",response.body().toString());
+                                        Log.d("DEBUG_APP_API",String.format("%s", response.isSuccessful()));
+                                    if (response.isSuccessful()) {
+                                        RequestItemResponse res =response.body();
+                                        assert res != null;
+//                                        showAlertMessage(res.Result.idActivo,"REQUEST ACTIVO");
+                                        if (res.Result != null) {
+                                            if (res.Result.disponible) {
+                                                showAlertMessage(res.Result.keyActivo,"REQUEST ACTIVO Disponible");
+                                            } else {
+                                                showAlertMessage("El usuario --- no tiene asignado este activo","");
+//                                                resumeTimer();
+                                            }
+                                        }
+                                    }else{
+                                        showAlertMessage("Response no successful","");
+                                    }
+                                    }catch(Exception e){
+                                        Log.d("DEBUG_APP_API",e.getLocalizedMessage());
+                                        showAlertMessage(String.format("Exception %s",e.getLocalizedMessage()),"");
+                                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<RequestItemResponse> call, Throwable t) {
+//                                    resumeTimer();
+                                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
+                                    showAlertMessage(String.format("onFailure %s",t.getLocalizedMessage()),"");
+                                    Log.d("DEBUG_APP_API",t.getLocalizedMessage());
+                                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
+                                    call.cancel();
+                                }
+                            });
+
+
+        });
 
         Dialog helpDialog = new HelpDialog(this,"Dialog text","Dialog title");
         helpDialog.setCanceledOnTouchOutside(true);
@@ -771,7 +849,7 @@ public class MainActivity extends TcnMainActivity {
                     showAlertMessage("Entrega Exitosa","Recoge tu producto");
                     AsyncTask.execute(()->{
                         dataSource.updateShipmentState(ShipmentState.SUCCESS.ordinal(),cEventInfo.m_lParam4);
-                        dataSource.requestDispensar(cEventInfo.m_lParam4);
+//                        dataSource.requestDispensar(cEventInfo.m_lParam4);
                     });
                    resumeTimer();
 //                    closeSession();

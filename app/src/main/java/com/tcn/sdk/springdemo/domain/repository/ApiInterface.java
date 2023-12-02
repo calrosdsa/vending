@@ -23,6 +23,9 @@ public interface ApiInterface {
     @POST
     Call<DispensarResponse> requestDispensar(@Url String url, @Body RequestDispensar requestDispensar);
 
+    @POST
+    Call<RequestItemResponse> updateDispensar(@Url String url, @Body RequestDispensar requestDispensar);
+
     @GET("activos/")
     Call<List<Activo>> getActivos();
 
