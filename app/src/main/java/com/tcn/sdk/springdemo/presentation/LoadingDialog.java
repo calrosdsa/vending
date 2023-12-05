@@ -70,7 +70,7 @@ public class LoadingDialog extends Dialog {
 	}
 
 	private void init(String load, String tv1) {
-		View contentView = View.inflate(m_Context, ResourceUtil.getLayoutId(m_Context, "app_activity_custom_loding_dialog_layout"), null);
+		View contentView = View.inflate(m_Context, R.layout.alert_message, null);
 		//contentView.setBackgroundResource(R.drawable.dialoback);
 		setContentView(contentView);
 		setCanceledOnTouchOutside(true);
@@ -83,10 +83,11 @@ public class LoadingDialog extends Dialog {
 				}
 			}
 		});
-		tv = (TextView) findViewById(ResourceUtil.getId(m_Context, "tv"));
+		tv = (TextView) findViewById(R.id.load_title);
 		tv.setText(tv1);
-		load_text=(TextView) findViewById(ResourceUtil.getId(m_Context, "load_text"));
+		load_text=(TextView) findViewById(R.id.load_text);
 		load_text.setText(load);
+		getWindow().setLayout(700, 350);
 //		initAnim();
 		getWindow().setWindowAnimations(Resources.getAnimResourceID(R.anim.ui_base_alpha_in));
 	}
@@ -145,7 +146,12 @@ public class LoadingDialog extends Dialog {
 
 	@Override
 	public void setTitle(CharSequence title) {
+//		if(title != ""){
+//			tv.setVisibility(View.VISIBLE);
 		tv.setText(title);
+//		}else{
+//			tv.setVisibility(View.GONE);
+//		}
 	}
 
 	@Override

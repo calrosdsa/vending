@@ -19,6 +19,9 @@ com/tcn/sdk/springdemo/presentation/SerialPortSetting.java
  com.tcn.sdk.springdemo.presentation.SerialPortSetting$2
  com.tcn.sdk.springdemo.presentation.SerialPortSetting$3
  com.tcn.sdk.springdemo.presentation.SerialPortSetting$4
+com/tcn/sdk/springdemo/presentation/components/buttons/CustomAlertDialog.java
+ com.tcn.sdk.springdemo.presentation.components.buttons.CustomAlertDialog
+ com.tcn.sdk.springdemo.presentation.components.buttons.CustomAlertDialog$1
 com/tcn/sdk/springdemo/presentation/UIComBack.java
  com.tcn.sdk.springdemo.presentation.UIComBack
 com/tcn/sdk/springdemo/data/dto/RequestItemResponse.java
@@ -58,9 +61,6 @@ com/tcn/sdk/springdemo/presentation/MainActivity.java
  com.tcn.sdk.springdemo.presentation.MainActivity$3
  com.tcn.sdk.springdemo.presentation.MainActivity$4
  com.tcn.sdk.springdemo.presentation.MainActivity$5
- com.tcn.sdk.springdemo.presentation.MainActivity$6
- com.tcn.sdk.springdemo.presentation.MainActivity$7
- com.tcn.sdk.springdemo.presentation.MainActivity$8
  com.tcn.sdk.springdemo.presentation.MainActivity$VendListener
 com/tcn/sdk/springdemo/presentation/MenuSettingsLatticeActivity.java
  com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity
@@ -136,8 +136,6 @@ com/tcn/sdk/springdemo/domain/repository/AppDataSource.java
  com.tcn.sdk.springdemo.domain.repository.AppDataSource
 com/tcn/sdk/springdemo/presentation/adapter/MainSliderAdapter.java
  com.tcn.sdk.springdemo.presentation.adapter.MainSliderAdapter
-com/tcn/sdk/springdemo/presentation/components/buttons/HelpDialog.java
- com.tcn.sdk.springdemo.presentation.components.buttons.HelpDialog
 com/tcn/sdk/springdemo/presentation/MySlipSwitch.java
  com.tcn.sdk.springdemo.presentation.MySlipSwitch
  com.tcn.sdk.springdemo.presentation.MySlipSwitch$OnSwitchListener

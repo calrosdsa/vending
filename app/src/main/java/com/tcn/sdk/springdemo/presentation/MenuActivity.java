@@ -157,9 +157,9 @@ public class MenuActivity extends TcnMainActivity {
         });
         viewLogs.setOnClickListener(view-> {
 
-//            Intent intent = new Intent(this,LogActivity.class);
-//            startActivity(intent);
-            clearAppData();
+            Intent intent = new Intent(this,LogActivity.class);
+            startActivity(intent);
+//            clearAppData();
         });
 
         loadingDialog = new SpotsDialog.Builder().setContext(MenuActivity.this)

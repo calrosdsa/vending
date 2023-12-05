@@ -830,14 +830,19 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen button_l_dim
+dimen button_m_dim
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
+dimen celda_text_dim
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
 dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
+dimen custom_dialog_text_dim
+dimen custom_dialog_title_dim
 dimen default_dash_indicator_width
 dimen default_indicator_margins
 dimen default_indicator_size
@@ -924,6 +929,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen username_text_dim
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1048,8 +1054,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable riple
+drawable ripple
 drawable roundedbutton
+drawable roundedbuttontransparent
 drawable selectedcard
 drawable title_back_normal
 drawable title_back_pressed
@@ -1068,6 +1075,8 @@ drawable ui_base_toastbackbutton
 drawable ui_base_toaststyle
 drawable ui_base_weixin_selector_btn_back
 drawable user_icon
+font arial
+font arial_bold
 id ALT
 id CTRL
 id FUNCTION
@@ -1095,6 +1104,7 @@ id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
+id activo_layout
 id add
 id alertTitle
 id all
@@ -1121,6 +1131,7 @@ id btn_name
 id btn_switch
 id buttonPanel
 id cancel_action
+id cancel_ship
 id cardview
 id center
 id center_horizontal
@@ -1131,8 +1142,8 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id close_button
-id close_help_dialog
 id collapseActionView
+id confirm_ship
 id container
 id contentPanel
 id coordinator
@@ -1185,7 +1196,6 @@ id func_paper_open_set_btn
 id ghost_view
 id gone
 id groups
-id helpButton
 id help_text
 id hiddenButton
 id home
@@ -1194,6 +1204,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_layout
 id info
 id init_button
 id input
@@ -1204,12 +1215,14 @@ id item_touch_helper_previous_elevation
 id iv_qrcode
 id iv_route
 id largeLabel
+id layout_description
 id left
 id line1
 id line3
 id listMode
 id list_item
 id load_text
+id load_title
 id log_files
 id log_name
 id log_position
@@ -1354,8 +1367,6 @@ id submenuarrow
 id submit_area
 id tabMode
 id testSlot
-id testSlot1
-id testSlot2
 id text
 id text2
 id textSpacerNoButtons
@@ -1376,6 +1387,7 @@ id title_template
 id toolbar_menu
 id top
 id topPanel
+id top_layout
 id touch_outside
 id transition_current_scene
 id transition_layout_save
@@ -1439,11 +1451,12 @@ layout abc_select_dialog_material
 layout activity_log
 layout activity_main
 layout activity_menu
-layout app_activity_custom_loding_dialog_layout
+layout alert_message
 layout app_outdialog
 layout background_menu_settings_layout_lattice
 layout background_menu_settings_layout_spr
 layout background_menu_settings_layout_standjs_board
+layout custom_alert_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1460,7 +1473,6 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dmax_spots_dialog
 layout drawer_layout
-layout help_dialog
 layout item
 layout item_slide_image
 layout layout_bcomm_help_qrcode
@@ -1751,6 +1763,7 @@ string board_ui_balance
 string board_ui_price_unit
 string bottom_sheet_behavior
 string character_counter_pattern
+string confirmar_dipensar_text
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

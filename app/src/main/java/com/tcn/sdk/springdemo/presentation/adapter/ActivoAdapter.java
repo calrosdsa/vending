@@ -81,7 +81,7 @@ public class ActivoAdapter extends RecyclerView.Adapter<ActivoAdapter.MyView> {
         // Recycler view with the list items
         Activo activo = list.get(position);
         holder.textView.setText(activo.name);
-        int defaultWidth = 130;
+        int defaultWidth = 98;
         int paddingWidth = 8;
         CardView cardView = holder.itemView.findViewById(R.id.cardview);
         cardView.setMinimumWidth((activo.celdas * defaultWidth)+ (paddingWidth * (activo.celdas-1)));

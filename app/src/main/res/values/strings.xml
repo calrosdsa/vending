@@ -160,4 +160,6 @@
     <string name="background_please_choose">请选择...</string>
     <string name="background_coffee_data_error">数据错误</string>
 
+    <string name="confirmar_dipensar_text" translatable="false">Si desea dispensar un %s porfavor presione confirmar </string>
+
 </resources>
