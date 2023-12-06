@@ -1,19 +1,11 @@
 package controller;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PixelFormat;
-import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,8 +13,7 @@ import android.view.View.OnTouchListener;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.tcn.sdk.springdemo.R;
-import com.tcn.sdk.springdemo.presentation.DrawerLayout;
+import com.tcn.vending.springdemo.presentation.DrawerLayout;
 
 public class OverlayService extends Service implements OnTouchListener, OnClickListener {
     private static String TAG = "OverlayService";

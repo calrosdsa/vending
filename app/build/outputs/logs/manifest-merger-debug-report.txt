@@ -39,7 +39,7 @@ INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xm
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-116:12
 INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:2:1-116:12
 	package
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:3:11-43
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:3:11-47
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -190,12 +190,12 @@ MERGED from [com.android.support:support-compat:26.1.0] D:\AndroidStudio\jbr\cac
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:50:9-65
 	android:name
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:46:9-50
-activity#com.tcn.sdk.springdemo.presentation.MainActivity
+activity#com.tcn.vending.springdemo.presentation.MainActivity
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:52:9-61:20
 	android:launchMode
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:54:13-43
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-54
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:53:13-80
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:56:13-60:29
 action#android.intent.action.MAIN
@@ -206,50 +206,50 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:59:17-76
 	android:name
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:59:27-74
-activity#com.tcn.sdk.springdemo.presentation.MenuActivity
+activity#com.tcn.vending.springdemo.presentation.MenuActivity
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:63:9-66:15
 	android:configChanges
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:65:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:64:13-54
-activity#com.tcn.sdk.springdemo.presentation.LogActivity
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:64:13-80
+activity#com.tcn.vending.springdemo.presentation.LogActivity
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:69:9-72:15
 	android:configChanges
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:71:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:70:13-53
-activity#com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:70:13-79
+activity#com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:75:9-78:46
 	android:launchMode
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:78:13-44
 	android:configChanges
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:77:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:76:13-69
-activity#com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:76:13-95
+activity#com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:80:9-83:46
 	android:launchMode
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:83:13-44
 	android:configChanges
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:82:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:81:13-69
-activity#com.tcn.sdk.springdemo.presentation.MainAct
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:81:13-95
+activity#com.tcn.vending.springdemo.presentation.MainAct
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:85:9-88:46
 	android:launchMode
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:88:13-44
 	android:configChanges
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:87:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:86:13-49
-activity#com.tcn.sdk.springdemo.presentation.SerialPortSetting
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:86:13-75
+activity#com.tcn.vending.springdemo.presentation.SerialPortSetting
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:90:9-94:20
 	android:launchMode
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:91:13-44
 	android:configChanges
 		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:93:13-70
 	android:name
-		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:92:13-59
+		ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:92:13-85
 receiver#controller.BootBroadcastReceiver
 ADDED from D:\AndroidApps\Expendedora\Vending\app\src\main\AndroidManifest.xml:102:9-106:20
 	android:name

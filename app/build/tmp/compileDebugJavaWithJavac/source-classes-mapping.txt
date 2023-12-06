@@ -1,207 +1,207 @@
-com/tcn/sdk/springdemo/presentation/adapter/LogsAdapter.java
- com.tcn.sdk.springdemo.presentation.adapter.LogsAdapter
- com.tcn.sdk.springdemo.presentation.adapter.LogsAdapter$MyView
-com/tcn/sdk/springdemo/presentation/Resources.java
- com.tcn.sdk.springdemo.presentation.Resources
-com/tcn/sdk/springdemo/domain/repository/ApiInterface.java
- com.tcn.sdk.springdemo.domain.repository.ApiInterface
+com/tcn/vending/springdemo/presentation/adapter/CeldaAdapter.java
+ com.tcn.vending.springdemo.presentation.adapter.CeldaAdapter
+ com.tcn.vending.springdemo.presentation.adapter.CeldaAdapter$MyView
+com/tcn/vending/springdemo/presentation/LoadingDialog.java
+ com.tcn.vending.springdemo.presentation.Clear
+ com.tcn.vending.springdemo.presentation.LoadingDialog
+ com.tcn.vending.springdemo.presentation.LoadingDialog$1
+ com.tcn.vending.springdemo.presentation.LoadingDialog$2
+com/tcn/vending/springdemo/data/dto/Marcacion.java
+ com.tcn.vending.springdemo.data.dto.Marcacion
+com/tcn/vending/springdemo/data/dto/RequestItem.java
+ com.tcn.vending.springdemo.data.dto.RequestItem
+com/tcn/vending/springdemo/data/Backup.java
+ com.tcn.vending.springdemo.data.Backup
+com/tcn/vending/springdemo/presentation/OutDialog.java
+ com.tcn.vending.springdemo.presentation.OutDialog
+ com.tcn.vending.springdemo.presentation.OutDialog$1
+ com.tcn.vending.springdemo.presentation.OutDialog$2
+com/tcn/vending/springdemo/data/dao/UserDao.java
+ com.tcn.vending.springdemo.data.dao.UserDao
+com/tcn/vending/springdemo/presentation/adapter/RecyclerItemClickListener.java
+ com.tcn.vending.springdemo.presentation.adapter.RecyclerItemClickListener
+ com.tcn.vending.springdemo.presentation.adapter.RecyclerItemClickListener$1
+ com.tcn.vending.springdemo.presentation.adapter.RecyclerItemClickListener$OnItemClickListener
 controller/VendIF.java
  controller.VendIF
  controller.VendIF$1
  controller.VendIF$VendCommunicationListener
-com/tcn/sdk/springdemo/presentation/adapter/RecyclerItemClickListener.java
- com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener
- com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener$1
- com.tcn.sdk.springdemo.presentation.adapter.RecyclerItemClickListener$OnItemClickListener
-com/tcn/sdk/springdemo/presentation/SerialPortSetting.java
- com.tcn.sdk.springdemo.presentation.SerialPortSetting
- com.tcn.sdk.springdemo.presentation.SerialPortSetting$1
- com.tcn.sdk.springdemo.presentation.SerialPortSetting$2
- com.tcn.sdk.springdemo.presentation.SerialPortSetting$3
- com.tcn.sdk.springdemo.presentation.SerialPortSetting$4
-com/tcn/sdk/springdemo/presentation/components/buttons/CustomAlertDialog.java
- com.tcn.sdk.springdemo.presentation.components.buttons.CustomAlertDialog
- com.tcn.sdk.springdemo.presentation.components.buttons.CustomAlertDialog$1
-com/tcn/sdk/springdemo/presentation/UIComBack.java
- com.tcn.sdk.springdemo.presentation.UIComBack
-com/tcn/sdk/springdemo/data/dto/RequestItemResponse.java
- com.tcn.sdk.springdemo.data.dto.RequestItemResponse
-com/tcn/sdk/springdemo/presentation/components/buttons/ButtonEditSelectD.java
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD$1
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD$ButtonListener
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonEditSelectD$ClickListener
-com/tcn/sdk/springdemo/data/dao/CeldaDao.java
- com.tcn.sdk.springdemo.data.dao.CeldaDao
-com/tcn/sdk/springdemo/presentation/CustomViewGroup.java
- com.tcn.sdk.springdemo.presentation.CustomViewGroup
-com/tcn/sdk/springdemo/presentation/GropInfoBack.java
- com.tcn.sdk.springdemo.presentation.GropInfoBack
+com/tcn/vending/springdemo/data/models/User.java
+ com.tcn.vending.springdemo.data.models.User
+com/tcn/vending/springdemo/data/dto/RequestDispensar.java
+ com.tcn.vending.springdemo.data.dto.RequestDispensar
+com/tcn/vending/springdemo/presentation/components/buttons/CustomAlertDialog.java
+ com.tcn.vending.springdemo.presentation.components.buttons.CustomAlertDialog
+ com.tcn.vending.springdemo.presentation.components.buttons.CustomAlertDialog$1
+com/tcn/vending/springdemo/presentation/MySlipSwitch.java
+ com.tcn.vending.springdemo.presentation.MySlipSwitch
+ com.tcn.vending.springdemo.presentation.MySlipSwitch$OnSwitchListener
+com/tcn/vending/springdemo/presentation/MainActivity.java
+ com.tcn.vending.springdemo.presentation.MainActivity
+ com.tcn.vending.springdemo.presentation.MainActivity$1
+ com.tcn.vending.springdemo.presentation.MainActivity$2
+ com.tcn.vending.springdemo.presentation.MainActivity$3
+ com.tcn.vending.springdemo.presentation.MainActivity$4
+ com.tcn.vending.springdemo.presentation.MainActivity$5
+ com.tcn.vending.springdemo.presentation.MainActivity$VendListener
+com/tcn/vending/springdemo/presentation/components/buttons/ButtonEditSelectD.java
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD$1
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD$ButtonListener
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD$ClickListener
+com/tcn/vending/springdemo/presentation/SerialPortSetting.java
+ com.tcn.vending.springdemo.presentation.SerialPortSetting
+ com.tcn.vending.springdemo.presentation.SerialPortSetting$1
+ com.tcn.vending.springdemo.presentation.SerialPortSetting$2
+ com.tcn.vending.springdemo.presentation.SerialPortSetting$3
+ com.tcn.vending.springdemo.presentation.SerialPortSetting$4
+com/tcn/vending/springdemo/presentation/MdbInfoBean.java
+ com.tcn.vending.springdemo.presentation.MdbInfoBean
 controller/OverlayService.java
  controller.OverlayService
-com/tcn/sdk/springdemo/presentation/TcnMainActivity.java
- com.tcn.sdk.springdemo.presentation.TcnMainActivity
-com/tcn/sdk/springdemo/domain/util/FileLogger.java
- com.tcn.sdk.springdemo.domain.util.FileLogger
-com/tcn/sdk/springdemo/data/repository/LocalAppDataSource.java
- com.tcn.sdk.springdemo.data.repository.LocalAppDataSource
- com.tcn.sdk.springdemo.data.repository.LocalAppDataSource$1
- com.tcn.sdk.springdemo.data.repository.LocalAppDataSource$2
-com/tcn/sdk/springdemo/data/dto/DispensarResponse.java
- com.tcn.sdk.springdemo.data.dto.DispensarResponse
-com/tcn/sdk/springdemo/presentation/DialogInput.java
- com.tcn.sdk.springdemo.presentation.DialogInput
- com.tcn.sdk.springdemo.presentation.DialogInput$1
- com.tcn.sdk.springdemo.presentation.DialogInput$ButtonListener
- com.tcn.sdk.springdemo.presentation.DialogInput$ClickListener
-com/tcn/sdk/springdemo/presentation/MainActivity.java
- com.tcn.sdk.springdemo.presentation.MainActivity
- com.tcn.sdk.springdemo.presentation.MainActivity$1
- com.tcn.sdk.springdemo.presentation.MainActivity$2
- com.tcn.sdk.springdemo.presentation.MainActivity$3
- com.tcn.sdk.springdemo.presentation.MainActivity$4
- com.tcn.sdk.springdemo.presentation.MainActivity$5
- com.tcn.sdk.springdemo.presentation.MainActivity$VendListener
-com/tcn/sdk/springdemo/presentation/MenuSettingsLatticeActivity.java
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$1
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$2
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$3
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$4
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$5
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$ButtonClickListener
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$ButtonEditClickListener
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$MenuSetTitleBarListener
- com.tcn.sdk.springdemo.presentation.MenuSettingsLatticeActivity$VendListener
-com/tcn/sdk/springdemo/data/dto/Result.java
- com.tcn.sdk.springdemo.data.dto.Result
-com/tcn/sdk/springdemo/data/Backup.java
- com.tcn.sdk.springdemo.data.Backup
-com/tcn/sdk/springdemo/presentation/adapter/CustomAdapter.java
- com.tcn.sdk.springdemo.presentation.adapter.CustomAdapter
- com.tcn.sdk.springdemo.presentation.adapter.CustomAdapter$1
- com.tcn.sdk.springdemo.presentation.adapter.CustomAdapter$ViewHolder
+com/tcn/vending/springdemo/data/dao/CeldaDao.java
+ com.tcn.vending.springdemo.data.dao.CeldaDao
+com/tcn/vending/springdemo/data/AppDatabase.java
+ com.tcn.vending.springdemo.data.AppDatabase
+com/tcn/vending/springdemo/data/dto/RequestItemResponse.java
+ com.tcn.vending.springdemo.data.dto.RequestItemResponse
+com/tcn/vending/springdemo/data/DataModel.java
+ com.tcn.vending.springdemo.data.DataModel
+com/tcn/vending/springdemo/presentation/TcnMainActivity.java
+ com.tcn.vending.springdemo.presentation.TcnMainActivity
+com/tcn/vending/springdemo/presentation/MenuSettingsStandJsActivity.java
+ com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity
+ com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity$1
+ com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity$2
+ com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity$3
+ com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity$ButtonEditClickListener
+ com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity$MenuSetTitleBarListener
+ com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity$SwitchButtonListener
+com/tcn/vending/springdemo/presentation/adapter/PicassoImageLoadingService.java
+ com.tcn.vending.springdemo.presentation.adapter.PicassoImageLoadingService
+com/tcn/vending/springdemo/Injection.java
+ com.tcn.vending.springdemo.Injection
+com/tcn/vending/springdemo/presentation/TcnUtilityUI.java
+ com.tcn.vending.springdemo.presentation.TcnUtilityUI
 controller/BootBroadcastReceiver.java
  controller.BootBroadcastReceiver
-com/tcn/sdk/springdemo/data/Converters.java
- com.tcn.sdk.springdemo.data.Converters
-com/tcn/sdk/springdemo/presentation/MdbInfoBean.java
- com.tcn.sdk.springdemo.presentation.MdbInfoBean
-com/tcn/sdk/springdemo/presentation/TcnUtilityUI.java
- com.tcn.sdk.springdemo.presentation.TcnUtilityUI
 controller/OverlayViewLayoutParams.java
  controller.OverlayViewLayoutParams
-com/tcn/sdk/springdemo/data/DataModel.java
- com.tcn.sdk.springdemo.data.DataModel
-com/tcn/sdk/springdemo/presentation/MainAct.java
- com.tcn.sdk.springdemo.presentation.MainAct
- com.tcn.sdk.springdemo.presentation.MainAct$1
- com.tcn.sdk.springdemo.presentation.MainAct$2
- com.tcn.sdk.springdemo.presentation.MainAct$3
- com.tcn.sdk.springdemo.presentation.MainAct$4
- com.tcn.sdk.springdemo.presentation.MainAct$5
- com.tcn.sdk.springdemo.presentation.MainAct$BtnClickListener
- com.tcn.sdk.springdemo.presentation.MainAct$ButtonClickListener
- com.tcn.sdk.springdemo.presentation.MainAct$ButtonEditClickListener
- com.tcn.sdk.springdemo.presentation.MainAct$DialogInputAddShowListener
- com.tcn.sdk.springdemo.presentation.MainAct$MenuSetTitleBarListener
- com.tcn.sdk.springdemo.presentation.MainAct$SwitchButtonListener
- com.tcn.sdk.springdemo.presentation.MainAct$VendListener
-com/tcn/sdk/springdemo/presentation/OutDialog.java
- com.tcn.sdk.springdemo.presentation.OutDialog
- com.tcn.sdk.springdemo.presentation.OutDialog$1
- com.tcn.sdk.springdemo.presentation.OutDialog$2
-com/tcn/sdk/springdemo/data/dao/ActivoDao.java
- com.tcn.sdk.springdemo.data.dao.ActivoDao
+com/tcn/vending/springdemo/presentation/adapter/ActivoAdapter.java
+ com.tcn.vending.springdemo.presentation.adapter.ActivoAdapter
+ com.tcn.vending.springdemo.presentation.adapter.ActivoAdapter$MyView
 controller/VendApplication.java
  controller.VendApplication
-com/tcn/sdk/springdemo/presentation/Titlebar.java
- com.tcn.sdk.springdemo.presentation.Titlebar
- com.tcn.sdk.springdemo.presentation.Titlebar$1
- com.tcn.sdk.springdemo.presentation.Titlebar$ClickListener
- com.tcn.sdk.springdemo.presentation.Titlebar$TitleBarListener
-com/tcn/sdk/springdemo/presentation/adapter/PicassoImageLoadingService.java
- com.tcn.sdk.springdemo.presentation.adapter.PicassoImageLoadingService
+com/tcn/vending/springdemo/data/APIClient.java
+ com.tcn.vending.springdemo.data.APIClient
 controller/VendEventID.java
  controller.VendEventID
-com/tcn/sdk/springdemo/data/dao/UserDao.java
- com.tcn.sdk.springdemo.data.dao.UserDao
-com/tcn/sdk/springdemo/data/APIClient.java
- com.tcn.sdk.springdemo.data.APIClient
-com/tcn/sdk/springdemo/data/models/Activo.java
- com.tcn.sdk.springdemo.data.models.Activo
-com/tcn/sdk/springdemo/data/models/User.java
- com.tcn.sdk.springdemo.data.models.User
-com/tcn/sdk/springdemo/domain/repository/AppDataSource.java
- com.tcn.sdk.springdemo.domain.repository.AppDataSource
-com/tcn/sdk/springdemo/presentation/adapter/MainSliderAdapter.java
- com.tcn.sdk.springdemo.presentation.adapter.MainSliderAdapter
-com/tcn/sdk/springdemo/presentation/MySlipSwitch.java
- com.tcn.sdk.springdemo.presentation.MySlipSwitch
- com.tcn.sdk.springdemo.presentation.MySlipSwitch$OnSwitchListener
-com/tcn/sdk/springdemo/presentation/LogActivity.java
- com.tcn.sdk.springdemo.presentation.LogActivity
- com.tcn.sdk.springdemo.presentation.LogActivity$1
+com/tcn/vending/springdemo/data/repository/AppPreferences.java
+ com.tcn.vending.springdemo.data.repository.AppPreferences
+com/tcn/vending/springdemo/presentation/Resources.java
+ com.tcn.vending.springdemo.presentation.Resources
+com/tcn/vending/springdemo/presentation/components/buttons/ButtonSwitch.java
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonSwitch
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonSwitch$1
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonSwitch$ButtonListener
+ com.tcn.vending.springdemo.presentation.components.buttons.ButtonSwitch$SwitchListener
+com/tcn/vending/springdemo/data/models/Celda.java
+ com.tcn.vending.springdemo.data.models.Celda
 controller/VendService.java
  controller.VendService
-com/tcn/sdk/springdemo/presentation/components/buttons/ButtonSwitch.java
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch$1
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch$ButtonListener
- com.tcn.sdk.springdemo.presentation.components.buttons.ButtonSwitch$SwitchListener
-com/tcn/sdk/springdemo/data/repository/AppPreferences.java
- com.tcn.sdk.springdemo.data.repository.AppPreferences
-com/tcn/sdk/springdemo/presentation/LoadingDialog.java
- com.tcn.sdk.springdemo.presentation.Clear
- com.tcn.sdk.springdemo.presentation.LoadingDialog
- com.tcn.sdk.springdemo.presentation.LoadingDialog$1
- com.tcn.sdk.springdemo.presentation.LoadingDialog$2
+com/tcn/vending/springdemo/data/models/Shipment.java
+ com.tcn.vending.springdemo.data.models.Shipment
+com/tcn/vending/springdemo/data/dao/ShipmentDao.java
+ com.tcn.vending.springdemo.data.dao.ShipmentDao
+com/tcn/vending/springdemo/presentation/GropInfoBack.java
+ com.tcn.vending.springdemo.presentation.GropInfoBack
+com/tcn/vending/springdemo/presentation/adapter/LogsAdapter.java
+ com.tcn.vending.springdemo.presentation.adapter.LogsAdapter
+ com.tcn.vending.springdemo.presentation.adapter.LogsAdapter$MyView
+com/tcn/vending/springdemo/presentation/adapter/MainSliderAdapter.java
+ com.tcn.vending.springdemo.presentation.adapter.MainSliderAdapter
+com/tcn/vending/springdemo/presentation/UIComBack.java
+ com.tcn.vending.springdemo.presentation.UIComBack
 controller/SyncShipmentsSchedule.java
  controller.SyncShipmentsSchedule
-com/tcn/sdk/springdemo/presentation/MyExceptionHandler.java
- com.tcn.sdk.springdemo.presentation.MyExceptionHandler
-com/tcn/sdk/springdemo/data/dto/RequestItem.java
- com.tcn.sdk.springdemo.data.dto.RequestItem
-com/tcn/sdk/springdemo/presentation/ResourceUtil.java
- com.tcn.sdk.springdemo.presentation.ResourceUtil
-com/tcn/sdk/springdemo/data/AppDatabase.java
- com.tcn.sdk.springdemo.data.AppDatabase
-com/tcn/sdk/springdemo/presentation/adapter/CeldaAdapter.java
- com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter
- com.tcn.sdk.springdemo.presentation.adapter.CeldaAdapter$MyView
-com/tcn/sdk/springdemo/presentation/MenuSettingsStandJsActivity.java
- com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity
- com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity$1
- com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity$2
- com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity$3
- com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity$ButtonEditClickListener
- com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity$MenuSetTitleBarListener
- com.tcn.sdk.springdemo.presentation.MenuSettingsStandJsActivity$SwitchButtonListener
-com/tcn/sdk/springdemo/data/dto/Marcacion.java
- com.tcn.sdk.springdemo.data.dto.Marcacion
-com/tcn/sdk/springdemo/presentation/MenuActivity.java
- com.tcn.sdk.springdemo.presentation.MenuActivity
- com.tcn.sdk.springdemo.presentation.MenuActivity$1
- com.tcn.sdk.springdemo.presentation.MenuActivity$VendListener
-com/tcn/sdk/springdemo/data/dto/RequestDispensar.java
- com.tcn.sdk.springdemo.data.dto.RequestDispensar
-com/tcn/sdk/springdemo/data/dao/ShipmentDao.java
- com.tcn.sdk.springdemo.data.dao.ShipmentDao
-com/tcn/sdk/springdemo/data/models/ShipmentState.java
- com.tcn.sdk.springdemo.data.models.ShipmentState
-com/tcn/sdk/springdemo/presentation/DrawerLayout.java
- com.tcn.sdk.springdemo.presentation.DrawerLayout
- com.tcn.sdk.springdemo.presentation.DrawerLayout$CloseDrawer
-com/tcn/sdk/springdemo/data/models/Celda.java
- com.tcn.sdk.springdemo.data.models.Celda
-com/tcn/sdk/springdemo/Injection.java
- com.tcn.sdk.springdemo.Injection
-com/tcn/sdk/springdemo/BuildConfig.java
- com.tcn.sdk.springdemo.BuildConfig
-com/tcn/sdk/springdemo/presentation/adapter/ActivoAdapter.java
- com.tcn.sdk.springdemo.presentation.adapter.ActivoAdapter
- com.tcn.sdk.springdemo.presentation.adapter.ActivoAdapter$MyView
-com/tcn/sdk/springdemo/presentation/TcnParamStandJs.java
- com.tcn.sdk.springdemo.presentation.TcnParamStandJs
-com/tcn/sdk/springdemo/data/models/Shipment.java
- com.tcn.sdk.springdemo.data.models.Shipment
+com/tcn/vending/springdemo/presentation/TcnParamStandJs.java
+ com.tcn.vending.springdemo.presentation.TcnParamStandJs
+com/tcn/vending/springdemo/data/Converters.java
+ com.tcn.vending.springdemo.data.Converters
+com/tcn/vending/springdemo/presentation/MainAct.java
+ com.tcn.vending.springdemo.presentation.MainAct
+ com.tcn.vending.springdemo.presentation.MainAct$1
+ com.tcn.vending.springdemo.presentation.MainAct$2
+ com.tcn.vending.springdemo.presentation.MainAct$3
+ com.tcn.vending.springdemo.presentation.MainAct$4
+ com.tcn.vending.springdemo.presentation.MainAct$5
+ com.tcn.vending.springdemo.presentation.MainAct$BtnClickListener
+ com.tcn.vending.springdemo.presentation.MainAct$ButtonClickListener
+ com.tcn.vending.springdemo.presentation.MainAct$ButtonEditClickListener
+ com.tcn.vending.springdemo.presentation.MainAct$DialogInputAddShowListener
+ com.tcn.vending.springdemo.presentation.MainAct$MenuSetTitleBarListener
+ com.tcn.vending.springdemo.presentation.MainAct$SwitchButtonListener
+ com.tcn.vending.springdemo.presentation.MainAct$VendListener
+com/tcn/vending/springdemo/data/dto/DispensarResponse.java
+ com.tcn.vending.springdemo.data.dto.DispensarResponse
+com/tcn/vending/springdemo/data/repository/LocalAppDataSource.java
+ com.tcn.vending.springdemo.data.repository.LocalAppDataSource
+ com.tcn.vending.springdemo.data.repository.LocalAppDataSource$1
+ com.tcn.vending.springdemo.data.repository.LocalAppDataSource$2
+com/tcn/vending/springdemo/data/dto/Result.java
+ com.tcn.vending.springdemo.data.dto.Result
+com/tcn/vending/springdemo/data/dao/ActivoDao.java
+ com.tcn.vending.springdemo.data.dao.ActivoDao
+com/tcn/vending/springdemo/presentation/MyExceptionHandler.java
+ com.tcn.vending.springdemo.presentation.MyExceptionHandler
+com/tcn/vending/springdemo/presentation/MenuActivity.java
+ com.tcn.vending.springdemo.presentation.MenuActivity
+ com.tcn.vending.springdemo.presentation.MenuActivity$1
+ com.tcn.vending.springdemo.presentation.MenuActivity$VendListener
+com/tcn/vending/springdemo/BuildConfig.java
+ com.tcn.vending.springdemo.BuildConfig
+com/tcn/vending/springdemo/data/models/Activo.java
+ com.tcn.vending.springdemo.data.models.Activo
+com/tcn/vending/springdemo/domain/util/FileLogger.java
+ com.tcn.vending.springdemo.domain.util.FileLogger
+com/tcn/vending/springdemo/presentation/ResourceUtil.java
+ com.tcn.vending.springdemo.presentation.ResourceUtil
+com/tcn/vending/springdemo/data/models/ShipmentState.java
+ com.tcn.vending.springdemo.data.models.ShipmentState
+com/tcn/vending/springdemo/presentation/CustomViewGroup.java
+ com.tcn.vending.springdemo.presentation.CustomViewGroup
+com/tcn/vending/springdemo/presentation/Titlebar.java
+ com.tcn.vending.springdemo.presentation.Titlebar
+ com.tcn.vending.springdemo.presentation.Titlebar$1
+ com.tcn.vending.springdemo.presentation.Titlebar$ClickListener
+ com.tcn.vending.springdemo.presentation.Titlebar$TitleBarListener
+com/tcn/vending/springdemo/domain/repository/ApiInterface.java
+ com.tcn.vending.springdemo.domain.repository.ApiInterface
+com/tcn/vending/springdemo/presentation/DrawerLayout.java
+ com.tcn.vending.springdemo.presentation.DrawerLayout
+ com.tcn.vending.springdemo.presentation.DrawerLayout$CloseDrawer
+com/tcn/vending/springdemo/presentation/DialogInput.java
+ com.tcn.vending.springdemo.presentation.DialogInput
+ com.tcn.vending.springdemo.presentation.DialogInput$1
+ com.tcn.vending.springdemo.presentation.DialogInput$ButtonListener
+ com.tcn.vending.springdemo.presentation.DialogInput$ClickListener
+com/tcn/vending/springdemo/presentation/MenuSettingsLatticeActivity.java
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$1
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$2
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$3
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$4
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$5
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$ButtonClickListener
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$ButtonEditClickListener
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$MenuSetTitleBarListener
+ com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity$VendListener
+com/tcn/vending/springdemo/domain/repository/AppDataSource.java
+ com.tcn.vending.springdemo.domain.repository.AppDataSource
+com/tcn/vending/springdemo/presentation/LogActivity.java
+ com.tcn.vending.springdemo.presentation.LogActivity
+ com.tcn.vending.springdemo.presentation.LogActivity$1
+com/tcn/vending/springdemo/presentation/adapter/CustomAdapter.java
+ com.tcn.vending.springdemo.presentation.adapter.CustomAdapter
+ com.tcn.vending.springdemo.presentation.adapter.CustomAdapter$1
+ com.tcn.vending.springdemo.presentation.adapter.CustomAdapter$ViewHolder

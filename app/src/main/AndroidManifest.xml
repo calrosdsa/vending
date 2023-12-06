@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.tcn.sdk.springdemo">
+          package="com.tcn.vending.springdemo">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -50,7 +50,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity
-            android:name=".presentation.MainActivity"
+            android:name="com.tcn.vending.springdemo.presentation.MainActivity"
             android:launchMode="singleTop"
             >
             <intent-filter>
@@ -61,35 +61,35 @@
         </activity>
 
         <activity
-            android:name=".presentation.MenuActivity"
+            android:name="com.tcn.vending.springdemo.presentation.MenuActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             />
 
 
         <activity
-            android:name=".presentation.LogActivity"
+            android:name="com.tcn.vending.springdemo.presentation.LogActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             />
 
 
         <activity
-            android:name=".presentation.MenuSettingsLatticeActivity"
+            android:name="com.tcn.vending.springdemo.presentation.MenuSettingsLatticeActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             android:launchMode="singleTask"/>
 
         <activity
-            android:name=".presentation.MenuSettingsStandJsActivity"
+            android:name="com.tcn.vending.springdemo.presentation.MenuSettingsStandJsActivity"
             android:configChanges="locale|keyboardHidden|orientation"
             android:launchMode="singleTask"/>
 
         <activity
-            android:name=".presentation.MainAct"
+            android:name="com.tcn.vending.springdemo.presentation.MainAct"
             android:configChanges="locale|keyboardHidden|orientation"
             android:launchMode="singleTask"/>
 
         <activity
             android:launchMode="singleTask"
-            android:name=".presentation.SerialPortSetting"
+            android:name="com.tcn.vending.springdemo.presentation.SerialPortSetting"
             android:configChanges="locale|keyboardHidden|orientation">
         </activity>
 

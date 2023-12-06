@@ -1,0 +1,255 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "fde8d5d3c3a83fa418fa9d70b21aa2a5",
+    "entities": [
+      {
+        "tableName": "celda",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` INTEGER NOT NULL, `mSlotNumber` INTEGER NOT NULL, `mRowNumber` INTEGER NOT NULL, `mIsMerged` INTEGER NOT NULL, `mCanMerged` INTEGER NOT NULL, `enabled` INTEGER NOT NULL, `mCanShow` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
+        "fields": [
+          {
+            "fieldPath": "mId",
+            "columnName": "mId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mSlotNumber",
+            "columnName": "mSlotNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mRowNumber",
+            "columnName": "mRowNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mIsMerged",
+            "columnName": "mIsMerged",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mCanMerged",
+            "columnName": "mCanMerged",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enabled",
+            "columnName": "enabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mCanShow",
+            "columnName": "mCanShow",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `mName` TEXT, `mCreatedAt` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
+        "fields": [
+          {
+            "fieldPath": "mId",
+            "columnName": "mId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mName",
+            "columnName": "mName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCreatedAt",
+            "columnName": "mCreatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "shipment",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `mCreatedAt` INTEGER NOT NULL, `mIdCelda` TEXT, `mIdActivo` TEXT, `mKeyActivo` TEXT, `mObjectType` TEXT, `mCodeUsuario` TEXT, `mIsVerified` INTEGER NOT NULL, `estado` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
+        "fields": [
+          {
+            "fieldPath": "mId",
+            "columnName": "mId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mCreatedAt",
+            "columnName": "mCreatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mIdCelda",
+            "columnName": "mIdCelda",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mIdActivo",
+            "columnName": "mIdActivo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mKeyActivo",
+            "columnName": "mKeyActivo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mObjectType",
+            "columnName": "mObjectType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mCodeUsuario",
+            "columnName": "mCodeUsuario",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mIsVerified",
+            "columnName": "mIsVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estado",
+            "columnName": "estado",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "activo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCelda` TEXT NOT NULL, `slotN` INTEGER NOT NULL, `celdaName` TEXT, `activoId` TEXT, `activoName` TEXT, `activoType` TEXT, `activoBrand` TEXT, `activoMode` TEXT, `cantidad` INTEGER NOT NULL, `celdas` REAL NOT NULL, `row` INTEGER NOT NULL, `enabled` INTEGER NOT NULL, PRIMARY KEY(`idCelda`))",
+        "fields": [
+          {
+            "fieldPath": "idCelda",
+            "columnName": "idCelda",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "slotN",
+            "columnName": "slotN",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "celdaName",
+            "columnName": "celdaName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activoId",
+            "columnName": "activoId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activoName",
+            "columnName": "activoName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activoType",
+            "columnName": "activoType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activoBrand",
+            "columnName": "activoBrand",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "activoMode",
+            "columnName": "activoMode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cantidad",
+            "columnName": "cantidad",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "celdas",
+            "columnName": "celdas",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "row",
+            "columnName": "row",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enabled",
+            "columnName": "enabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idCelda"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"fde8d5d3c3a83fa418fa9d70b21aa2a5\")"
+    ]
+  }
+}

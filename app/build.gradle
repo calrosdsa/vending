@@ -6,7 +6,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.compileVersion
     defaultConfig {
-        applicationId "com.tcn.sdk.springdemo"
+        applicationId "com.tcn.vending.springdemo"
         minSdkVersion rootProject.minVersion
         targetSdkVersion rootProject.targetVersion
         versionCode 1
@@ -36,6 +36,12 @@ android {
         main {
             jniLibs.srcDirs = ['src/main/jniLibs']
             aidl.srcDirs = ['src/main/aidl']
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
         }
     }
 }
@@ -112,9 +118,11 @@ dependencies {
     // Test helpers
     testImplementation "android.arch.persistence.room:testing:$room_version"
 
-    testImplementation 'org.robolectric:robolectric:3.6.1'
-
-    testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:4.11.1"
+    testImplementation 'junit:junit:4.13.2'
+//    testImplementation 'org.robolectric:robolectric:3.6.1'
+//
+//    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

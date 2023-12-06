@@ -4,7 +4,7 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.tcn.sdk.springdemo",
+  "applicationId": "com.tcn.vending.springdemo",
   "variantName": "debug",
   "elements": [
     {

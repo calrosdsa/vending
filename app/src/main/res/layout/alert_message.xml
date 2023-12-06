@@ -52,7 +52,7 @@
 
 
     <Button
-        android:id="@+id/confirm_ship"
+        android:id="@+id/confirm_button"
         app:layout_constraintTop_toBottomOf="@id/layout_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

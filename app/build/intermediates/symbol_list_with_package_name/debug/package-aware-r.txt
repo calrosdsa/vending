@@ -1,4 +1,4 @@
-com.tcn.sdk.springdemo
+com.tcn.vending.springdemo
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1143,6 +1143,7 @@ id clip_horizontal
 id clip_vertical
 id close_button
 id collapseActionView
+id confirm_button
 id confirm_ship
 id container
 id contentPanel
@@ -1308,6 +1309,7 @@ id parent_matrix
 id percent
 id pin
 id position
+id progress_bar
 id progress_circular
 id progress_horizontal
 id radio

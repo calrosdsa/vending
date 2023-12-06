@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.tcn.sdk.springdemo",
+  "applicationId": "com.tcn.vending.springdemo",
   "variantName": "debug",
   "elements": []
 }

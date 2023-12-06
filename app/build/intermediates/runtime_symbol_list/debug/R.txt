@@ -1142,6 +1142,7 @@ int id clip_horizontal 0x7f0a003e
 int id clip_vertical 0x7f0a003f
 int id close_button 0x7f0a0040
 int id collapseActionView 0x7f0a0041
+int id confirm_button 0x7f0a014e
 int id confirm_ship 0x7f0a0042
 int id container 0x7f0a0043
 int id contentPanel 0x7f0a0044
@@ -1307,6 +1308,7 @@ int id parent_matrix 0x7f0a00e3
 int id percent 0x7f0a00e4
 int id pin 0x7f0a00e5
 int id position 0x7f0a00e6
+int id progress_bar 0x7f0a014f
 int id progress_circular 0x7f0a00e7
 int id progress_horizontal 0x7f0a00e8
 int id radio 0x7f0a00e9
