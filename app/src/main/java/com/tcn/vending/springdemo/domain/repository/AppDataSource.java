@@ -1,5 +1,6 @@
 package com.tcn.vending.springdemo.domain.repository;
 
+import com.tcn.vending.springdemo.data.dto.ActivoDto;
 import com.tcn.vending.springdemo.data.dto.RequestDispensar;
 import com.tcn.vending.springdemo.data.dto.RequestItem;
 import com.tcn.vending.springdemo.data.dto.RequestItemResponse;
@@ -28,6 +29,8 @@ public interface AppDataSource {
     Flowable<User> observeUser();
     void insertUser(User user);
 
+    void insertActivos(List<Activo> activos);
+
     //Shipment
     void insertShipment(Shipment shipment);
 
@@ -40,7 +43,7 @@ public interface AppDataSource {
     void requestDispensar(String id);
 
 
-    void getActivos();
+    Call<ActivoDto> getActivos(String codeUser);
 
     void syncUnverifiedShipments();
 }

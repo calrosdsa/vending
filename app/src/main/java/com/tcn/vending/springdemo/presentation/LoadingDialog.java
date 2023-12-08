@@ -95,7 +95,7 @@ public class LoadingDialog extends Dialog {
 		load_text.setText(load);
 		confirm_button = findViewById(R.id.confirm_button);
 		confirm_button.setOnClickListener(view -> LoadingDialog.this.cancel());
-		getWindow().setLayout(700, 380);
+//		getWindow().setLayout(700, 380);
 //		initAnim();
 		getWindow().setWindowAnimations(Resources.getAnimResourceID(R.anim.ui_base_alpha_in));
 	}

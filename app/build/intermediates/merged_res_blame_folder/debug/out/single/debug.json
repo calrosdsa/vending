@@ -32,12 +32,12 @@
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\card.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_fm_play_page_playing_loading.png.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\mipmap-xhdpi\\fm_play_page_playing_loading.png"
-    },
-    {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ui_base_toaststyle.xml.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\ui_base_toaststyle.xml"
+    },
+    {
+        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_fm_play_page_playing_loading.png.flat",
+        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\mipmap-xhdpi\\fm_play_page_playing_loading.png"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_shibai.png.flat",

@@ -31,6 +31,9 @@ import androidx.work.NetworkType;
 
 import com.tcn.vending.springdemo.Injection;
 import com.tcn.vending.springdemo.R;
+import com.tcn.vending.springdemo.data.dto.ActivoDto;
+import com.tcn.vending.springdemo.data.dto.RequestItem;
+import com.tcn.vending.springdemo.data.dto.RequestItemResponse;
 import com.tcn.vending.springdemo.data.models.Activo;
 import com.tcn.vending.springdemo.domain.util.FileLogger;
 import com.tcn.vending.springdemo.presentation.adapter.ActivoAdapter;
@@ -56,6 +59,9 @@ import dmax.dialog.SpotsDialog;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends TcnMainActivity {
     RecyclerView recyclerView1;
@@ -113,32 +119,19 @@ public class MainActivity extends TcnMainActivity {
 //            makeToast(hubConnection.getConnectionState().name());
         });
 
-        new CountDownTimer(60000, 1000) {
-            @SuppressLint("SuspiciousIndentation")
-            public void onTick(long millisUntilFinished) {
-//                counterTimer -= 1000;
-                Log.d("DEBUG_APP_TIMER",String.format("%s  --- %s",counterTimer,millisUntilFinished));
-
-                //here you can have your logic to set text to edittext
-            }
-
-            public void onFinish() {
-                clearAppData();
-//                    closeSession();
-                Log.d("DEBUG_APP_TIMER","456");
-            }
-        }.start();
 
 
 //        mButton.setVisibility(View.INVISIBLE);
-        AsyncTask.execute(()->dataSource.getActivos());
         initView();
-        scheduleJob();
+//        scheduleJob();
 
         if (extras != null) {
 
             String name = extras.getString("name");
             String id = extras.getString("id");
+
+            getActivos(id);
+
             Log.d("DEBUG_APP_",name+id);
             currrentUser = new User(id,name);
 //            CountDownTimer initTimer = startTimer();
@@ -150,6 +143,38 @@ public class MainActivity extends TcnMainActivity {
 
         }
     }
+
+    private void getActivos(String codeUser){
+        Call<ActivoDto> call = dataSource.getActivos(codeUser);
+        call.enqueue(new Callback<ActivoDto>() {
+            @Override
+            public void onResponse(Call<ActivoDto> call, Response<ActivoDto> response) {
+                try{
+                    if(response.isSuccessful()){
+                        ActivoDto res = response.body();
+                        assert res != null;
+                        if(res.IsSuccess){
+                            AsyncTask.execute(()-> dataSource.insertActivos(res.Result));
+                        }
+                    }else{
+                        FileLogger.logError("getActivos_onResponse","Unsuccessfull response");
+                        Log.d("DEBUG_APP_ERR","NO SUCCESS");
+                        call.cancel();
+                    }
+                }catch(Exception e){
+                    FileLogger.logError("getActivos_onResponse",e.getLocalizedMessage());
+                    Log.d("DEBUG_APP_ERR",e.getLocalizedMessage());
+                }
+            }
+            @Override
+            public void onFailure(Call<ActivoDto> call, Throwable t) {
+                FileLogger.logError("getActivos_onFailure",t.getLocalizedMessage());
+                Log.d("DEBUG_APP_API",t.getLocalizedMessage());
+                call.cancel();
+            }
+        });
+    }
+
     private CountDownTimer startTimer(){
         TextView mTextField = findViewById(R.id.text_counter);
              return  new CountDownTimer(counterTimer, 1000) {
@@ -249,7 +274,7 @@ public class MainActivity extends TcnMainActivity {
             alertDialog.setLoadText("Por favor, confirma si deseas regresar a la pantalla de inicio.");
             alertDialog.setTitle("Salir");
             alertDialog.setConfirmOnclick(view1 -> clearAppData());
-            alertDialog.setHeight(380);
+//            alertDialog.setHeight(380);
             alertDialog.show();
         });
 
@@ -423,7 +448,7 @@ public class MainActivity extends TcnMainActivity {
                 alertDialog.setTitle("Para continuar confirme su solicitud");
                 alertDialog.setLoadText(getString(R.string.confirmar_dipensar_text,activo.activoName));
                 alertDialog.setConfirmOnclick(view1 -> shipItem());
-                alertDialog.setHeight(450);
+//                alertDialog.setHeight(420);
                 alertDialog.show();
 
 //                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -443,50 +468,7 @@ public class MainActivity extends TcnMainActivity {
 //                            Activo activo = mActivos.get(position);
 //                            RequestItem r = new RequestItem(activo.idCelda,currrentUser.mId);
 //
-//                            Call<RequestItemResponse> call = dataSource.requestActivo(r);
-//                            call.enqueue(new Callback<RequestItemResponse>() {
-//                                @Override
-//                                public void onResponse(Call<RequestItemResponse> call, Response<RequestItemResponse> response) {
-//                                    try{
-//                                    Log.d("DEBUG_APP_API",response.message());
-//                                    Log.d("DEBUG_APP_API",String.format("%s", response.isSuccessful()));
-//                                    if (response.isSuccessful()) {
-//                                        RequestItemResponse res =response.body();
-//                                        assert res != null;
-//                                        if (res.result != null) {
-//                                            if (res.result.disponible) {
-//                                                int slotNo = position + 1;//出货的货道号 dispensing slot number
-//                                                initLoader(slotNo);
-//                                                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
-//                                                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
-//                                                String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
-//                                                Shipment shipment = new Shipment(activo.idCelda,currrentUser.mId,tradeNo,res.result.idActivo,res.result.keyActivo,activo.objectType);
-//                                                dataSource.insertShipment(shipment);
-//                                                TcnVendIF.getInstance().ship(slotNo, shipMethod, amount, tradeNo);
-//                                            } else {
-//                                                Snackbar.make(view, "El usuario --- no tiene asignado este activo",
-//                                                        Snackbar.LENGTH_LONG).show();
-//                                                resumeTimer();
-//                                            }
-//                                        }
-//                                    }else{
-//                                        Snackbar.make(view, "Ocurrio un error inesperado",
-//                                                Snackbar.LENGTH_LONG).show();
-//                                    }
-//                                    }catch(Exception e){
-//                                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
-//                                    }
-//                                }
-//
-//                                @Override
-//                                public void onFailure(Call<RequestItemResponse> call, Throwable t) {
-//                                    resumeTimer();
-//                                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
-//                                    Log.d("DEBUG_APP_API",t.getLocalizedMessage());
-//                                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
-//                                    call.cancel();
-//                                }
-//                            });
+
             }
 
             @Override
@@ -496,7 +478,6 @@ public class MainActivity extends TcnMainActivity {
 
 //                Intent mainIntent = new Intent(ComposeActivity.this, MainAct.class);
 //                ComposeActivity.this.startActivity(mainIntent);
-                // do whatever
             }
         });
 }
@@ -505,40 +486,88 @@ public class MainActivity extends TcnMainActivity {
        stopTimer();
        int slotNo = activo.slotN;//出货的货道号 dispensing slot number
        initLoader(slotNo);
-       if(slotNo == 34){
-           Handler handler = new Handler();
-           handler.postDelayed(new Runnable() {
-               @Override
-               public void run() {
-                   // Do something after 5s = 5000ms
-                   String content = "Error de conexión. Por favor, inténtelo nuevamente o comuníquese con el servicio de soporte.";
-                   showAlertMessage(content,"Error",false);
-                   resumeTimer();
-               }
-           }, 3000);
+       RequestItem r = new RequestItem(activo.idCelda,currrentUser.mId);
+       Call<RequestItemResponse> call = dataSource.requestActivo(r);
+       call.enqueue(new Callback<RequestItemResponse>() {
+           @Override
+           public void onResponse(Call<RequestItemResponse> call, Response<RequestItemResponse> response) {
+               try{
+                                    Log.d("DEBUG_APP_API",response.message());
+                                    Log.d("DEBUG_APP_API",String.format("%s", response.isSuccessful()));
+                                    if (response.isSuccessful()) {
+                                        RequestItemResponse res =response.body();
+                                        assert res != null;
+                                            if (res.IsSuccess) {
+                                                int slotNo = activo.slotN;//出货的货道号 dispensing slot number
+                                                String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
+                                                String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
+                                                String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+//                                                Shipment shipment = new Shipment(activo.idCelda,currrentUser.mId,tradeNo,res.result.idActivo,res.result.keyActivo,activo.objectType);
+//                                                dataSource.insertShipment(shipment);
+                                                TcnVendIF.getInstance().ship(slotNo, shipMethod, amount, tradeNo);
+                                            } else {
+                                                showAlertMessage("Se produjo un error inesperado. Por favor, inténtelo nuevamente o póngase en contacto con el servicio de soporte.",
+                                                        "Error",false);
+//                                                Snackbar.make(view, "El usuario --- no tiene asignado este activo",
+//                                                        Snackbar.LENGTH_LONG).show();
+                                                resumeTimer();
+                                            }
+                                    }else{
+                                        showAlertMessage("Se produjo un error inesperado. Por favor, inténtelo nuevamente o póngase en contacto con el servicio de soporte.",
+                                                "Error",false);
+                                    }
+                                    }catch(Exception e){
+                                       showAlertMessage("Se produjo un error inesperado. Por favor, inténtelo nuevamente o póngase en contacto con el servicio de soporte.",
+                           "Error",false);
+                                        FileLogger.logError("Request_item_onResponse",e.getLocalizedMessage());
+                                    }
+                                }
 
-           return;
-       }
-
-       if(slotNo == 41){
-           Handler handler = new Handler();
-           handler.postDelayed(new Runnable() {
-               @Override
-               public void run() {
-                   // Do something after 5s = 5000ms
-                   String content = "Se produjo un error inesperado. Por favor, inténtelo nuevamente o póngase en contacto con el servicio de soporte.";
-                   showAlertMessage(content,"Error",false);
-                   resumeTimer();
-               }
-           }, 3000);
-
-           return;
-       }
-
-       String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
-       String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
-       String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
-       TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
+                                @Override
+                                public void onFailure(Call<RequestItemResponse> call, Throwable t) {
+                                    resumeTimer();
+                                    FileLogger.logError("RequestItem_onFailure",t.getLocalizedMessage());
+                                    Log.d("DEBUG_APP_API",t.getLocalizedMessage());
+                                    showAlertMessage("Error de conexión. Por favor, inténtelo nuevamente o comuníquese con el servicio de soporte.",
+                                            "Error",false);
+//                                    Snackbar.make(view, "Ocurrio un error inesperado", Snackbar.LENGTH_LONG).show();
+                                    call.cancel();
+                                }
+                            });
+//       if(slotNo == 34){
+//           Handler handler = new Handler();
+//           handler.postDelayed(new Runnable() {
+//               @Override
+//               public void run() {
+//                   // Do something after 5s = 5000ms
+//                   String content = "Error de conexión. Por favor, inténtelo nuevamente o comuníquese con el servicio de soporte.";
+//                   showAlertMessage(content,"Error",false);
+//                   resumeTimer();
+//               }
+//           }, 3000);
+//
+//           return;
+//       }
+//
+//       if(slotNo == 41){
+//           Handler handler = new Handler();
+//           handler.postDelayed(new Runnable() {
+//               @Override
+//               public void run() {
+//                   // Do something after 5s = 5000ms
+//                   String content = "Se produjo un error inesperado. Por favor, inténtelo nuevamente o póngase en contacto con el servicio de soporte.";
+//                   showAlertMessage(content,"Error",false);
+//                   resumeTimer();
+//               }
+//           }, 3000);
+//
+//           return;
+//       }
+//
+//       String shipMethod = PayMethod.PAYMETHED_WECHAT; //出货方法,微信支付出货，此处自己可以修改。 The shipping method is defined by the payment method, and the developer can replace WECHAT with the actual payment method.
+//       String amount = "0.1";    //支付的金额（元）,自己修改 This is a unit price, the developer can switch the unit price according to the country
+//       String tradeNo = UUID.randomUUID().toString();//支付订单号，每次出货，订单号不能一样，此处自己修改。 Transaction number, it cannot be the same number and should be different every time. you can modify it by yourself.
+//       TcnVendIF.getInstance().reqShip(slotNo, shipMethod, amount, tradeNo);
    }
 
 
@@ -568,10 +597,7 @@ public class MainActivity extends TcnMainActivity {
                     String loadText = "Error al dispensar. Por favor, póngase en contacto con el servicio de soporte.";
                     String loadTitle = "Fault";
                     showAlertMessage(loadText,loadTitle,true);
-
-//                    closeSession();
                     resumeTimer();
-//                    closeSession();
 //                    TcnUtilityUI.getToast(ComposeActivity.this, cEventInfo.m_lParam4, 20).show();
                     break;
 
@@ -588,7 +614,7 @@ public class MainActivity extends TcnMainActivity {
                 case TcnVendEventID.COMMAND_SHIPMENT_FAILURE:
                     String loadText2 = "Error al dispensar. Por favor, póngase en contacto con el servicio de soporte.";
                     String loadTitle1 = "Error";
-                    showAlertMessage(loadText2,loadTitle1,true);
+                    showAlertMessage(loadText2,loadTitle1, true);
 
 //                    closeSession();
                     resumeTimer();

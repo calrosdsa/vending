@@ -1,4 +1,2 @@
-com/tcn/sdk/springdemo/test/BuildConfig.java
- com.tcn.sdk.springdemo.test.BuildConfig
-com/tcn/sdk/springdemo/ExampleInstrumentedTest.java
- com.tcn.sdk.springdemo.ExampleInstrumentedTest
+com/tcn/vending/springdemo/test/BuildConfig.java
+ com.tcn.vending.springdemo.test.BuildConfig

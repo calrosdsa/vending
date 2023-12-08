@@ -1,1 +1,1 @@
-com.tcn.sdk.springdemo.test
+com.tcn.vending.springdemo.test

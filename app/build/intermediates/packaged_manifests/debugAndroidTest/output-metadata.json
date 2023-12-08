@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.tcn.sdk.springdemo.test",
+  "applicationId": "com.tcn.vending.springdemo.test",
   "variantName": "debugAndroidTest",
   "elements": [
     {

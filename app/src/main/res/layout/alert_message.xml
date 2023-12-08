@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    android:padding="15dp"
-    android:background="@drawable/help_dialog_back"
-    >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/help_dialog_back"
+        >
+
 
     <TextView
         android:id="@+id/load_title"
@@ -37,7 +42,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/load_title"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
         >
 
         <TextView
@@ -57,12 +62,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginVertical="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/arial_bold"
         android:text="Confirmar"
         android:textAllCaps="false"
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         android:textSize="@dimen/button_l_dim"
         style="?attr/buttonBarNegativeButtonStyle"
@@ -78,3 +83,4 @@
          android:background="@drawable/dialog_bocop_loading_rotate_anim_img" />
     -->
 </android.support.constraint.ConstraintLayout>
+</RelativeLayout>

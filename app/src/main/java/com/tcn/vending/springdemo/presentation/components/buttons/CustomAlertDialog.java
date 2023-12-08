@@ -82,12 +82,4 @@ public class CustomAlertDialog extends Dialog {
 	public void cancel() {
 		super.cancel();
 	}
-
-
-
-
-
-
-
-
 }

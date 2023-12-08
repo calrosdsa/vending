@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+     android:layout_height="wrap_content">
+
 <android.support.constraint.ConstraintLayout
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="300dp"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:background="@drawable/help_dialog_back"
@@ -16,6 +20,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:fontFamily="@font/arial_bold"
                 android:padding="3dp"
+                android:text="Confirme su sulictud"
                 android:textSize="@dimen/custom_dialog_title_dim" />
 
 <!--            <ImageButton-->
@@ -35,11 +40,12 @@
           android:layout_height="wrap_content"
           app:layout_constraintTop_toBottomOf="@id/load_title"
           app:layout_constraintStart_toStartOf="parent"
-          android:paddingTop="10dp"
+          android:paddingTop="5dp"
           >
 
           <TextView
               android:id="@+id/load_text"
+              android:text="Porfa vor confirme si desa dispensar un Maouse Row dasmd aosmdasm da"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:fontFamily="@font/arial"
@@ -54,6 +60,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/arial_bold"
@@ -61,7 +68,6 @@
         android:textAllCaps="false"
         android:padding="10dp"
         android:textSize="@dimen/button_l_dim"
-        android:layout_marginVertical="10dp"
         style="?attr/buttonBarNegativeButtonStyle"
         android:textColor="@color/primary"
         />
@@ -71,7 +77,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="20dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/arial_bold"
@@ -93,4 +99,4 @@
             -->
 </android.support.constraint.ConstraintLayout>
 
-
+</RelativeLayout>

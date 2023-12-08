@@ -42,7 +42,6 @@ com/tcn/vending/springdemo/presentation/MainActivity.java
  com.tcn.vending.springdemo.presentation.MainActivity$2
  com.tcn.vending.springdemo.presentation.MainActivity$3
  com.tcn.vending.springdemo.presentation.MainActivity$4
- com.tcn.vending.springdemo.presentation.MainActivity$5
  com.tcn.vending.springdemo.presentation.MainActivity$VendListener
 com/tcn/vending/springdemo/presentation/components/buttons/ButtonEditSelectD.java
  com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
@@ -55,6 +54,8 @@ com/tcn/vending/springdemo/presentation/SerialPortSetting.java
  com.tcn.vending.springdemo.presentation.SerialPortSetting$2
  com.tcn.vending.springdemo.presentation.SerialPortSetting$3
  com.tcn.vending.springdemo.presentation.SerialPortSetting$4
+com/tcn/vending/springdemo/data/dto/RequestActivos.java
+ com.tcn.vending.springdemo.data.dto.RequestActivos
 com/tcn/vending/springdemo/presentation/MdbInfoBean.java
  com.tcn.vending.springdemo.presentation.MdbInfoBean
 controller/OverlayService.java
@@ -147,7 +148,6 @@ com/tcn/vending/springdemo/data/dto/DispensarResponse.java
 com/tcn/vending/springdemo/data/repository/LocalAppDataSource.java
  com.tcn.vending.springdemo.data.repository.LocalAppDataSource
  com.tcn.vending.springdemo.data.repository.LocalAppDataSource$1
- com.tcn.vending.springdemo.data.repository.LocalAppDataSource$2
 com/tcn/vending/springdemo/data/dto/Result.java
  com.tcn.vending.springdemo.data.dto.Result
 com/tcn/vending/springdemo/data/dao/ActivoDao.java
@@ -205,3 +205,5 @@ com/tcn/vending/springdemo/presentation/adapter/CustomAdapter.java
  com.tcn.vending.springdemo.presentation.adapter.CustomAdapter
  com.tcn.vending.springdemo.presentation.adapter.CustomAdapter$1
  com.tcn.vending.springdemo.presentation.adapter.CustomAdapter$ViewHolder
+com/tcn/vending/springdemo/data/dto/ActivoDto.java
+ com.tcn.vending.springdemo.data.dto.ActivoDto

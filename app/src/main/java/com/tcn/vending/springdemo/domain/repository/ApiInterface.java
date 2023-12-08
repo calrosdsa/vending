@@ -1,6 +1,8 @@
 package com.tcn.vending.springdemo.domain.repository;
 
+import com.tcn.vending.springdemo.data.dto.ActivoDto;
 import com.tcn.vending.springdemo.data.dto.DispensarResponse;
+import com.tcn.vending.springdemo.data.dto.RequestActivos;
 import com.tcn.vending.springdemo.data.dto.RequestDispensar;
 import com.tcn.vending.springdemo.data.dto.RequestItem;
 import com.tcn.vending.springdemo.data.dto.RequestItemResponse;
@@ -23,8 +25,8 @@ public interface ApiInterface {
     @POST
     Call<RequestItemResponse> updateDispensar(@Url String url, @Body RequestDispensar requestDispensar);
 
-    @GET("activos/")
-    Call<List<Activo>> getActivos();
+    @POST("/validar/ObtenerArray")
+    Call<ActivoDto> getActivos(@Body RequestActivos requestActivos);
 
 
 }

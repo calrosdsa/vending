@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tcn.sdk.springdemo.test" >
+    package="com.tcn.vending.springdemo.test" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.tcn.sdk.springdemo"
-        android:targetPackage="com.tcn.sdk.springdemo" />
+        android:label="Tests for com.tcn.vending.springdemo"
+        android:targetPackage="com.tcn.vending.springdemo" />
 
     <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />

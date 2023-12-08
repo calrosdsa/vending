@@ -9,8 +9,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
-    public static final String hostUrlTest = "http://172.20.20.76:92/v1/";
-//    public static final String hostUrlTest = "http://10.22.6.5:92/v1/";
+//    public static final String hostUrlTest = "http://10.22.4.41:91";
+    public static final String hostUrlTest = "http://172.20.20.76:92";
 
     public static ApiInterface getRestService() {
 

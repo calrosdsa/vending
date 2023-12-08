@@ -208,7 +208,7 @@
     <LinearLayout
         android:id="@+id/activo_layout"
         android:layout_width="match_parent"
-        android:layout_height="870dp"
+        android:layout_height="900dp"
         android:orientation="vertical"
         android:padding="15dp"
         android:gravity="center"

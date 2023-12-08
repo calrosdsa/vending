@@ -7,7 +7,9 @@ import com.tcn.vending.springdemo.data.dao.ActivoDao;
 import com.tcn.vending.springdemo.data.dao.CeldaDao;
 import com.tcn.vending.springdemo.data.dao.ShipmentDao;
 import com.tcn.vending.springdemo.data.dao.UserDao;
+import com.tcn.vending.springdemo.data.dto.ActivoDto;
 import com.tcn.vending.springdemo.data.dto.DispensarResponse;
+import com.tcn.vending.springdemo.data.dto.RequestActivos;
 import com.tcn.vending.springdemo.data.dto.RequestDispensar;
 import com.tcn.vending.springdemo.data.dto.RequestItem;
 import com.tcn.vending.springdemo.data.dto.RequestItemResponse;
@@ -47,7 +49,7 @@ public class LocalAppDataSource implements AppDataSource {
     //API
     @Override
     public Call<RequestItemResponse> requestActivo(RequestItem r){
-       return mRestService.requestActivo("http://10.0.3.82:91/validar/ValidarPeticion",r);
+       return mRestService.requestActivo("http://10.22.4.41:91/validar/Dispensar",r);
     }
 
     @Override
@@ -95,32 +97,9 @@ public class LocalAppDataSource implements AppDataSource {
     }
 
     @Override
-    public void getActivos() {
-        Call<List<Activo>> call = mRestService.getActivos();
-        call.enqueue(new Callback<List<Activo>>() {
-            @Override
-            public void onResponse(Call<List<Activo>> call, Response<List<Activo>> response) {
-                try{
-                if(response.isSuccessful()){
-                    List<Activo> activos = response.body();
-                    AsyncTask.execute(()-> mActivoDao.insertActivos(activos));
-                }else{
-                    FileLogger.logError("getActivos_onResponse","Unsuccessfull response");
-                    Log.d("DEBUG_APP_ERR","NO SUCCESS");
-                    call.cancel();
-                }
-                }catch(Exception e){
-                    FileLogger.logError("getActivos_onResponse",e.getLocalizedMessage());
-                    Log.d("DEBUG_APP_ERR",e.getLocalizedMessage());
-                }
-            }
-            @Override
-            public void onFailure(Call<List<Activo>> call, Throwable t) {
-                FileLogger.logError("getActivos_onFailure",t.getLocalizedMessage());
-                Log.d("DEBUG_APP_API",t.getLocalizedMessage());
-                call.cancel();
-            }
-        });
+    public Call<ActivoDto> getActivos(String codeUser) {
+        RequestActivos request = new RequestActivos(codeUser);
+        return mRestService.getActivos(request);
     }
 
     @Override
@@ -153,6 +132,9 @@ public class LocalAppDataSource implements AppDataSource {
     public void insertAllCeldas(List<Celda> celdas) {
         mCeldaDao.insertAll(celdas);
     }
+
+    @Override
+    public void insertActivos(List<Activo> activos) { mActivoDao.insertActivos(activos);}
 
     @Override
     public Celda mergeCelda(Celda celda) {

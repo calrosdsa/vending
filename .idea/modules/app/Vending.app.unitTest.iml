@@ -94,7 +94,7 @@
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Vending.app.main" scope="TEST" />
-    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.13.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.persistence.room:migration:1.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.persistence.room:common:1.1.1" level="project" />
@@ -105,38 +105,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.retrofit2:converter-gson:2.3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:robolectric:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:junit:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:shadows-framework:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:resources:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:sandbox:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:nativeruntime:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:utils-reflector:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:plugins-maven-dependency-resolver:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:shadows-versioning:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:shadowapi:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:utils:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:pluginapi:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:annotations:4.11.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:guava:31.1-jre" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:failureaccess:1.0.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.checkerframework:checker-qual:3.12.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.errorprone:error_prone_annotations:2.11.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.j2objc:j2objc-annotations:1.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: javax.inject:javax.inject:1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: javax.annotation:javax.annotation-api:1.3.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm-commons:9.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm-util:9.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm-analysis:9.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm-tree:9.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm:9.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.auto.value:auto-value-annotations:1.10.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.almworks.sqlite4java:sqlite4java:1.0.392" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.ibm.icu:icu4j:73.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: androidx.annotation:annotation:1.3.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.bouncycastle:bcprov-jdk18on:1.76" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.greenrobot:eventbus:3.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.retrofit2:adapter-rxjava2:2.3.0" level="project" />
@@ -148,6 +116,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.reactivestreams:reactive-streams:1.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.picasso:picasso:2.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: dev.gustavoavila:java-android-websocket-client:2.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:listenablefuture:1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.persistence.room:testing:1.1.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.work:work-runtime:1.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.persistence.room:rxjava2:1.1.1@aar" level="project" />
@@ -173,7 +142,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.core:runtime:1.1.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.lifecycle:runtime:1.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: android.arch.lifecycle:viewmodel:1.1.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:monitor:1.6.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.constraint:constraint-layout:1.1.3@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.d-max:spots-dialog:1.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.ss.bannerslider:bannerslider:2.0.0@aar" level="project" />
