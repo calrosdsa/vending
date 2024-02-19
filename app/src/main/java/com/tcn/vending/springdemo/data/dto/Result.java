@@ -6,4 +6,7 @@ public class Result {
     public String keyActivo;
     public int codeUsuario;
     public int idUsuario;
+    public String keyTicket;
+    public String keyActivoNuevo;
+    public String keyActivoAntiguo;
 }

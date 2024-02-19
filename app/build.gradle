@@ -73,7 +73,7 @@ dependencies {
     implementation(name: 'tcn_springboard-release', ext: 'aar')
 
 
-    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+//    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 
     implementation 'com.ss.bannerslider:bannerslider:2.0.0'
 

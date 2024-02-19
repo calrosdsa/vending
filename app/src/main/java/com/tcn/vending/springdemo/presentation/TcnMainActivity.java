@@ -17,7 +17,7 @@ public class TcnMainActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setFullScreen(this);
+//		setFullScreen(this);
 		super.onCreate(savedInstanceState);
 
 
@@ -32,7 +32,7 @@ public class TcnMainActivity extends AppCompatActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		FullScreencall();
+//		FullScreencall();
 	}
 
 	@Override
@@ -45,19 +45,19 @@ public class TcnMainActivity extends AppCompatActivity {
 		super.onDestroy();
 	}
 
-	private void setFullScreen(Activity activity) {
-		activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		activity.getWindow().setFlags(
-				WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-	}
-
-	public void FullScreencall() {
-		//for new api versions.
-		View decorView = getWindow().getDecorView();
-		int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-		decorView.setSystemUiVisibility(uiOptions);
-	}
+//	private void setFullScreen(Activity activity) {
+//		activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//		activity.getWindow().setFlags(
+//				WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//	}
+//
+//	public void FullScreencall() {
+//		//for new api versions.
+//		View decorView = getWindow().getDecorView();
+//		int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+//		decorView.setSystemUiVisibility(uiOptions);
+//	}
 
 
 //	@Override // android.app.Activity, android.view.Window.Callback

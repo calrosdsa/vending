@@ -4,12 +4,10 @@
     android:layout_height="match_parent"
     android:background="@color/background_main_background">
 
-
     <com.tcn.vending.springdemo.presentation.Titlebar
         android:id="@+id/menu_setttings_titlebar"
         android:layout_width="match_parent"
-        android:layout_height="100px"
-        >
+        android:layout_height="100dp">
 
     </com.tcn.vending.springdemo.presentation.Titlebar>
 
@@ -27,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:text="设置串口"
+                android:visibility="gone"
                 android:textColor="@color/ui_base_red"
                 android:textSize="18sp"
                 android:background="@color/ui_base_blue"
@@ -36,20 +35,22 @@
             <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spring_display_price"
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:visibility="gone"
+                android:layout_height="100dp"
                 style="@style/background_lrmarginss">
 
             </com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonSwitch
                     android:id="@+id/menu_spr_light_check"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginson">
 
@@ -58,7 +59,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_query_slot"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -68,7 +69,7 @@
             <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spr_ship_slot"
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
                 style="@style/background_lrmarginss">
 
             </com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD>
@@ -77,28 +78,30 @@
             <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spr_ship_slot_test"
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
                 style="@style/background_lrmarginss">
 
             </com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
             <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                 android:id="@+id/menu_spr_reqselect"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
                 style="@style/background_lrmarginss">
 
             </com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_self_check"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -107,7 +110,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_reset"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -117,24 +120,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_heat_cool"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
                 </com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD>
 
                 <!--<com.tcn.uicommon.button.ButtonEditSelectD-->
-                    <!--android:id="@+id/menu_spr_set_temp"-->
-                    <!--android:layout_width="0px"-->
-                    <!--android:layout_height="100px"-->
-                    <!--android:layout_weight="1"-->
-                    <!--style="@style/app_lrmarginss">-->
+                <!--android:id="@+id/menu_spr_set_temp"-->
+                <!--android:layout_width="0px"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_weight="1"-->
+                <!--style="@style/app_lrmarginss">-->
 
                 <!--</com.tcn.uicommon.button.ButtonEditSelectD>-->
             </LinearLayout>
@@ -142,12 +146,14 @@
             <LinearLayout
                 android:id="@+id/menu_spr_set_heat_cool_layout"
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
+                    android:visibility="gone"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -171,8 +177,9 @@
 
                 <LinearLayout
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <TextView
@@ -195,8 +202,9 @@
 
                 <LinearLayout
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <TextView
@@ -221,14 +229,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
+                android:visibility="gone"
                 android:orientation="horizontal"
                 android:layout_marginTop="20px">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_glass_heat_enable"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -237,7 +246,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_glass_heat_disable"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -246,13 +255,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_open_led"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -261,7 +271,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_close_led"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -270,13 +280,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_buzzer_open"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -285,7 +296,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_buzzer_close"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -294,13 +305,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_spring"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -309,7 +320,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_belts"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -318,13 +329,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_spring_all"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -333,7 +344,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_slot_belts_all"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -342,13 +353,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_single_slot"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -357,7 +368,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_double_slot"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -365,14 +376,15 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="100px"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_set_single_slot_all"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -381,7 +393,7 @@
                 <com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
                     android:id="@+id/menu_spr_test_mode"
                     android:layout_width="0px"
-                    android:layout_height="100px"
+                    android:layout_height="100dp"
                     android:layout_weight="1"
                     style="@style/background_lrmarginss">
 
@@ -469,7 +481,8 @@
                 android:textSize="18sp"
                 android:text="格子机设置"
                 style="@style/background_lrmarginss"
-                android:visibility="gone">
+                android:visibility="gone"
+                >
 
             </Button>
 

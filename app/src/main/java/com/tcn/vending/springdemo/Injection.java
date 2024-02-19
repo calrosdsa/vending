@@ -17,14 +17,14 @@ import java.io.InputStream;
 
 public class Injection {
     public static AppDataSource provideUserDataSource(Context context) {
-        AppDatabase database = AppDatabase.getInstance(context);
+//        AppDatabase database = AppDatabase.getInstance(context);
         ApiInterface restService = APIClient.getRestService();
         return new LocalAppDataSource(
-                database.celdaDao(),
-                database.userDao(),
-                restService,
-                database.shipmentDao(),
-                database.activoDao()
+//                database.celdaDao(),
+//                database.userDao(),
+                restService
+//                database.shipmentDao(),
+//                database.activoDao()
         );
     }
 }

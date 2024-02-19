@@ -160,6 +160,9 @@
     <string name="background_please_choose">请选择...</string>
     <string name="background_coffee_data_error">数据错误</string>
 
-    <string name="confirmar_dipensar_text" translatable="false">Si desea dispensar un %s porfavor presione confirmar </string>
+    <string name="confirmar_dipensar_text" translatable="false">Si desea dispensar un %s, por favor, presione confirmar </string>
+    <string name="unexpected_error">Se produjo un error inesperado. Por favor, inténtelo nuevamente o póngase en contacto con el servicio de soporte.</string>
+    <string name="connection_err">Error de conexión. Por favor, inténtelo nuevamente o comuníquese con el servicio de soporte.</string>
+    <string name="successfull_message">Se ha dispensado con éxito y se ha actualizado su inventario</string>
 
 </resources>

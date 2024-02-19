@@ -6,13 +6,11 @@
     android:layout_height="wrap_content">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="380dp"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:background="@drawable/help_dialog_back"
         >
-
-
     <TextView
         android:id="@+id/load_title"
         android:layout_width="match_parent"
@@ -20,7 +18,7 @@
         android:text="Para continuar confirme su solicitud"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:fontFamily="@font/arial_bold"
+        android:fontFamily="@font/humanist_777_bold_bt"
         android:padding="3dp"
         android:gravity="center"
         android:textSize="@dimen/custom_dialog_title_dim" />
@@ -49,7 +47,7 @@
             android:id="@+id/load_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arial"
+            android:fontFamily="@font/calibri_regular"
             android:padding="3dp"
             android:textSize="@dimen/custom_dialog_text_dim"
             />
@@ -64,7 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/arial_bold"
+        android:fontFamily="@font/humanist_777_bold_bt"
         android:text="Confirmar"
         android:textAllCaps="false"
         android:layout_marginTop="10dp"

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tcn.vending.springdemo.R;
+
+import java.util.Objects;
 
 
 /**
@@ -163,13 +166,24 @@ public class OutDialog extends Dialog {
         mAnim.setInterpolator(lir);
     }
 
+    static int ui_flags =
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                    View.SYSTEM_UI_FLAG_FULLSCREEN |
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
     @Override
     public void show() {
+        Objects.requireNonNull(getWindow()).setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+        getWindow().getDecorView().setSystemUiVisibility(ui_flags);
         timeCount = 0;
         iv_route.startAnimation(mAnim);
         handler.removeMessages(CHANGE_TITLE_WHAT);
         handler.sendEmptyMessage(CHANGE_TITLE_WHAT);
         super.show();
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
     }
 
     @Override
@@ -214,7 +228,7 @@ public class OutDialog extends Dialog {
         //iv_route.setBackgroundResource(0);
         iv_route.setImageResource(R.mipmap.lyric_search_pressed);
         outnum.setText("");
-        tv.setText("出货成功"); //Shipped successfully
+        tv.setText("Enviado exitosamente"); //Shipped successfully
         tv_point.setText("");
         tv_point.setVisibility(View.GONE);
         handler.sendEmptyMessageDelayed(DISMISS_DIALOG, DISMISS_DIALOG_DELAYMILLIS);
@@ -227,7 +241,7 @@ public class OutDialog extends Dialog {
         iv_route.setBackgroundResource(0);
         iv_route.setImageResource(R.mipmap.shibai);
         outnum.setText("");
-        tv.setText("出货失败");//Shipping failed
+        tv.setText("El envío falló");//Shipping failed
         tv_point.setText("");
         tv_point.setVisibility(View.GONE);
         handler.sendEmptyMessageDelayed(DISMISS_DIALOG, DISMISS_DIALOG_DELAYMILLIS);

@@ -21,10 +21,6 @@ anim up_from_bottom
 animator design_appbar_state_list_animator
 array baudrates_name
 array baudrates_value
-attr DialogSpotColor
-attr DialogSpotCount
-attr DialogTitleAppearance
-attr DialogTitleText
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -572,7 +568,6 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
-color spots_dialog_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -830,6 +825,7 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activo_name_size
 dimen button_l_dim
 dimen button_m_dim
 dimen cardview_compat_inset_shadow
@@ -915,12 +911,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
-dimen progress_margin
-dimen progress_width
 dimen round_square_indicator_radius
-dimen spot_size
-dimen title_margin
-dimen title_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1017,6 +1008,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_close_24
 drawable baseline_help_outline_24
+drawable bicentenario_bolivia
 drawable btn_normal
 drawable btn_pressed
 drawable btn_selector
@@ -1027,7 +1019,6 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable dmax_spots_spot
 drawable exit_icon
 drawable help_dialog_back
 drawable ic_launcher_background
@@ -1040,6 +1031,7 @@ drawable indicator_round_square_unselected
 drawable indicator_square_selected
 drawable indicator_square_unselected
 drawable logo
+drawable logo_background
 drawable mmtitle_bg
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -1075,8 +1067,15 @@ drawable ui_base_toastbackbutton
 drawable ui_base_toaststyle
 drawable ui_base_weixin_selector_btn_back
 drawable user_icon
+drawable ypfb_portada
 font arial
 font arial_bold
+font calibri_bold
+font calibri_regular
+font humanist_777_black_bt
+font humanist_777_bold_bt
+font humanist_777_bold_condensed_bt
+font rubik_bubbles_regular
 id ALT
 id CTRL
 id FUNCTION
@@ -1104,6 +1103,7 @@ id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
+id activoName
 id activo_layout
 id add
 id alertTitle
@@ -1115,6 +1115,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bottom_layout
 id btn_edit_display
 id btn_edit_edit_input
 id btn_edit_edit_select
@@ -1168,8 +1169,6 @@ id dialog_start_text
 id dimensions
 id direct
 id disableHome
-id dmax_spots_progress
-id dmax_spots_title
 id edit_query
 id end
 id end_padder
@@ -1205,7 +1204,6 @@ id icon
 id icon_group
 id ifRoom
 id image
-id image_layout
 id info
 id init_button
 id input
@@ -1308,6 +1306,7 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id portada
 id position
 id progress_bar
 id progress_circular
@@ -1473,7 +1472,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout dmax_spots_dialog
 layout drawer_layout
 layout item
 layout item_slide_image
@@ -1766,6 +1764,7 @@ string board_ui_price_unit
 string bottom_sheet_behavior
 string character_counter_pattern
 string confirmar_dipensar_text
+string connection_err
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1776,6 +1775,7 @@ string serial_port_motherboard_baud_rate
 string serial_port_motherboard_serial
 string serial_port_server_serial
 string status_bar_notification_info_overflow
+string successfull_message
 string ui_base_aisle_name
 string ui_base_back
 string ui_base_backgroound_cancel
@@ -1808,6 +1808,7 @@ string ui_base_notify_slot_faultSlot
 string ui_base_notify_sold_out
 string ui_base_notify_sys_busy
 string ui_base_saving
+string unexpected_error
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2009,7 +2010,6 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
-style SpotsDialogDefault
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
@@ -2248,7 +2248,6 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle textColorError
-styleable Dialog DialogSpotColor DialogSpotCount DialogTitleAppearance DialogTitleText
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabSize pressedTranslationZ rippleColor useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide

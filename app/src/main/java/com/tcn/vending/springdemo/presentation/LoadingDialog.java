@@ -2,15 +2,17 @@ package com.tcn.vending.springdemo.presentation;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Handler;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.tcn.vending.springdemo.R;
+
+import java.util.Objects;
 
 interface Clear {
 	void clearData();
@@ -126,12 +128,32 @@ public class LoadingDialog extends Dialog {
 		mAnim.setStartTime(Animation.START_ON_FIRST_FRAME);
 	}
 
+
+	static int ui_flags =
+			View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+					View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+					View.SYSTEM_UI_FLAG_FULLSCREEN |
+					View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+					View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+					View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+
+
 	@Override
 	public void show() {
+		Objects.requireNonNull(getWindow()).setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+				WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+		getWindow().getDecorView().setSystemUiVisibility(ui_flags);
 		super.show();
+		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
 		timeCount = 0;
 		handler.sendEmptyMessage(CHANGE_TITLE_WHAT);
 	}
+//	@Override
+//	public void show() {
+//		super.show();
+//		timeCount = 0;
+//		handler.sendEmptyMessage(CHANGE_TITLE_WHAT);
+//	}
 
 	@Override
 	public void dismiss() {

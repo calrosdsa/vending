@@ -51,7 +51,6 @@
         android:extractNativeLibs="false"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         <activity
             android:name="com.tcn.vending.springdemo.presentation.MainActivity"
@@ -63,8 +62,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.tcn.vending.springdemo.presentation.MenuActivity"
-            android:configChanges="locale|keyboardHidden|orientation" />
+            android:name="com.tcn.vending.springdemo.presentation.MenuConfigActivity"
+            android:configChanges="locale|keyboardHidden|orientation"
+            android:launchMode="singleTask" />
         <activity
             android:name="com.tcn.vending.springdemo.presentation.LogActivity"
             android:configChanges="locale|keyboardHidden|orientation" />
@@ -99,13 +99,11 @@
         </receiver>
 
         <service android:name="controller.VendService" />
-        <service
-            android:name="controller.OverlayService"
-            android:exported="false" />
-        <service
-            android:name="controller.SyncShipmentsSchedule"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
+        <!-- <service -->
+        <!-- android:name="controller.OverlayService" -->
+        <!-- android:exported="false"/> -->
+        <!-- <service android:name="controller.SyncShipmentsSchedule" -->
+        <!-- android:permission="android.permission.BIND_JOB_SERVICE" /> -->
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />

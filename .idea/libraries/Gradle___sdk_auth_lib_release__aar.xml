@@ -4,8 +4,8 @@
       <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1f0004ddeed05a7b95c49b5635b5b326/sdk_auth_lib-release/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1f0004ddeed05a7b95c49b5635b5b326/sdk_auth_lib-release/res" />
       <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1f0004ddeed05a7b95c49b5635b5b326/sdk_auth_lib-release/jars/classes.jar!/" />
+      <root url="file://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1f0004ddeed05a7b95c49b5635b5b326/sdk_auth_lib-release/res" />
       <root url="file://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1f0004ddeed05a7b95c49b5635b5b326/sdk_auth_lib-release/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
