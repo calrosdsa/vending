@@ -4,17 +4,7 @@
             "outputFile": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "D:\\AndroidStudio\\jbr\\caches\\transforms-2\\files-2.1\\280d146c8b2567f8e465d8c7407ca43f\\work-runtime-1.0.1\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,121",
-                        "endColumns": "65,62",
-                        "endOffsets": "116,179"
-                    }
-                },
-                {
-                    "source": "D:\\AndroidStudio\\jbr\\caches\\transforms-2\\files-2.1\\1d64b5052513c769d51b27624bb35b4c\\cardview-v7-26.1.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Program Files\\Android\\Android Studio\\jbr\\caches\\transforms-2\\files-2.1\\1d64b5052513c769d51b27624bb35b4c\\cardview-v7-26.1.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -33,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "D:\\AndroidStudio\\jbr\\caches\\transforms-2\\files-2.1\\de0151e446039cdc1a9280ae05eb2e08\\appcompat-v7-26.1.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Program Files\\Android\\Android Studio\\jbr\\caches\\transforms-2\\files-2.1\\de0151e446039cdc1a9280ae05eb2e08\\appcompat-v7-26.1.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -49,6 +39,16 @@
                         "endLines": "4,5,6,7,20,33,34,35,36,37,38",
                         "endColumns": "134,134,74,86,12,12,126,104,114,106,112",
                         "endOffsets": "314,449,524,611,1401,2203,2330,2435,2550,2657,2770"
+                    }
+                },
+                {
+                    "source": "C:\\Program Files\\Android\\Android Studio\\jbr\\caches\\transforms-2\\files-2.1\\280d146c8b2567f8e465d8c7407ca43f\\work-runtime-1.0.1\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
                     }
                 }
             ]

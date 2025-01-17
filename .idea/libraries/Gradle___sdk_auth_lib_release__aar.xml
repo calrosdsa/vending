@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: :sdk_auth_lib-release:@aar">
+  <library name="Gradle: :sdk_auth_lib-release:@aar" external-system-id="GRADLE">
     <ANNOTATIONS>
       <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1f0004ddeed05a7b95c49b5635b5b326/sdk_auth_lib-release/annotations.zip!/" />
     </ANNOTATIONS>

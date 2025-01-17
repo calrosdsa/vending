@@ -1,11 +1,11 @@
 <component name="libraryTable">
-  <library name="Gradle: android.arch.persistence.room:runtime:1.1.1@aar">
+  <library name="Gradle: android.arch.persistence.room:runtime:1.1.1@aar" external-system-id="GRADLE">
     <ANNOTATIONS>
       <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1934370e5550339690bea12b39e2b900/runtime-1.1.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1934370e5550339690bea12b39e2b900/runtime-1.1.1/jars/classes.jar!/" />
       <root url="file://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1934370e5550339690bea12b39e2b900/runtime-1.1.1/AndroidManifest.xml" />
+      <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/transforms-2/files-2.1/1934370e5550339690bea12b39e2b900/runtime-1.1.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

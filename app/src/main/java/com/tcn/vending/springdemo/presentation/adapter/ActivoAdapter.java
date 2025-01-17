@@ -44,21 +44,17 @@ public class ActivoAdapter extends RecyclerView.Adapter<ActivoAdapter.MyView> {
                     .findViewById(R.id.activoName);
         }
     }
-
     // Constructor for adapter class
     // which takes a list of String type
     public ActivoAdapter(List<Activo> horizontalList)
     {
         this.list = horizontalList;
     }
-
     // Override onCreateViewHolder which deals
     // with the inflation of the card layout
     // as an item for the RecyclerView.
     @Override
-    public MyView onCreateViewHolder(ViewGroup parent,
-                                     int viewType)
-    {
+    public MyView onCreateViewHolder(ViewGroup parent,int viewType) {
 
         // Inflate item.xml using LayoutInflator
         View itemView
@@ -108,7 +104,6 @@ public class ActivoAdapter extends RecyclerView.Adapter<ActivoAdapter.MyView> {
 //            holder.textView.setTextColor(context.getColor(R.color.primary));
         }
     }
-
     // Override getItemCount which Returns
     // the length of the RecyclerView.
     @Override

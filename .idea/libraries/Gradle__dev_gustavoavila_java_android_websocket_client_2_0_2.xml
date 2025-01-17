@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: dev.gustavoavila:java-android-websocket-client:2.0.2">
+  <library name="Gradle: dev.gustavoavila:java-android-websocket-client:2.0.2" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/modules-2/files-2.1/dev.gustavoavila/java-android-websocket-client/2.0.2/a777684a2beaa3482fdaaff1105d26e42964094e/java-android-websocket-client-2.0.2.jar!/" />
     </CLASSES>

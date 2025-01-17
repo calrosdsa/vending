@@ -342,15 +342,6 @@ attr showDividers
 attr showText
 attr showTitle
 attr singleChoiceItemLayout
-attr slider_animateIndicators
-attr slider_defaultBanner
-attr slider_emptyView
-attr slider_hideIndicators
-attr slider_indicatorSize
-attr slider_interval
-attr slider_loopSlides
-attr slider_selectedSlideIndicator
-attr slider_unselectedSlideIndicator
 attr spanCount
 attr spinBars
 attr spinnerDropDownItemStyle
@@ -516,8 +507,6 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
-color default_indicator_color_selected
-color default_indicator_color_unselected
 color design_bottom_navigation_shadow_color
 color design_error
 color design_fab_shadow_end_color
@@ -839,9 +828,6 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen custom_dialog_text_dim
 dimen custom_dialog_title_dim
-dimen default_dash_indicator_width
-dimen default_indicator_margins
-dimen default_indicator_size
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_text_size
@@ -895,7 +881,6 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
-dimen max_slider_indicator_size
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -911,7 +896,6 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
-dimen round_square_indicator_radius
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1022,14 +1006,6 @@ drawable design_snackbar_background
 drawable exit_icon
 drawable help_dialog_back
 drawable ic_launcher_background
-drawable indicator_circle_selected
-drawable indicator_circle_unselected
-drawable indicator_dash_selected
-drawable indicator_dash_unselected
-drawable indicator_round_square_selected
-drawable indicator_round_square_unselected
-drawable indicator_square_selected
-drawable indicator_square_unselected
 drawable logo
 drawable logo_background
 drawable mmtitle_bg
@@ -1474,7 +1450,6 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout drawer_layout
 layout item
-layout item_slide_image
 layout layout_bcomm_help_qrcode
 layout log
 layout notification_action
@@ -2269,7 +2244,6 @@ styleable RecyclerView android_orientation android_descendantFocusability fastSc
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
-styleable Slider slider_animateIndicators slider_defaultBanner slider_emptyView slider_hideIndicators slider_indicatorSize slider_interval slider_loopSlides slider_selectedSlideIndicator slider_unselectedSlideIndicator
 styleable SnackbarLayout android_maxWidth elevation maxActionInlineWidth
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode

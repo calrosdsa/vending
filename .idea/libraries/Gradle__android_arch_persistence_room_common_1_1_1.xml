@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: android.arch.persistence.room:common:1.1.1">
+  <library name="Gradle: android.arch.persistence.room:common:1.1.1" external-system-id="GRADLE">
     <CLASSES>
       <root url="jar://$APPLICATION_HOME_DIR$/jbr/caches/modules-2/files-2.1/android.arch.persistence.room/common/1.1.1/8094cc50760b9ac665a8ea76b51888f70042e2b5/common-1.1.1.jar!/" />
     </CLASSES>

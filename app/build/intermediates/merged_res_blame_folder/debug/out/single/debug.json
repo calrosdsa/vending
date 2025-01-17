@@ -8,20 +8,20 @@
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\font_rubik_bubbles_regular.ttf.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\font\\rubik_bubbles_regular.ttf"
-    },
-    {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\font_arial_bold.ttf.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\font\\arial_bold.ttf"
     },
     {
-        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_normal.xml.flat",
-        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\btn_normal.xml"
+        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\font_rubik_bubbles_regular.ttf.flat",
+        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\font\\rubik_bubbles_regular.ttf"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\font_calibri_bold.ttf.flat",
         "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\font\\calibri_bold.ttf"
+    },
+    {
+        "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_normal.xml.flat",
+        "source": "D:\\AndroidApps\\Expendedora\\Vending\\app\\src\\main\\res\\drawable\\btn_normal.xml"
     },
     {
         "merged": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",

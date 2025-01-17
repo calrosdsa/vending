@@ -41,6 +41,7 @@ com/tcn/vending/springdemo/presentation/MainActivity.java
  com.tcn.vending.springdemo.presentation.MainActivity$4
  com.tcn.vending.springdemo.presentation.MainActivity$5
  com.tcn.vending.springdemo.presentation.MainActivity$6
+ com.tcn.vending.springdemo.presentation.MainActivity$7
  com.tcn.vending.springdemo.presentation.MainActivity$VendListener
 com/tcn/vending/springdemo/presentation/components/buttons/ButtonEditSelectD.java
  com.tcn.vending.springdemo.presentation.components.buttons.ButtonEditSelectD
@@ -98,8 +99,6 @@ com/tcn/vending/springdemo/presentation/MenuSettingsStandJsActivity.java
 com/tcn/vending/springdemo/presentation/components/CustomAlertDialog.java
  com.tcn.vending.springdemo.presentation.components.CustomAlertDialog
  com.tcn.vending.springdemo.presentation.components.CustomAlertDialog$1
-com/tcn/vending/springdemo/presentation/adapter/PicassoImageLoadingService.java
- com.tcn.vending.springdemo.presentation.adapter.PicassoImageLoadingService
 com/tcn/vending/springdemo/Injection.java
  com.tcn.vending.springdemo.Injection
 com/tcn/vending/springdemo/presentation/TcnUtilityUI.java
@@ -141,8 +140,6 @@ com/tcn/vending/springdemo/presentation/GropInfoBack.java
 com/tcn/vending/springdemo/presentation/adapter/LogsAdapter.java
  com.tcn.vending.springdemo.presentation.adapter.LogsAdapter
  com.tcn.vending.springdemo.presentation.adapter.LogsAdapter$MyView
-com/tcn/vending/springdemo/presentation/adapter/MainSliderAdapter.java
- com.tcn.vending.springdemo.presentation.adapter.MainSliderAdapter
 com/tcn/vending/springdemo/presentation/UIComBack.java
  com.tcn.vending.springdemo.presentation.UIComBack
 controller/SyncShipmentsSchedule.java

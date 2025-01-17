@@ -21,7 +21,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.tcn.vending.springdemo.Injection;
 import com.tcn.vending.springdemo.R;
@@ -122,6 +121,7 @@ public class MainActivity extends TcnMainActivity {
             mUseText.setText(name);
             }
         }
+         //START
 //        String jsonVal = "{\n" +
 //                "\t\"IsSuccess\": true,\n" +
 //                "\t\"Result\": [\n" +
@@ -434,20 +434,6 @@ public class MainActivity extends TcnMainActivity {
 //                "            \"enabled\": true\n" +
 //                "        },\n" +
 //                "        {\n" +
-//                "            \"idCelda\": 26,\n" +
-//                "            \"slotN\": 51,\n" +
-//                "            \"celdaName\": \"25\",\n" +
-//                "            \"activoName\": \"Celular\",\n" +
-//                "            \"activoId\": null,\n" +
-//                "            \"activoType\": \"Celular\",\n" +
-//                "            \"activoBrand\": \"SAMSUNG\",\n" +
-//                "            \"activoMode\": \"Galaxy A12\",\n" +
-//                "            \"cantidad\": 5,\n" +
-//                "            \"celdas\": 1.4,\n" +
-//                "            \"row\": 6,\n" +
-//                "            \"enabled\": true\n" +
-//                "        },\n" +
-//                "        {\n" +
 //                "            \"idCelda\": 27,\n" +
 //                "            \"slotN\": 52,\n" +
 //                "            \"celdaName\": \"26\",\n" +
@@ -493,40 +479,54 @@ public class MainActivity extends TcnMainActivity {
 //                "            \"idCelda\": 30,\n" +
 //                "            \"slotN\": 56,\n" +
 //                "            \"celdaName\": \"29\",\n" +
-//                "            \"activoName\": \"Celular\",\n" +
+//                "            \"activoName\": \"MOCHILA\",\n" +
 //                "            \"activoId\": null,\n" +
-//                "            \"activoType\": \"Celular\",\n" +
-//                "            \"activoBrand\": \"SAMSUNG\",\n" +
-//                "            \"activoMode\": \"Galaxy A12\",\n" +
-//                "            \"cantidad\": 6,\n" +
+//                "            \"activoType\": \"MOCHILA\",\n" +
+//                "            \"activoBrand\": \"Targus\",\n" +
+//                "            \"activoMode\": \"CVT 600\",\n" +
+//                "            \"cantidad\": 0,\n" +
 //                "            \"celdas\": 1.4,\n" +
 //                "            \"row\": 6,\n" +
 //                "            \"enabled\": true\n" +
 //                "        },\n" +
 //                "        {\n" +
 //                "            \"idCelda\": 32,\n" +
-//                "            \"slotN\": 59,\n" +
-//                "            \"celdaName\": \"31\",\n" +
+//                "            \"slotN\": 58,\n" +
+//                "            \"celdaName\": \"30\",\n" +
+//                "            \"activoName\": \"MOCHILA\",\n" +
+//                "            \"activoId\": null,\n" +
+//                "            \"activoType\": \"MOCHILA\",\n" +
+//                "            \"activoBrand\": \"Targus\",\n" +
+//                "            \"activoMode\": \"CVT 600\",\n" +
+//                "            \"cantidad\": 2,\n" +
+//                "            \"celdas\": 1.4,\n" +
+//                "            \"row\": 6,\n" +
+//                "            \"enabled\": false\n" +
+//                "        },\n" +
+//                "        {\n" +
+//                "            \"idCelda\": 26,\n" +
+//                "            \"slotN\": 51,\n" +
+//                "            \"celdaName\": \"25\",\n" +
 //                "            \"activoName\": \"Celular\",\n" +
 //                "            \"activoId\": null,\n" +
 //                "            \"activoType\": \"Celular\",\n" +
 //                "            \"activoBrand\": \"SAMSUNG\",\n" +
 //                "            \"activoMode\": \"Galaxy A12\",\n" +
-//                "            \"cantidad\": 3,\n" +
+//                "            \"cantidad\": 5,\n" +
 //                "            \"celdas\": 1.4,\n" +
 //                "            \"row\": 6,\n" +
 //                "            \"enabled\": true\n" +
 //                "        },\n" +
 //                "        {\n" +
 //                "            \"idCelda\": 31,\n" +
-//                "            \"slotN\": 58,\n" +
-//                "            \"celdaName\": \"30\",\n" +
-//                "            \"activoName\": \"Celular\",\n" +
+//                "            \"slotN\": 59,\n" +
+//                "            \"celdaName\": \"31\",\n" +
+//                "            \"activoName\": \"MOCHILA\",\n" +
 //                "            \"activoId\": null,\n" +
-//                "            \"activoType\": \"Celular\",\n" +
-//                "            \"activoBrand\": \"SAMSUNG\",\n" +
-//                "            \"activoMode\": \"Galaxy A12\",\n" +
-//                "            \"cantidad\": 3,\n" +
+//                "            \"activoType\": \"MOCHILA\",\n" +
+//                "            \"activoBrand\": \"Targus\",\n" +
+//                "            \"activoMode\": \"CVT 600\",\n" +
+//                "            \"cantidad\": 1,\n" +
 //                "            \"celdas\": 1.4,\n" +
 //                "            \"row\": 6,\n" +
 //                "            \"enabled\": true\n" +
@@ -564,6 +564,7 @@ public class MainActivity extends TcnMainActivity {
 //                "}";
 //        ActivoDto dataActivos = new Gson().fromJson(jsonVal,ActivoDto.class);
 //        observeActivos(dataActivos.Result);
+        //END
     }
 
 
@@ -656,10 +657,21 @@ public class MainActivity extends TcnMainActivity {
 
     }
 
+    private List<Activo> sortActivos(List<Activo> activos) {
+        Collections.sort(activos, new Comparator<Activo>() {
+            @Override
+            public int compare(Activo activo, Activo t1) {
+                return Integer.compare(activo.slotN, t1.slotN);
+            }
+        });
+        return activos;
+    }
+
     Activo getActivoByRowAndPosition(int position,int row){
         ArrayList<Activo> activos = new ArrayList<>();
+        List<Activo> sortedActivos = sortActivos(mActivos);
         for (int i = 0;i < mActivos.size();i++){
-            Activo currentActivo = mActivos.get(i);
+            Activo currentActivo = sortedActivos.get(i);
             if(currentActivo.row == row){
                 activos.add(currentActivo);
             }
@@ -695,7 +707,7 @@ public class MainActivity extends TcnMainActivity {
                         activo =getActivoByRowAndPosition(position,6);
                         break;
                 }
-                if (activo== null) return;
+                if (activo == null) return;
                 if(!activo.enabled) {
 //                    showAlertMessage("El activo que has seleccionado parece no estar en tu inventario.","No permitido");
                     return;

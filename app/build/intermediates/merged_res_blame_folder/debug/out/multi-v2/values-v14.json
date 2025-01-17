@@ -4,7 +4,7 @@
             "outputFile": "D:\\AndroidApps\\Expendedora\\Vending\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "D:\\AndroidStudio\\jbr\\caches\\transforms-2\\files-2.1\\de0151e446039cdc1a9280ae05eb2e08\\appcompat-v7-26.1.0\\res\\values-v14\\values-v14.xml",
+                    "source": "C:\\Program Files\\Android\\Android Studio\\jbr\\caches\\transforms-2\\files-2.1\\de0151e446039cdc1a9280ae05eb2e08\\appcompat-v7-26.1.0\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15",
                         "startColumns": "4,4,4,4,4",
